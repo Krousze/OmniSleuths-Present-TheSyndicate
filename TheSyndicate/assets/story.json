@@ -80,7 +80,8 @@
     ],
     "destinations": [ "hallway", "upload", "recyclerTruck" ],
     "actualDestinationId": null,
-    "start": false
+    "start": false,
+    "displayASCII": "__\n   _  |@@|\n  / \\ \\--/ __\n  ) O|----|  |   __\n / / \\ }{ /\\ )_ / _\\\n )/  /\\__/\\ \\__O (__\n|/  (--/\\--)    \\__/\n/   _)(  )(_\n   `---''---`\n"
     },
     {
     "id": "loveOneself",

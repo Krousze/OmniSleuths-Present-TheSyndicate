@@ -22,7 +22,7 @@ namespace TheSyndicate
 
         public void Start()
         {
-            ConsoleWindow.ShowWindow(ConsoleWindow.ThisConsole, ConsoleWindow.MAXIMIZE);
+            //ConsoleWindow.ShowWindow(ConsoleWindow.ThisConsole, ConsoleWindow.MAXIMIZE);
             Console.ForegroundColor = ConsoleColor.Green;
             Console.CursorVisible = true;
             while (CurrentScene.HasNextScenes())

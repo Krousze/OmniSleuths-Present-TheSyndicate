@@ -12,15 +12,17 @@ namespace TheSyndicate
         public string[] Options { get; private set; }
         public string[] Destinations { get; private set; }
         public string ActualDestinationId { get; private set; }
+        public string displayASCII { get; private set; }
         public bool Start { get; private set; }
         public IAction Action { get; set; }
 
-        public Scene(string id, string text, string[] options, string[] destinations, bool start)
+        public Scene(string id, string text, string[] options, string[] destinations, bool start, string displayASCII)
         {
             this.Id = id;
             this.Text = text;
             this.Options = options;
             this.Destinations = destinations;
+            this.displayASCII = displayASCII;
             this.ActualDestinationId = null;
             this.Start = start;
         }
