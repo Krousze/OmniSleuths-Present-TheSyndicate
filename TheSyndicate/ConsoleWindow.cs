@@ -17,5 +17,20 @@ namespace TheSyndicate
         public const int MAXIMIZE = 3;
         private const int MINIMIZE = 6;
         private const int RESTORE = 9;
+
+
+        [DllImport("libc")]
+        private static extern int system(string exec);
+
+        public static void SetMacWindow()
+        {
+            system(@"printf '\e[8;68;140t'");
+        }
+
+        public static void SetWindowsWindow()
+        {
+            Console.SetWindowSize(Program.WINDOW_WIDTH, Program.WINDOW_HEIGHT);
+        }
+
     }
 }
