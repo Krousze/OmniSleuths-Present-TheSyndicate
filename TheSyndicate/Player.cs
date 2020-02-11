@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 using System.IO;
 
 namespace TheSyndicate
@@ -7,9 +8,11 @@ namespace TheSyndicate
     {
         private static Player _instance;
         private const int MAXIMUM_BATTERY_POWER = 4;
+        private const int MAXIMUM_LOVEPOINTS = 100;
         private static string PATH_TO_SAVE_STATE = @"..\..\..\assets\SaveState.json";
         public string CurrentSceneId { get; private set; }
         public int BatteryPower { get; set; }
+        public int LovePointTotal { get; private set; }
 
         [JsonConstructor]
         private Player(string currentSceneId = null,
@@ -17,6 +20,7 @@ namespace TheSyndicate
         {
             this.CurrentSceneId = currentSceneId;
             this.BatteryPower = batteryPower;
+            this.LovePointTotal = MAXIMUM_LOVEPOINTS;
         }
 
         public static Player GetInstance()
@@ -88,6 +92,30 @@ namespace TheSyndicate
         public void DecrementBatteryPowerByOne()
         {
             this.BatteryPower--;
+        }
+
+        public void AddLovePoints(int num)
+        {
+            //Limit change in points
+            if (num == 0)
+            {
+                this.LovePointTotal = 0;
+            }
+            else
+            {
+
+                int n;
+                if (Math.Abs(num) > 50)
+                {
+                    n = (num < 0) ? -50 : 50;
+                }
+                else
+                {
+                    n = num;
+                }
+
+                this.LovePointTotal += n;
+            }
         }
     }
 }

@@ -6,7 +6,7 @@ namespace TheSyndicate
     {
         static void Main(string[] args)
         {
-            
+            //My Console.LargestWindowHeight = 58, Console.LargestWindowWidth = 205 
             GameEngine gameEngine = new GameEngine();
             gameEngine.Start();
         }

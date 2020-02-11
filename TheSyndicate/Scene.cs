@@ -13,6 +13,8 @@ namespace TheSyndicate
         public string[] Destinations { get; private set; }
         public string ActualDestinationId { get; private set; }
         public bool Start { get; private set; }
+        public int ScenePoints { get; private set; }
+        public int[] LovePointsMaxMin { get; private set; }
         public IAction Action { get; set; }
 
         public Scene(string id, string text, string[] options, string[] destinations, bool start)
@@ -79,6 +81,10 @@ namespace TheSyndicate
             }
             sceneTextBox.SetBoxPosition(Console.WindowWidth - (Console.WindowWidth / 4), Console.WindowHeight - 2);
             Console.WriteLine($"Press 0 at any point to save and quit.");
+
+            // ??Test Love Points implementation.
+            sceneTextBox.SetBoxPosition(Console.WindowWidth - (Console.WindowWidth / 4), Console.WindowHeight-3);
+            Console.WriteLine($"Love Points: {player.LovePointTotal}");
         }
 
         private void RenderInstructions(TextBox sceneTextBox)
@@ -141,6 +147,8 @@ namespace TheSyndicate
             this.ActualDestinationId = this.Destinations[selectedOption - 1];
             if (this.ActualDestinationId.Equals("fight"))
             {
+
+                player.AddLovePoints(-5);//?? Lose Love Points for getting into fight
                 this.Action = new FightAction();
                 Action.ExecuteAction();
                 if (Action.DidPlayerSucceed())
@@ -150,6 +158,7 @@ namespace TheSyndicate
                 else
                 {
                     this.ActualDestinationId = "dead";
+                    player.AddLovePoints(0);//?? Love Points go to zero upon death.
                 }
             }
             else if (this.Id.Equals("upload") || 
