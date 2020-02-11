@@ -31,6 +31,7 @@ namespace TheSyndicate
         {
             TextBox sceneTextBox = RenderText();
             RenderOptions(sceneTextBox);
+            DisplayASCII(sceneTextBox);
             if (this.Options.Length > 0)
             {
                 ExecutePlayerOption(sceneTextBox);
@@ -58,7 +59,7 @@ namespace TheSyndicate
             if (this.Options.Length > 0) 
             {
                 RenderUserOptions(sceneTextBox);
-                DisplayASCII();
+                DisplayASCII(sceneTextBox);
             }
             else
             {
@@ -80,8 +81,6 @@ namespace TheSyndicate
                 Console.WriteLine($"{i + 1}: {this.Options[i]}");
                 sceneTextBox.TextBoxY += 2;
             }
-            sceneTextBox.SetBoxPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY + 2);
-            DisplayASCII();
             sceneTextBox.SetBoxPosition(Console.WindowWidth - (Console.WindowWidth / 4), Console.WindowHeight - 2);
             Console.WriteLine($"Press 0 at any point to save and quit.");
         }
@@ -173,11 +172,12 @@ namespace TheSyndicate
         {
             return Destinations.Length > 0;
         }
-        public string[] DisplayASCII()
+        public void DisplayASCII(TextBox scenetextBox)
         {
-            //scenetextBox.TextBoxY += 2;
-            //scenetextBox.SetBoxPosition(scenetextBox.TextBoxX, scenetextBox.TextBoxY);
-            return displayASCII;
+            scenetextBox.TextBoxY += 2;
+            scenetextBox.SetBoxPosition(scenetextBox.TextBoxX, scenetextBox.TextBoxY);
+            scenetextBox.FormatText(displayASCII[0]);
+            //return displayASCII;
         }
     }
 }
