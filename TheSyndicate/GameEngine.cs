@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.InteropServices;
 using Newtonsoft.Json;
 
 
@@ -8,7 +9,7 @@ namespace TheSyndicate
 {
     class GameEngine
     {
-        private string PATH_TO_STORY = @"..\..\..\assets\story.json";
+        private string PATH_TO_STORY = @"../../../assets/story.json";
         private Dictionary<string, Scene> Scenes { get; set; }
         private Scene CurrentScene { get; set; }
         private Player Player { get; set; }
@@ -22,7 +23,6 @@ namespace TheSyndicate
 
         public void Start()
         {
-            ConsoleWindow.ShowWindow(ConsoleWindow.ThisConsole, ConsoleWindow.MAXIMIZE);
             Console.ForegroundColor = ConsoleColor.Green;
             Console.CursorVisible = true;
             while (CurrentScene.HasNextScenes())
