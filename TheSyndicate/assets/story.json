@@ -6,8 +6,7 @@
     "destinations": [],
     "actualDestinationId": null,
     "start": false,
-    "displayASCII": ["         __\n      _  |@@|\n  / \\ \\--/ __\n  ) O|----|  |   __\n / / \\ }{ /\\ )_ / _\\\n )/  /\\__/\\ \\__O (__\n|/  (--/\\--)    \\__/\n/   _)(  )(_\n   `---''---`\n",
-      " __\n      (___()'`;\n      /,    /`\n      \\\"--\\\\n"
+    "displayASCII": ["         __\n      _      |@@|\n      /      \\      \\--/      __\n      )      O|----|      |      __\n      /      /      \\  }  {    /\\ )_    / _\\\n      )/ /\\__/\\    \\__O (__       __\n    |/ (--/\\--)    \\__/ /      (___()'`;\n    _)( )(_      /,    /`\n    `---''---`     \\\"--\\\\n"
     ]
   },
     {
@@ -29,7 +28,9 @@
     "destinations": [],
     "actualDestinationId": null,
     "start": false,
-    "displayASCII": [ "        @@@@@@           @@@@@@\n      @@@@@@@@@@       @@@@@@@@@@\n    @@@@@@@@@@@@@@   @@@@@@@@@@@@@@\n  @@@@@@@@@@@@@@@@@ @@@@@@@@@@@@@@@@@\n @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n      @@@@@@@@@@@@@@@@@@@@@@@@@@@\n        @@@@@@@@@@@@@@@@@@@@@@@\n          @@@@@@@@@@@@@@@@@@@\n            @@@@@@@@@@@@@@@\n              @@@@@@@@@@@\n                @@@@@@@\n                  @@@\n                   @\n" ]
+    "displayASCII": [
+      "        @@@@@@           @@@@@@\n      @@@@@@@@@@       @@@@@@@@@@\n    @@@@@@@@@@@@@@   @@@@@@@@@@@@@@\n  @@@@@@@@@@@@@@@@@ @@@@@@@@@@@@@@@@@\n @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n      @@@@@@@@@@@@@@@@@@@@@@@@@@@\n        @@@@@@@@@@@@@@@@@@@@@@@\n          @@@@@@@@@@@@@@@@@@@\n            @@@@@@@@@@@@@@@\n              @@@@@@@@@@@\n                @@@@@@@\n                  @@@\n                   @\n"
+    ]
   },
   {
     "id": "fight",
@@ -54,7 +55,7 @@
     "destinations": [ "fight", "animal", "dead" ],
     "actualDestinationId": null,
     "start": false,
-    "displayASCII": [ "      /\\       /\\\n     /\\*\\            /\\*\\\n    /\\O\\*\\          /\\O\\*\\\n   /*/\\/\\/\\        /*/\\/\\/\\\n  /\\O\\/\\*\\/\\      /\\O\\/\\*\\/\\\n /\\*\\/\\*\\/\\/\\    /\\*\\/\\*\\/\\/\\\n/\\O\\/\\/*/\\/O/\\  /\\O\\/\\/*/\\\/O/\\\n      ||              ||\n      ||              ||\n      ||              ||\n" ]
+    "displayASCII": [ "      /\\              /\\\n     /\\*\\            /\\*\\\n    /\\O\\*\\          /\\O\\*\\\n   /*/\\/\\/\\        /*/\\/\\/\\\n  /\\O\\/\\*\\/\\      /\\O\\/\\*\\/\\\n /\\*\\/\\*\\/\\/\\    /\\*\\/\\*\\/\\/\\\n/\\O\\/\\/*/\\/O/\\  /\\O\\/\\/*/\\\/O/\\\n      ||              ||\n      ||              ||\n      ||              ||\n" ]
   },
   {
     "id": "hallway",
@@ -77,22 +78,22 @@
     "destinations": [ "introScene" ],
     "actualDestinationId": null,
     "start": true,
-    "displayASCII": [ "      /\\       /\\\n     /\\*\\            /\\*\\\n    /\\O\\*\\          /\\O\\*\\\n   /*/\\/\\/\\        /*/\\/\\/\\\n  /\\O\\/\\*\\/\\      /\\O\\/\\*\\/\\\n /\\*\\/\\*\\/\\/\\    /\\*\\/\\*\\/\\/\\\n/\\O\\/\\/*/\\/O/\\  /\\O\\/\\/*/\\\/O/\\\n      ||              ||\n      ||              ||\n      ||              ||\n" ]
+    "displayASCII": [ "      /\\              /\\\n     /\\*\\            /\\*\\\n    /\\O\\*\\          /\\O\\*\\\n   /*/\\/\\/\\        /*/\\/\\/\\\n  /\\O\\/\\*\\/\\      /\\O\\/\\*\\/\\\n /\\*\\/\\*\\/\\/\\    /\\*\\/\\*\\/\\/\\\n/\\O\\/\\/*/\\/O/\\  /\\O\\/\\/*/\\\/O/\\\n      ||              ||\n      ||              ||\n      ||              ||\n" ]
 
   },
-    {
-    "id": "introScene",
-    "text": "You think to yourself as you continue toward your destination. The bay is not far now, but for some reason, you are unable to shake the thought of feeling love. You begin to question whether these thoughts are trivial or something you should pursue?\n\nC.R.A.I.G. : I guess I'll never know what love is like... I'm just a robot. So, I guess it wouldn't make much sense for me to actually feel love in the first place.\n\nC.R.A.I.G. : No! I've helped so many feel love, I must seek out love.\n\nYou have three options at this point:",
-    "options": [
-        "Take the hallway.",
-        "Upload your consciousness.",
-        "Continue to recycler truck."
-    ],
-    "destinations": [ "hallway", "upload", "recyclerTruck" ],
-    "actualDestinationId": null,
-    "start": false,
-      "displayASCII": [ "__\n   _  |@@|\n  / \\ \\--/ __\n  ) O|----|  |   __\n / / \\ }{ /\\ )_ / _\\\n )/  /\\__/\\ \\__O (__\n|/  (--/\\--)    \\__/\n/   _)(  )(_\n   `---''---`\n" ]
-    },
+  {
+  "id": "introScene",
+  "text": "You think to yourself as you continue toward your destination. The bay is not far now, but for some reason, you are unable to shake the thought of feeling love. You begin to question whether these thoughts are trivial or something you should pursue?\n\nC.R.A.I.G. : I guess I'll never know what love is like... I'm just a robot. So, I guess it wouldn't make much sense for me to actually feel love in the first place.\n\nC.R.A.I.G. : No! I've helped so many feel love, I must seek out love.\n\nYou have three options at this point:",
+  "options": [
+      "Take the hallway.",
+      "Upload your consciousness.",
+      "Continue to recycler truck."
+  ],
+  "destinations": [ "hallway", "upload", "recyclerTruck" ],
+  "actualDestinationId": null,
+  "start": false,
+  "displayASCII": ["           __\n       _  |@@|\n      / \\ \\--/ __\n      ) O|----|  |   __\n     / / \\ }{ /\\ )_ / _\\\n     )/  /\\__/\\ \\__O (__\n    |/  (--/\\--)    \\__/\n    /   _)(  )(_\n       `---''---`\n"]
+  },
   {
     "id": "loveOneself",
     "text": "You have reached the end of your journey not knowing what it all was for. But there is no regret because you have found what you were searching for. It has finally occurred to you that the love you sought after was in Yourself the entire time. Your love for your very existance is what pushed you to follow through with this journey. You have successfully evaded the reach of the All-Seeing Syndicate. How you decide to live out your remaining existance is up to you. To be continued...",

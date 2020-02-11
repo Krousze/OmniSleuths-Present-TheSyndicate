@@ -12,7 +12,7 @@ namespace TheSyndicate
         public string[] Options { get; private set; }
         public string[] Destinations { get; private set; }
         public string ActualDestinationId { get; private set; }
-        public string[] displayASCII { get; private set; }
+        public string[] DisplayASCII { get; private set; }
         public bool Start { get; private set; }
         public IAction Action { get; set; }
 
@@ -22,7 +22,7 @@ namespace TheSyndicate
             this.Text = text;
             this.Options = options;
             this.Destinations = destinations;
-            this.displayASCII = displayASCII;
+            this.DisplayASCII = displayASCII;
             this.ActualDestinationId = null;
             this.Start = start;
         }
@@ -31,7 +31,7 @@ namespace TheSyndicate
         {
             TextBox sceneTextBox = RenderText();
             RenderOptions(sceneTextBox);
-            DisplayASCII(sceneTextBox);
+            ASCIIDisplay(sceneTextBox);
             if (this.Options.Length > 0)
             {
                 ExecutePlayerOption(sceneTextBox);
@@ -59,7 +59,6 @@ namespace TheSyndicate
             if (this.Options.Length > 0) 
             {
                 RenderUserOptions(sceneTextBox);
-                DisplayASCII(sceneTextBox);
             }
             else
             {
@@ -172,12 +171,10 @@ namespace TheSyndicate
         {
             return Destinations.Length > 0;
         }
-        public void DisplayASCII(TextBox scenetextBox)
+        public void ASCIIDisplay(TextBox scenetextBox)
         {
-            scenetextBox.TextBoxY += 2;
             scenetextBox.SetBoxPosition(scenetextBox.TextBoxX, scenetextBox.TextBoxY);
-            scenetextBox.FormatText(displayASCII[0]);
-            //return displayASCII;
+            scenetextBox.FormatText(DisplayASCII[0]);
         }
     }
 }
