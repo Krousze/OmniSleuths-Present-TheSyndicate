@@ -3,8 +3,13 @@ using System.Runtime.InteropServices;
 
 namespace TheSyndicate
 {
+
+
     class ConsoleWindow
     {
+
+
+
         [DllImport("kernel32.dll", ExactSpelling = true)]
 
         private static extern IntPtr GetConsoleWindow();
@@ -29,7 +34,8 @@ namespace TheSyndicate
 
         public static void SetWindowsWindow()
         {
-            Console.SetWindowSize(Program.WINDOW_WIDTH, Program.WINDOW_HEIGHT);
+            Program.WINDOW_WIDTH = Console.WindowWidth;
+            Program.WINDOW_HEIGHT = Console.WindowHeight;
         }
 
     }

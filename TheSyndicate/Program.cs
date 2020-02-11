@@ -6,8 +6,9 @@ namespace TheSyndicate
 {
     class Program
     {
-        public const int WINDOW_WIDTH = 140;
-        public const int WINDOW_HEIGHT = 68;
+
+        public static int WINDOW_WIDTH = 140;
+        public static int WINDOW_HEIGHT = 68;
 
         static void Main(string[] args)
         {
@@ -19,15 +20,11 @@ namespace TheSyndicate
             }
             else
             {
-                Console.WriteLine(Program.WINDOW_HEIGHT + ", " + Program.WINDOW_WIDTH);
                 ConsoleWindow.SetMacWindow();
-                Console.WriteLine(Program.WINDOW_HEIGHT + ", " + Program.WINDOW_WIDTH);
-                Console.ReadKey();
             }
-
-
             GameEngine gameEngine = new GameEngine();
             gameEngine.Start();
+            //Console.WriteLine(Program.WINDOW_HEIGHT);
         }
     }
 }
