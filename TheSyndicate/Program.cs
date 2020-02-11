@@ -15,7 +15,7 @@ namespace TheSyndicate
 
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
-                //ConsoleWindow.ShowWindow(ConsoleWindow.ThisConsole, ConsoleWindow.MAXIMIZE);
+                ConsoleWindow.ShowWindow(ConsoleWindow.ThisConsole, ConsoleWindow.MAXIMIZE);
                 ConsoleWindow.SetWindowsWindow();
             }
             else
