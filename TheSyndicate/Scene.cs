@@ -12,11 +12,11 @@ namespace TheSyndicate
         public string[] Options { get; private set; }
         public string[] Destinations { get; private set; }
         public string ActualDestinationId { get; private set; }
-        public string displayASCII { get; private set; }
+        public string[] displayASCII { get; private set; }
         public bool Start { get; private set; }
         public IAction Action { get; set; }
 
-        public Scene(string id, string text, string[] options, string[] destinations, bool start, string displayASCII)
+        public Scene(string id, string text, string[] options, string[] destinations, bool start, string[] displayASCII)
         {
             this.Id = id;
             this.Text = text;
@@ -58,6 +58,7 @@ namespace TheSyndicate
             if (this.Options.Length > 0) 
             {
                 RenderUserOptions(sceneTextBox);
+                DisplayASCII();
             }
             else
             {
@@ -79,6 +80,8 @@ namespace TheSyndicate
                 Console.WriteLine($"{i + 1}: {this.Options[i]}");
                 sceneTextBox.TextBoxY += 2;
             }
+            sceneTextBox.SetBoxPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY + 2);
+            DisplayASCII();
             sceneTextBox.SetBoxPosition(Console.WindowWidth - (Console.WindowWidth / 4), Console.WindowHeight - 2);
             Console.WriteLine($"Press 0 at any point to save and quit.");
         }
@@ -169,6 +172,12 @@ namespace TheSyndicate
         public bool HasNextScenes()
         {
             return Destinations.Length > 0;
+        }
+        public string[] DisplayASCII()
+        {
+            //scenetextBox.TextBoxY += 2;
+            //scenetextBox.SetBoxPosition(scenetextBox.TextBoxX, scenetextBox.TextBoxY);
+            return displayASCII;
         }
     }
 }
