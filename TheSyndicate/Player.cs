@@ -8,10 +8,12 @@ namespace TheSyndicate
     {
         private static Player _instance;
         private const int MAXIMUM_BATTERY_POWER = 4;
-        private const int MAXIMUM_LOVEPOINTS = 100;
         private static string PATH_TO_SAVE_STATE = @"..\..\..\assets\SaveState.json";
         public string CurrentSceneId { get; private set; }
         public int BatteryPower { get; set; }
+
+        //LovePoints serve as a measure of progress and influence available paths.
+        private const int MAXIMUM_LOVEPOINTS = 100;
         public int LovePointTotal { get; private set; }
 
         [JsonConstructor]
@@ -94,6 +96,11 @@ namespace TheSyndicate
             this.BatteryPower--;
         }
 
+        /// Add LovePoints to LovePointTotal. 
+        /// Domain of num: [-50,50]. 
+        /// Currently, adding "0" Lovepoints sets LovePointsTotal to 0.
+        /// 
+
         public void AddLovePoints(int num)
         {
             //Limit change in points
@@ -105,6 +112,7 @@ namespace TheSyndicate
             {
 
                 int n;
+
                 if (Math.Abs(num) > 50)
                 {
                     n = (num < 0) ? -50 : 50;
@@ -114,7 +122,20 @@ namespace TheSyndicate
                     n = num;
                 }
 
-                this.LovePointTotal += n;
+                int newTotal = this.LovePointTotal + n;
+
+                if (newTotal > MAXIMUM_LOVEPOINTS)
+                {
+                    this.LovePointTotal = MAXIMUM_LOVEPOINTS;
+                }
+                else if (newTotal < -MAXIMUM_LOVEPOINTS)
+                {
+                    this.LovePointTotal = -MAXIMUM_LOVEPOINTS;
+                }
+                else
+                {
+                    this.LovePointTotal = newTotal;
+                }
             }
         }
     }

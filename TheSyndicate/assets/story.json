@@ -6,8 +6,8 @@
     "destinations": [],
     "actualDestinationId": null,
     "start": false,
-    "ScenePoints": 25,
-    "LovePointsMaxMin": [50,30] 
+    "scenePoints": 25,
+    "lovePointsMaxMin": [ 50, 30 ]
   },
   {
     "id": "city",
@@ -19,8 +19,8 @@
     "destinations": [ "fight", "toaster" ],
     "actualDestinationId": null,
     "start": false,
-    "ScenePoints": 5,
-    "LovePointsMaxMin": [ 30, 60 ]
+    "scenePoints": 5,
+    "lovePointsMaxMin": [ 30, 60 ]
   },
   {
     "id": "dead",
@@ -29,8 +29,8 @@
     "destinations": [],
     "actualDestinationId": null,
     "start": false,
-    "ScenePoints": 0,
-    "LovePointsMaxMin": [ 30, 60 ]
+    "scenePoints": 0,
+    "lovePointsMaxMin": [ 30, 60 ]
   },
   {
     "id": "fight",
@@ -42,8 +42,8 @@
     "destinations": [ "dead", "recyclerTruck" ],
     "actualDestinationId": null,
     "start": false,
-    "ScenePoints": 10,
-    "LovePointsMaxMin": [ 20, 70 ]
+    "scenePoints": 10,
+    "lovePointsMaxMin": [ 20, 70 ]
   },
   {
     "id": "forest",
@@ -56,8 +56,8 @@
     "destinations": [ "fight", "animal", "dead" ],
     "actualDestinationId": null,
     "start": false,
-    "ScenePoints": 10,
-    "LovePointsMaxMin": [ 30, 70 ]
+    "scenePoints": 10,
+    "lovePointsMaxMin": [ 30, 70 ]
   },
   {
     "id": "hallway",
@@ -69,8 +69,8 @@
     "destinations": [ "city", "fight" ],
     "actualDestinationId": null,
     "start": false,
-    "ScenePoints": 11,
-    "LovePointsMaxMin": [ 20, 60 ]
+    "scenePoints": 11,
+    "lovePointsMaxMin": [ 20, 60 ]
   },
   {
     "id": "introduction",
@@ -81,8 +81,8 @@
     "destinations": [ "introScene" ],
     "actualDestinationId": null,
     "start": true,
-    "ScenePoints": 50,
-    "LovePointsMaxMin": [ 20, 60 ]
+    "scenePoints": 50,
+    "lovePointsMaxMin": [ 100, 20 ]
   },
   {
     "id": "introScene",
@@ -95,8 +95,8 @@
     "destinations": [ "hallway", "upload", "recyclerTruck" ],
     "actualDestinationId": null,
     "start": false,
-    "ScenePoints": 1,
-    "LovePointsMaxMin": [ 20, 60 ]
+    "scenePoints": 1,
+    "lovePointsMaxMin": [ 100, 20 ]
 
   },
   {
@@ -106,8 +106,8 @@
     "destinations": [],
     "actualDestinationId": null,
     "start": false,
-    "ScenePoints": 20,
-    "LovePointsMaxMin": [ 30, 60 ]
+    "scenePoints": 20,
+    "lovePointsMaxMin": [ 30, 60 ]
   },
   {
     "id": "recyclerTruck",
@@ -120,8 +120,8 @@
     "destinations": [ "forest", "dead", "city" ],
     "actualDestinationId": null,
     "start": false,
-    "ScenePoints": 8,
-    "LovePointsMaxMin": [ 50, 20 ]
+    "scenePoints": 8,
+    "lovePointsMaxMin": [ 90, 20 ]
   },
   {
     "id": "toaster",
@@ -130,8 +130,8 @@
     "destinations": [],
     "actualDestinationId": null,
     "start": false,
-    "ScenePoints": 2,
-    "LovePointsMaxMin": [ 20, 80 ]
+    "scenePoints": 2,
+    "lovePointsMaxMin": [ 20, 80 ]
   },
   {
     "id": "upload",
@@ -143,8 +143,8 @@
     "destinations": [ "web", "city" ],
     "actualDestinationId": null,
     "start": false,
-    "ScenePoints": 2,
-    "LovePointsMaxMin": [ 30, 60 ]
+    "scenePoints": 2,
+    "lovePointsMaxMin": [ 30, 60 ]
   },
   {
     "id": "web",
@@ -156,7 +156,7 @@
     "destinations": [ "loveOneself", "city" ],
     "actualDestinationId": null,
     "start": false,
-    "ScenePoints": 5,
-    "LovePointsMaxMin": [ 20, 60 ]
+    "scenePoints": 5,
+    "lovePointsMaxMin": [ 20, 60 ]
   }
 ]
