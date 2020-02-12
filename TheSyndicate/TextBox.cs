@@ -103,9 +103,9 @@ namespace TheSyndicate
 
             while (startIndex < text.Length)
             {
-                lastSpaceInALine = CheckForLastSpaceInALine(lineWidth, endIndex);
 
                 newLineIndex = NEW_LINE_PATTERN.Match(text, startIndex, endIndex - startIndex).Index;
+                lastSpaceInALine = CheckForLastSpaceInALine(lineWidth, endIndex);
 
                 //checks if \n appears before maximum lineWidth, if so, then renders up to \n and continues to next line
                 if (newLineIndex < endIndex && newLineIndex != 0)

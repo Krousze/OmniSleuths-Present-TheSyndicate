@@ -175,6 +175,7 @@ namespace TheSyndicate
         {
             scenetextBox.SetBoxPosition(scenetextBox.TextBoxX, scenetextBox.TextBoxY);
             scenetextBox.FormatText(DisplayASCII[0]);
+            //return DisplayASCII;
         }
     }
 }
