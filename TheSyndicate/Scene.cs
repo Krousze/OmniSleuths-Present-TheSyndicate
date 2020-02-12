@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Drawing;
 using TheSyndicate.Actions;
+using CC = Colorful.Console;
 
 namespace TheSyndicate
 {
@@ -38,11 +40,41 @@ namespace TheSyndicate
         public void Play()
         {
             TextBox sceneTextBox = RenderText();
+            RenderProgressBar();
             RenderOptions(sceneTextBox);
             if (this.Options.Length > 0)
             {
                 ExecutePlayerOption(sceneTextBox);
             }
+        }
+
+        public void RenderProgressBar()
+        {
+            
+            int blocks = player.LovePointTotal * 20 / 100;
+
+            char POINT_METER_BLOCK = '\u2588';
+            int cursorX = Program.WINDOW_WIDTH - 10;
+            int cursorY = Program.WINDOW_HEIGHT - 25;
+            Console.SetCursorPosition(cursorX - 1, cursorY--);
+            CC.Write("EVIL", Color.Red);
+            int r = 255;
+            int g = 0;
+            int b = 0;
+            for (int i = 1; i <= 20; i++)
+            {
+                Console.SetCursorPosition(cursorX, cursorY--);
+
+                CC.Write(new string(POINT_METER_BLOCK, 2), Color.FromArgb(r, g, b));
+                r -= 12;
+                g += 12;
+                if (i == blocks)
+                {
+                    CC.Write(" <--", Color.Gray);
+                }
+            }
+            Console.SetCursorPosition(cursorX - 1, cursorY);
+            CC.Write("GOOD", Color.Green);
         }
 
         TextBox RenderText()
