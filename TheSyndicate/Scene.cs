@@ -31,7 +31,7 @@ namespace TheSyndicate
         {
             TextBox sceneTextBox = RenderText();
             RenderOptions(sceneTextBox);
-            ASCIIDisplay(sceneTextBox);
+            //ASCIIDisplay(sceneTextBox);
             if (this.Options.Length > 0)
             {
                 ExecutePlayerOption(sceneTextBox);
@@ -171,11 +171,10 @@ namespace TheSyndicate
         {
             return Destinations.Length > 0;
         }
-        public void ASCIIDisplay(TextBox scenetextBox)
-        {
-            scenetextBox.SetBoxPosition(scenetextBox.TextBoxX, scenetextBox.TextBoxY);
-            scenetextBox.FormatText(DisplayASCII[0]);
-            //return DisplayASCII;
-        }
+        //public void ASCIIDisplay(TextBox scenetextBox)
+        //{
+        //    scenetextBox.SetBoxPosition(scenetextBox.TextBoxX, scenetextBox.TextBoxY);
+        //    scenetextBox.FormatText(DisplayASCII[0]);
+        //}
     }
 }
