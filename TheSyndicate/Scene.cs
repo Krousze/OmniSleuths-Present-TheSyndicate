@@ -1,10 +1,6 @@
 ﻿using System;
-<<<<<<< HEAD
 using System.Drawing;
-=======
 using System.Threading.Tasks;
-
->>>>>>> ca68a16d0b2f96e78db6e1895f9b4c4b0bdc72c2
 using TheSyndicate.Actions;
 using CC = Colorful.Console;
 
