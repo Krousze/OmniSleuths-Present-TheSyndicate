@@ -1,5 +1,10 @@
 ﻿using System;
+<<<<<<< HEAD
 using System.Drawing;
+=======
+using System.Threading.Tasks;
+
+>>>>>>> ca68a16d0b2f96e78db6e1895f9b4c4b0bdc72c2
 using TheSyndicate.Actions;
 using CC = Colorful.Console;
 
@@ -23,6 +28,7 @@ namespace TheSyndicate
                                                             /// Love Points for 'love' path.
 
         bool[] choiceArray = { true, true, true };
+        private TextToSpeech tts = new TextToSpeech();
 
 
 
@@ -66,8 +72,8 @@ namespace TheSyndicate
                 Console.SetCursorPosition(cursorX, cursorY--);
 
                 CC.Write(new string(POINT_METER_BLOCK, 2), Color.FromArgb(r, g, b));
-                r -= 12;
-                g += 12;
+                r -= 10;
+                g += 7;
                 if (i == blocks)
                 {
                     CC.Write(" <--", Color.Gray);
@@ -86,11 +92,22 @@ namespace TheSyndicate
             TextBox dialogBox = new TextBox(this.Text, Program.WINDOW_WIDTH * 3 / 4, 2, (Program.WINDOW_WIDTH - (Program.WINDOW_WIDTH * 3 / 4)) / 2, 2);
             dialogBox.FormatText(this.Text);
             dialogBox.DrawDialogBox(this.Text);
+            tts.HearText(this.Text);
+            //playVoice(); //??Asynchronous play
 
             //returning dialogBox for information about height of dialog box
 
+
             return dialogBox;
         }
+
+        //??Play asynchronously?
+        //public async Task playVoice()
+        //{
+        //   await Task.Run(()=> tts.HearText(this.Text));
+
+        //}
+
 
         void RenderOptions(TextBox sceneTextBox)
         {
@@ -271,15 +288,18 @@ namespace TheSyndicate
 
         private int GetValidUserInput(TextBox sceneTextBox)
         {
-            int userInput;//Unassigned, userInput is zero.
+            int userInput=-1;//Unassigned, userInput is zero.
 
             do
             {
-                string spaces = "                              ";
+                string spaces = "                                          ";
                 sceneTextBox.SetBoxPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY + 2);
                 Console.Write(spaces);
                 sceneTextBox.SetBoxPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY + 2);
-                Int32.TryParse(Console.ReadLine(), out userInput);
+                if (Int32.TryParse(Console.ReadLine(), out int xInput))
+                {
+                    userInput = xInput;
+                }
                 Console.SetCursorPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY + 2);
             }
             while (!IsValidInput(userInput));
