@@ -9,6 +9,7 @@ namespace TheSyndicate
 
         public static int WINDOW_WIDTH = 140;
         public static int WINDOW_HEIGHT = 68;
+        public static string ASSETS_PATH = "";
 
         static void Main(string[] args)
         {
@@ -17,10 +18,12 @@ namespace TheSyndicate
             {
                 ConsoleWindow.ShowWindow(ConsoleWindow.ThisConsole, ConsoleWindow.MAXIMIZE);
                 ConsoleWindow.SetWindowsWindow();
+                ASSETS_PATH = @"..\..\..\assets\";
             }
             else
             {
                 ConsoleWindow.SetMacWindow();
+                ASSETS_PATH = @"../../../assets/";
             }
             GameEngine gameEngine = new GameEngine();
             gameEngine.Start();
