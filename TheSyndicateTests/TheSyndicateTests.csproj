@@ -8,6 +8,10 @@
 
   <ItemGroup>
     <PackageReference Include="Colorful.Console" Version="1.2.10" />
+<<<<<<< HEAD
+=======
+    <PackageReference Include="Microsoft.CognitiveServices.Speech" Version="1.9.0" />
+>>>>>>> ca68a16d0b2f96e78db6e1895f9b4c4b0bdc72c2
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="2.0.0" />
     <PackageReference Include="MSTest.TestFramework" Version="2.0.0" />
