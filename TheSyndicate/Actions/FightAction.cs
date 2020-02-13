@@ -13,6 +13,8 @@ namespace TheSyndicate.Actions
         private static int SECONDS_USER_HAS_TO_DODGE = 1;
         private static int TIMES_USER_MUST_DODGE_ATTACKS = 3;
         private static int NUMBER_OF_ATTACKS_TO_DEFEND_AGAINST = 5;
+        private static string FIGHTASCII =
+"                                             (#%%%#(\n                                 .###%#.    /%%%#%*#(\n                                *#%%%%%##   #%%%%###,\n                                #%#%%%%%*  ,%%%%%%##   .##%##%*\n                               .#####%%#   #%%%%%%#,   ,(%%%%%#*\n                               #%%%%%#%(  .#%##%%##   /%%%%%%%#\n                               /%%%%%##   ##%#####/  .%%%%%%##.\n                              /%%%%%#%#  .##%%%%%#.  %#%%%%%%/\n                              #*%%%%##.  (%%%%%%%#  /(%%%%%%%\n                             *#(#%%%%%   //%#%%%#. .%#%%%%%#.    #%%###\n                             ##(%%%%%,  *###%%#%#  ##/##%%#(    #%%%%##,\n                            ,%##%%%%%%##%(###,/#, *#%%%%%%#   ,%#%%%##\n           ,*,              #%%##%%%%%%#%(###**# .#%%%%%%#*  *###%%#(\n         #%%#%#(#/         .#%%%%%%%%%%%%%%%%%%%#%#%%%%%%#  %(%##%%*\n          %%#%(##%#%       ##%%%%%##%%%#/#%%%%###%%%#/#.*..*%%(%%%\n           *#%####%%##\\\\//.##(((%#,      *%%(    #*|        |%#%#\n            .%%##%%%#/    %%    ##        %%%    *#|        |%#/\n              ##%%%%%#    **    ##    %   ,#%    .#%#,    #%##.\n               #%%%%%%    %%    (#    %    ##,    ##%#    (%%\n                /#%%%#.         *#    %%   ,#(    %%#%    ,(\n                 *#%%%/    %    .#          #%    (#%#    /\n                  ,#%%#    %%    %    %%    .%    */##.__/\n                   .###    %%    %    %%%    /%    %%// /\n                     #%    %%    /##%%%%%%%%####%%#%#%//\n                      #%%%/%%#%%%%%%#%#%%%%%%####%%%%.\n                       .#((%%%%%%%%#(/#%%%%%%(%%%%%#\n                          /%%#%%%%#%%#####%%%#%#/(\n                              .(%##%(%##,(#%#/.\n\n\n\n                             Press ENTER to continue.                 \n";
         private static string INSTRUCTIONS = $"HALT. YOU ARE NOT AUTHORIZED TO ACCESS THIS LOCATION!!\n\nYou turn to find a relic of the war between The Syndicate and humans, a Watchman robot. You've gotten yourself into a fight! You're a lover, not a fighter though so you refuse to hurt your opponent. Looks like you're going to have to dodge.\nYour opponent will attack you {NUMBER_OF_ATTACKS_TO_DEFEND_AGAINST} time(s) and you must successfully dodge {TIMES_USER_MUST_DODGE_ATTACKS} time(s). \nYou will have {SECONDS_USER_HAS_TO_DODGE} second(s) to respond by pressing the correct arrow key.\nIf your opponent throws a left hook, you must dodge right (right arrow key)\nIf your opponent throws a right hook, you must dodge left (left arrow key)\nIf your opponent shoots a laser beam, you must duck(down arrow key)";
         private static int NumberOfTypesOfAttacks = Attack.GetNames(typeof(Attack)).Length;
         private Stopwatch Stopwatch { get; set; }
@@ -40,17 +42,20 @@ namespace TheSyndicate.Actions
 
         private void RenderInstructions()
         {
-            TextBox instructions = new TextBox(INSTRUCTIONS, Program.WINDOW_WIDTH / 3, 2, Program.WINDOW_WIDTH / 3, Program.WINDOW_HEIGHT / 4);
+            TextBox fightACSII = new TextBox(FIGHTASCII, Program.WINDOW_WIDTH / 3, 2, Program.WINDOW_WIDTH / 3, Program.WINDOW_HEIGHT / 3);
+            TextBox instructions = new TextBox(INSTRUCTIONS, Program.WINDOW_WIDTH / 3, 2, Program.WINDOW_WIDTH / 3, Program.WINDOW_HEIGHT / 8);
             Console.Clear();
+            fightACSII.SetBoxPosition(fightACSII.TextBoxX, fightACSII.TextBoxY);
+            fightACSII.FormatText(FIGHTASCII);
             instructions.SetBoxPosition(instructions.TextBoxX, instructions.TextBoxY);
             instructions.FormatText(INSTRUCTIONS);
         }
 
         private void WaitForPlayerToPressEnter()
         {
-            string enterPrompt = "Press ENTER to continue.";
-            Console.SetCursorPosition(Program.WINDOW_WIDTH / 2 - enterPrompt.Length / 2, Program.WINDOW_HEIGHT - (Program.WINDOW_HEIGHT / 5));
-            Console.WriteLine(enterPrompt);
+            //string enterPrompt = "Press ENTER to continue.";
+            //Console.SetCursorPosition(Program.WINDOW_WIDTH / 2 - enterPrompt.Length / 2, Program.WINDOW_HEIGHT - (Program.WINDOW_HEIGHT / 16));
+            //Console.WriteLine(enterPrompt);
 
             ConsoleKey userInput = Console.ReadKey(true).Key;
             while (userInput != ConsoleKey.Enter)

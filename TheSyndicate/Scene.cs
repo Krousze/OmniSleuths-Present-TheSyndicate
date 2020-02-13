@@ -66,8 +66,8 @@ namespace TheSyndicate
                 Console.SetCursorPosition(cursorX, cursorY--);
 
                 CC.Write(new string(POINT_METER_BLOCK, 2), Color.FromArgb(r, g, b));
-                r -= 12;
-                g += 12;
+                r -= 10;
+                g += 7;
                 if (i == blocks)
                 {
                     CC.Write(" <--", Color.Gray);
