@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading.Tasks;
+
 using TheSyndicate.Actions;
 
 namespace TheSyndicate
@@ -21,6 +23,7 @@ namespace TheSyndicate
                                                             /// Love Points for 'love' path.
 
         bool[] choiceArray = { true, true, true };
+        private TextToSpeech tts = new TextToSpeech();
 
 
 
@@ -54,11 +57,22 @@ namespace TheSyndicate
             TextBox dialogBox = new TextBox(this.Text, Program.WINDOW_WIDTH * 3 / 4, 2, (Program.WINDOW_WIDTH - (Program.WINDOW_WIDTH * 3 / 4)) / 2, 2);
             dialogBox.FormatText(this.Text);
             dialogBox.DrawDialogBox(this.Text);
+            tts.HearText(this.Text);
+            //playVoice(); //??Asynchronous play
 
             //returning dialogBox for information about height of dialog box
 
+
             return dialogBox;
         }
+
+        //??Play asynchronously?
+        //public async Task playVoice()
+        //{
+        //   await Task.Run(()=> tts.HearText(this.Text));
+
+        //}
+
 
         void RenderOptions(TextBox sceneTextBox)
         {
@@ -239,15 +253,18 @@ namespace TheSyndicate
 
         private int GetValidUserInput(TextBox sceneTextBox)
         {
-            int userInput;//Unassigned, userInput is zero.
+            int userInput=-1;//Unassigned, userInput is zero.
 
             do
             {
-                string spaces = "                              ";
+                string spaces = "                                          ";
                 sceneTextBox.SetBoxPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY + 2);
                 Console.Write(spaces);
                 sceneTextBox.SetBoxPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY + 2);
-                Int32.TryParse(Console.ReadLine(), out userInput);
+                if (Int32.TryParse(Console.ReadLine(), out int xInput))
+                {
+                    userInput = xInput;
+                }
                 Console.SetCursorPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY + 2);
             }
             while (!IsValidInput(userInput));
