@@ -1,10 +1,8 @@
 ﻿using System;
-<<<<<<< HEAD
 using System.Drawing;
-=======
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
->>>>>>> ca68a16d0b2f96e78db6e1895f9b4c4b0bdc72c2
 using TheSyndicate.Actions;
 using CC = Colorful.Console;
 
@@ -29,10 +27,11 @@ namespace TheSyndicate
 
         bool[] choiceArray = { true, true, true };
         private TextToSpeech tts = new TextToSpeech();
+        public Dictionary<string,string>[] dialogue { get; private set; }
 
 
 
-        public Scene(string id, string text, string[] options, string[] destinations, bool start, int[] lovePointsMaxMin)
+        public Scene(string id, string text, string[] options, string[] destinations, bool start, int[] lovePointsMaxMin, Dictionary<string,string>[] script)
         {
             this.Id = id;
             this.Text = text;
@@ -41,6 +40,7 @@ namespace TheSyndicate
             this.ActualDestinationId = null;
             this.Start = start;
             this.LovePointsMaxMin = lovePointsMaxMin;
+            this.dialogue = script;
         }
 
         public void Play()
@@ -92,7 +92,8 @@ namespace TheSyndicate
             TextBox dialogBox = new TextBox(this.Text, Program.WINDOW_WIDTH * 3 / 4, 2, (Program.WINDOW_WIDTH - (Program.WINDOW_WIDTH * 3 / 4)) / 2, 2);
             dialogBox.FormatText(this.Text);
             dialogBox.DrawDialogBox(this.Text);
-            tts.HearText(this.Text);
+            //tts.HearText(this.Text);
+            tts.HearText(this.dialogue);
             //playVoice(); //??Asynchronous play
 
             //returning dialogBox for information about height of dialog box
