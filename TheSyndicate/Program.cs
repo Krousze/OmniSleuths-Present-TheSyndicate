@@ -23,7 +23,7 @@ namespace TheSyndicate
             else
             {
                 ConsoleWindow.SetMacWindow();
-                ASSETS_PATH = @"../../../assets/";
+                ASSETS_PATH = @"../../../../assets/";
             }
             GameEngine gameEngine = new GameEngine();
             gameEngine.Start();

@@ -56,13 +56,8 @@
     "destinations": [ "fight", "animal", "dead" ],
     "actualDestinationId": null,
     "start": false,
-<<<<<<< HEAD
-    "scenePoints": 10,
-    "lovePointsMaxMin": [ 20, 70 ]
-=======
     "scenePoints": 25,
     "lovePointsMaxMin": [ 50, 30 ]
->>>>>>> ca68a16d0b2f96e78db6e1895f9b4c4b0bdc72c2
   },
   {
     "id": "hallway",
