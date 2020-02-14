@@ -56,9 +56,9 @@ namespace TheSyndicate
                 ConsoleWindow.SetMacWindow();
                 ASSETS_PATH = @"../../../../assets/";
             }
-            RecognizeSpeechAsync().Wait();
-            Console.WriteLine("Please press <Return> to continue.");
-            Console.ReadLine();
+            //RecognizeSpeechAsync().Wait();
+            //Console.WriteLine("Please press <Return> to continue.");
+            //Console.ReadLine();
             GameEngine gameEngine = new GameEngine();
             gameEngine.Start();
             //Console.WriteLine(Program.WINDOW_HEIGHT);
