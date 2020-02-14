@@ -153,12 +153,6 @@ namespace TheSyndicate
 
         private void PrintAvailableOptions(TextBox sceneTextBox)
         {
-            ///Method requires that the Option[0] be "Good" & Option[1] be "Bad", for two choices (i.e., optLen=2).
-            ///Method requires that the Option[0] be "Good" & Option[1] be "Neutral" & Option[2]be "Bad", for three choices (i.e., optLen=3).
-            ///
-            //int hateMax = (this.LovePointsMaxMin[0]);
-            //int loveMin = (this.LovePointsMaxMin[1]);
-
             int optLen = this.Options.Length;
             //Random rnd = new Random();
             for (int i = 0; i < optLen; i++)
@@ -166,91 +160,6 @@ namespace TheSyndicate
                 sceneTextBox.SetBoxPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY + 2);
                 ConsoleColor currentColor = Console.ForegroundColor;
                 CC.WriteLine($"{i + 1}: {this.Options[i]}", IsOptionAvailable(i) ? Color.Green : Color.Gray);
-                //if (optLen == 2)
-                //{
-                //    choiceArray[0] = true; //??Memory management?
-                //    choiceArray[1] = true;
-                //    choiceArray[2] = false;
-                //    switch (i)
-                //    {
-                //        case 0:
-
-                //            if (player.LovePointTotal < loveMin)
-                //            {
-                //                Console.ForegroundColor = ConsoleColor.DarkGray;
-                //                Console.WriteLine($"{i + 1}: {this.Options[i]}");
-                //                choiceArray[i] = false;
-
-
-                //            }
-                //            else
-                //            {
-                //                Console.WriteLine($"{i + 1}: {this.Options[i]}");
-                //            }
-                //            break;
-                //        default:
-                //            if (player.LovePointTotal > hateMax)
-                //            {
-                //                Console.ForegroundColor = ConsoleColor.DarkGray;
-                //                Console.WriteLine($"{i + 1}: {this.Options[i]}");
-                //                choiceArray[i] = false;
-
-
-                //            }
-                //            else
-                //            {
-                //                Console.WriteLine($"{i + 1}: {this.Options[i]}");
-                //            }
-                //            break;
-                //    }
-
-                //}
-                //else if (optLen == 3)
-                //{
-                //    choiceArray[0] = true; //??Memory management?
-                //    choiceArray[1] = true;
-                //    choiceArray[2] = true;
-                //    switch (i)
-                //    {
-                //        case 0:
-
-                //            if (player.LovePointTotal < loveMin)
-                //            {
-                //                Console.ForegroundColor = ConsoleColor.DarkGray;
-                //                Console.WriteLine($"{i + 1}: {this.Options[i]}");
-                //                choiceArray[i] = false;
-
-                //            }
-                //            else
-                //            {
-                //                Console.WriteLine($"{i + 1}: {this.Options[i]}");
-
-                //            }
-                //            break;
-                //        case 2:
-                //            if (player.LovePointTotal > hateMax)
-                //            {
-                //                Console.ForegroundColor = ConsoleColor.DarkGray;
-                //                Console.WriteLine($"{i + 1}: {this.Options[i]}");
-                //                choiceArray[i] = false;
-
-                //            }
-                //            else
-                //            {
-                //                Console.WriteLine($"{i + 1}: {this.Options[i]}");
-
-                //            }
-                //            break;
-                //        default:
-
-                //            Console.WriteLine($"{i + 1}: {this.Options[i]}");
-                //            break;
-                //    }
-                //}
-                //else
-                //{
-                //    Console.WriteLine($"{i + 1}: {this.Options[i]}");
-                //}
                 Console.ForegroundColor = currentColor;
                 sceneTextBox.TextBoxY += 2;
             }
@@ -269,10 +178,12 @@ namespace TheSyndicate
             {
                 return player.LovePointTotal <= hateMax;
             }
-            else
+            else if (index == 2 || index == 3)
             {
                 return true;
             }
+            return false;
+           
         }
 
         private void RenderInstructions(TextBox sceneTextBox)
@@ -329,8 +240,8 @@ namespace TheSyndicate
         public bool IsValidInput(int userInput)
         {
             int numberOfOptions = this.Options.Length;
-            bool result = userInput >= 0 && userInput <= numberOfOptions && (userInput == 0 || choiceArray[userInput - 1]);
-            if (!result)
+            bool isValid = IsOptionAvailable(userInput-1);
+            if (!isValid)
             {
                 string msg = "Pick again...";
                 //Console.Write(spaces);
@@ -340,7 +251,7 @@ namespace TheSyndicate
                 //Console.SetCursorPosition(Console.CursorLeft-msg.Length, Console.CursorTop);
                 //Console.Write(spaces);
             }
-            return result;
+            return isValid;
         }
 
         void ClearConsole()
