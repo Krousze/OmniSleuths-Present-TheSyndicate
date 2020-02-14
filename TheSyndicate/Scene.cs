@@ -59,24 +59,48 @@ namespace TheSyndicate
             int cursorX = Program.WINDOW_WIDTH - 10;
             int cursorY = Program.WINDOW_HEIGHT - 25;
             Console.SetCursorPosition(cursorX - 1, cursorY--);
-            CC.Write("EVIL", Color.Red);
-            int r = 255;
+            int r = 240;
             int g = 0;
             int b = 0;
-            for (int i = 1; i <= 20; i++)
+            CC.Write("EVIL", Color.FromArgb(r, g, b));
+            for (int i = 0; i <= 19; i++)
             {
+                if (i == 0)
+                {
+                    r = 240;
+                    g = 0;
+                    b = 0;
+                }
+                if (i == 10)
+                {
+                    r = 240;
+                    g = 240;
+                    b = 240;
+                }
                 Console.SetCursorPosition(cursorX, cursorY--);
-
-                CC.Write(new string(POINT_METER_BLOCK, 2), Color.FromArgb(r, g, b));
-                r -= 10;
-                g += 7;
+                if (i <= 9)
+                {
+                    CC.Write(new string(POINT_METER_BLOCK, 2), Color.FromArgb(r, g, b));
+                    g += 23;
+                    b += 23;
+                }
+                else if (i > 9 && i <= 19)
+                {
+                    CC.Write(new string(POINT_METER_BLOCK, 2), Color.FromArgb(r, g, b));
+                    r -= 23;
+                    b -= 23;
+                }
                 if (i == blocks)
                 {
                     CC.Write(" <--", Color.Gray);
                 }
             }
+            r = 0;
+            g = 240;
+            b = 0;
+
             Console.SetCursorPosition(cursorX - 1, cursorY);
-            CC.Write("GOOD", Color.Green);
+            CC.Write("Good", Color.FromArgb(r, g, b));
         }
 
         TextBox RenderText()
@@ -88,7 +112,7 @@ namespace TheSyndicate
             TextBox dialogBox = new TextBox(this.Text, Program.WINDOW_WIDTH * 3 / 4, 2, (Program.WINDOW_WIDTH - (Program.WINDOW_WIDTH * 3 / 4)) / 2, 2);
             dialogBox.FormatText(this.Text);
             dialogBox.DrawDialogBox(this.Text);
-            tts.HearText(this.Text);
+            //tts.HearText(this.Text);
             //playVoice(); //??Asynchronous play
 
             //returning dialogBox for information about height of dialog box
@@ -156,7 +180,7 @@ namespace TheSyndicate
             {
                 sceneTextBox.SetBoxPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY + 2);
                 ConsoleColor currentColor = Console.ForegroundColor;
-                CC.WriteLine($"{i + 1}: {this.Options[i]}", IsOptionAvailable(i) ? Color.Green : Color.Gray);
+                CC.WriteLine($"{i + 1}: {this.Options[i]}", IsOptionAvailable(i) ? Color.Cyan : Color.Gray);
                 Console.ForegroundColor = currentColor;
                 sceneTextBox.TextBoxY += 2;
             }
@@ -196,7 +220,7 @@ namespace TheSyndicate
             sceneTextBox.TextBoxY += 2;
             sceneTextBox.SetBoxPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY);
             Console.WriteLine("You have reached the end of your journey. Press CTRL + C to end.");
-            Console.ForegroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.Cyan;
         }
 
         private void ExecutePlayerOption(TextBox sceneTextBox)
