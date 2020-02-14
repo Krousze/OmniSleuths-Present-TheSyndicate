@@ -1,14 +1,6 @@
 ﻿using System;
-<<<<<<< HEAD
-
-using System.Drawing;
-
-using System.Threading.Tasks;
-
-=======
 using System.Drawing;
 using System.Threading.Tasks;
->>>>>>> Refactor
 using TheSyndicate.Actions;
 using CC = Colorful.Console;
 
@@ -96,7 +88,7 @@ namespace TheSyndicate
             TextBox dialogBox = new TextBox(this.Text, Program.WINDOW_WIDTH * 3 / 4, 2, (Program.WINDOW_WIDTH - (Program.WINDOW_WIDTH * 3 / 4)) / 2, 2);
             dialogBox.FormatText(this.Text);
             dialogBox.DrawDialogBox(this.Text);
-            //tts.HearText(this.Text);
+            tts.HearText(this.Text);
             //playVoice(); //??Asynchronous play
 
             //returning dialogBox for information about height of dialog box

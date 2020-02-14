@@ -24,7 +24,7 @@ namespace TheSyndicate
 
         private void CleanText()
         {
-            Regex rgx = new Regex(@"([a-zA-Z0-9,?.'%]+)");
+            Regex rgx = new Regex(@"([a-zA-Z0-9,?.']+)");
             MatchCollection matches = rgx.Matches(this.text);
 
             var textArray =from Match m in matches select m.Value;
@@ -38,7 +38,7 @@ namespace TheSyndicate
             // Creates an instance of a speech config with specified subscription key and service region.
             // Replace with your own subscription key and service region (e.g., "westus").
             var config = SpeechConfig.FromSubscription("0c685477e7a34e9a98bb25d61c815137", "westus2");
-            config.SpeechSynthesisVoiceName ="en-GB-HazelRUS"; //Voice options available at: https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/language-support#text-to-speech
+            config.SpeechSynthesisVoiceName = "en-GB-George-Apollo"; //Voice options available at: https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/language-support#text-to-speech
             // Creates a speech synthesizer using the default speaker as audio output.
             using (var synthesizer = new SpeechSynthesizer(config))
             {
