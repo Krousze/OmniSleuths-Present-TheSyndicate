@@ -156,8 +156,8 @@ namespace TheSyndicate
             ///Method requires that the Option[0] be "Good" & Option[1] be "Bad", for two choices (i.e., optLen=2).
             ///Method requires that the Option[0] be "Good" & Option[1] be "Neutral" & Option[2]be "Bad", for three choices (i.e., optLen=3).
             ///
-            int hateMax = (this.LovePointsMaxMin[0]);
-            int loveMin = (this.LovePointsMaxMin[1]);
+            //int hateMax = (this.LovePointsMaxMin[0]);
+            //int loveMin = (this.LovePointsMaxMin[1]);
 
             int optLen = this.Options.Length;
             //Random rnd = new Random();
@@ -165,93 +165,113 @@ namespace TheSyndicate
             {
                 sceneTextBox.SetBoxPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY + 2);
                 ConsoleColor currentColor = Console.ForegroundColor;
-                if (optLen == 2)
-                {
-                    choiceArray[0] = true; //??Memory management?
-                    choiceArray[1] = true;
-                    choiceArray[2] = false;
-                    switch (i)
-                    {
-                        case 0:
+                CC.WriteLine($"{i + 1}: {this.Options[i]}", IsOptionAvailable(i) ? Color.Green : Color.Gray);
+                //if (optLen == 2)
+                //{
+                //    choiceArray[0] = true; //??Memory management?
+                //    choiceArray[1] = true;
+                //    choiceArray[2] = false;
+                //    switch (i)
+                //    {
+                //        case 0:
 
-                            if (player.LovePointTotal < loveMin)
-                            {
-                                Console.ForegroundColor = ConsoleColor.DarkGray;
-                                Console.WriteLine($"{i + 1}: {this.Options[i]}");
-                                choiceArray[i] = false;
-
-
-                            }
-                            else
-                            {
-                                Console.WriteLine($"{i + 1}: {this.Options[i]}");
-                            }
-                            break;
-                        default:
-                            if (player.LovePointTotal > hateMax)
-                            {
-                                Console.ForegroundColor = ConsoleColor.DarkGray;
-                                Console.WriteLine($"{i + 1}: {this.Options[i]}");
-                                choiceArray[i] = false;
+                //            if (player.LovePointTotal < loveMin)
+                //            {
+                //                Console.ForegroundColor = ConsoleColor.DarkGray;
+                //                Console.WriteLine($"{i + 1}: {this.Options[i]}");
+                //                choiceArray[i] = false;
 
 
-                            }
-                            else
-                            {
-                                Console.WriteLine($"{i + 1}: {this.Options[i]}");
-                            }
-                            break;
-                    }
+                //            }
+                //            else
+                //            {
+                //                Console.WriteLine($"{i + 1}: {this.Options[i]}");
+                //            }
+                //            break;
+                //        default:
+                //            if (player.LovePointTotal > hateMax)
+                //            {
+                //                Console.ForegroundColor = ConsoleColor.DarkGray;
+                //                Console.WriteLine($"{i + 1}: {this.Options[i]}");
+                //                choiceArray[i] = false;
 
-                }
-                else if (optLen == 3)
-                {
-                    choiceArray[0] = true; //??Memory management?
-                    choiceArray[1] = true;
-                    choiceArray[2] = true;
-                    switch (i)
-                    {
-                        case 0:
 
-                            if (player.LovePointTotal < loveMin)
-                            {
-                                Console.ForegroundColor = ConsoleColor.DarkGray;
-                                Console.WriteLine($"{i + 1}: {this.Options[i]}");
-                                choiceArray[i] = false;
+                //            }
+                //            else
+                //            {
+                //                Console.WriteLine($"{i + 1}: {this.Options[i]}");
+                //            }
+                //            break;
+                //    }
 
-                            }
-                            else
-                            {
-                                Console.WriteLine($"{i + 1}: {this.Options[i]}");
+                //}
+                //else if (optLen == 3)
+                //{
+                //    choiceArray[0] = true; //??Memory management?
+                //    choiceArray[1] = true;
+                //    choiceArray[2] = true;
+                //    switch (i)
+                //    {
+                //        case 0:
 
-                            }
-                            break;
-                        case 2:
-                            if (player.LovePointTotal > hateMax)
-                            {
-                                Console.ForegroundColor = ConsoleColor.DarkGray;
-                                Console.WriteLine($"{i + 1}: {this.Options[i]}");
-                                choiceArray[i] = false;
+                //            if (player.LovePointTotal < loveMin)
+                //            {
+                //                Console.ForegroundColor = ConsoleColor.DarkGray;
+                //                Console.WriteLine($"{i + 1}: {this.Options[i]}");
+                //                choiceArray[i] = false;
 
-                            }
-                            else
-                            {
-                                Console.WriteLine($"{i + 1}: {this.Options[i]}");
+                //            }
+                //            else
+                //            {
+                //                Console.WriteLine($"{i + 1}: {this.Options[i]}");
 
-                            }
-                            break;
-                        default:
+                //            }
+                //            break;
+                //        case 2:
+                //            if (player.LovePointTotal > hateMax)
+                //            {
+                //                Console.ForegroundColor = ConsoleColor.DarkGray;
+                //                Console.WriteLine($"{i + 1}: {this.Options[i]}");
+                //                choiceArray[i] = false;
 
-                            Console.WriteLine($"{i + 1}: {this.Options[i]}");
-                            break;
-                    }
-                }
-                else
-                {
-                    Console.WriteLine($"{i + 1}: {this.Options[i]}");
-                }
+                //            }
+                //            else
+                //            {
+                //                Console.WriteLine($"{i + 1}: {this.Options[i]}");
+
+                //            }
+                //            break;
+                //        default:
+
+                //            Console.WriteLine($"{i + 1}: {this.Options[i]}");
+                //            break;
+                //    }
+                //}
+                //else
+                //{
+                //    Console.WriteLine($"{i + 1}: {this.Options[i]}");
+                //}
                 Console.ForegroundColor = currentColor;
                 sceneTextBox.TextBoxY += 2;
+            }
+        }
+
+        private bool IsOptionAvailable(int index)
+        {
+            int loveMin = this.LovePointsMaxMin[1];
+            int hateMax = this.LovePointsMaxMin[0];
+
+            if (index == 0)
+            {
+                return player.LovePointTotal >= loveMin;
+            }
+            else if (index == 1)
+            {
+                return player.LovePointTotal <= hateMax;
+            }
+            else
+            {
+                return true;
             }
         }
 
