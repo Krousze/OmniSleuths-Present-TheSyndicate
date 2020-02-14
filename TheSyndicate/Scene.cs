@@ -1,10 +1,6 @@
 ﻿using System;
-<<<<<<< HEAD
 using System.Drawing;
-=======
 using System.Threading.Tasks;
-
->>>>>>> ca68a16d0b2f96e78db6e1895f9b4c4b0bdc72c2
 using TheSyndicate.Actions;
 using CC = Colorful.Console;
 
@@ -27,7 +23,7 @@ namespace TheSyndicate
         public int[] LovePointsMaxMin { get; private set; } /// Maximum allowable points for "evil" path, Minimum allowable
                                                             /// Love Points for 'love' path.
 
-        bool[] choiceArray = { true, true, true };
+        bool[] choiceArray = { true, true, true, true };
         private TextToSpeech tts = new TextToSpeech();
 
 
@@ -92,7 +88,7 @@ namespace TheSyndicate
             TextBox dialogBox = new TextBox(this.Text, Program.WINDOW_WIDTH * 3 / 4, 2, (Program.WINDOW_WIDTH - (Program.WINDOW_WIDTH * 3 / 4)) / 2, 2);
             dialogBox.FormatText(this.Text);
             dialogBox.DrawDialogBox(this.Text);
-            tts.HearText(this.Text);
+            //tts.HearText(this.Text);
             //playVoice(); //??Asynchronous play
 
             //returning dialogBox for information about height of dialog box
@@ -148,112 +144,43 @@ namespace TheSyndicate
             Console.WriteLine($"Press 0 at any point to save and quit.");
 
             // ??Test Love Points implementation.
-            sceneTextBox.SetBoxPosition(Console.WindowWidth - (Console.WindowWidth / 4), Console.WindowHeight - 3);
-            Console.WriteLine($"Love Points: {player.LovePointTotal}");
+            sceneTextBox.SetBoxPosition(Console.WindowWidth - (Console.WindowWidth / 3), Console.WindowHeight - 3);
+            Console.WriteLine($"Love Points: {player.LovePointTotal} | HateMax: {this.LovePointsMaxMin[0]} | LoveMin: {this.LovePointsMaxMin[1]}");
         }
 
         private void PrintAvailableOptions(TextBox sceneTextBox)
         {
-            ///Method requires that the Option[0] be "Good" & Option[1] be "Bad", for two choices (i.e., optLen=2).
-            ///Method requires that the Option[0] be "Good" & Option[1] be "Neutral" & Option[2]be "Bad", for three choices (i.e., optLen=3).
-            ///
-            int hateMax = (this.LovePointsMaxMin[0]);
-            int loveMin = (this.LovePointsMaxMin[1]);
-
             int optLen = this.Options.Length;
             //Random rnd = new Random();
             for (int i = 0; i < optLen; i++)
             {
                 sceneTextBox.SetBoxPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY + 2);
                 ConsoleColor currentColor = Console.ForegroundColor;
-                if (optLen == 2)
-                {
-                    choiceArray[0] = true; //??Memory management?
-                    choiceArray[1] = true;
-                    choiceArray[2] = false;
-                    switch (i)
-                    {
-                        case 0:
-
-                            if (player.LovePointTotal < loveMin)
-                            {
-                                Console.ForegroundColor = ConsoleColor.DarkGray;
-                                Console.WriteLine($"{i + 1}: {this.Options[i]}");
-                                choiceArray[i] = false;
-
-
-                            }
-                            else
-                            {
-                                Console.WriteLine($"{i + 1}: {this.Options[i]}");
-                            }
-                            break;
-                        default:
-                            if (player.LovePointTotal > hateMax)
-                            {
-                                Console.ForegroundColor = ConsoleColor.DarkGray;
-                                Console.WriteLine($"{i + 1}: {this.Options[i]}");
-                                choiceArray[i] = false;
-
-
-                            }
-                            else
-                            {
-                                Console.WriteLine($"{i + 1}: {this.Options[i]}");
-                            }
-                            break;
-                    }
-
-                }
-                else if (optLen == 3)
-                {
-                    choiceArray[0] = true; //??Memory management?
-                    choiceArray[1] = true;
-                    choiceArray[2] = true;
-                    switch (i)
-                    {
-                        case 0:
-
-                            if (player.LovePointTotal < loveMin)
-                            {
-                                Console.ForegroundColor = ConsoleColor.DarkGray;
-                                Console.WriteLine($"{i + 1}: {this.Options[i]}");
-                                choiceArray[i] = false;
-
-                            }
-                            else
-                            {
-                                Console.WriteLine($"{i + 1}: {this.Options[i]}");
-
-                            }
-                            break;
-                        case 2:
-                            if (player.LovePointTotal > hateMax)
-                            {
-                                Console.ForegroundColor = ConsoleColor.DarkGray;
-                                Console.WriteLine($"{i + 1}: {this.Options[i]}");
-                                choiceArray[i] = false;
-
-                            }
-                            else
-                            {
-                                Console.WriteLine($"{i + 1}: {this.Options[i]}");
-
-                            }
-                            break;
-                        default:
-
-                            Console.WriteLine($"{i + 1}: {this.Options[i]}");
-                            break;
-                    }
-                }
-                else
-                {
-                    Console.WriteLine($"{i + 1}: {this.Options[i]}");
-                }
+                CC.WriteLine($"{i + 1}: {this.Options[i]}", IsOptionAvailable(i) ? Color.Green : Color.Gray);
                 Console.ForegroundColor = currentColor;
                 sceneTextBox.TextBoxY += 2;
             }
+        }
+
+        private bool IsOptionAvailable(int index)
+        {
+            int loveMin = this.LovePointsMaxMin[1];
+            int hateMax = this.LovePointsMaxMin[0];
+
+            if (index == 0)
+            {
+                return player.LovePointTotal >= loveMin;
+            }
+            else if (index == 1)
+            {
+                return player.LovePointTotal <= hateMax;
+            }
+            else if (index == 2 || index == 3)
+            {
+                return true;
+            }
+            return false;
+           
         }
 
         private void RenderInstructions(TextBox sceneTextBox)
@@ -310,8 +237,8 @@ namespace TheSyndicate
         public bool IsValidInput(int userInput)
         {
             int numberOfOptions = this.Options.Length;
-            bool result = userInput >= 0 && userInput <= numberOfOptions && (userInput == 0 || choiceArray[userInput - 1]);
-            if (!result)
+            bool isValid = IsOptionAvailable(userInput-1);
+            if (!isValid)
             {
                 string msg = "Pick again...";
                 //Console.Write(spaces);
@@ -321,7 +248,7 @@ namespace TheSyndicate
                 //Console.SetCursorPosition(Console.CursorLeft-msg.Length, Console.CursorTop);
                 //Console.Write(spaces);
             }
-            return result;
+            return isValid;
         }
 
         void ClearConsole()
@@ -332,6 +259,17 @@ namespace TheSyndicate
         void SetDestinationId(int selectedOption)
         {
             this.ActualDestinationId = this.Destinations[selectedOption - 1];
+            if (selectedOption == 4)
+            {
+                this.ActualDestinationId = this.Id;
+                PlayMiniGameAndUpdatePoints();
+                //if (!Action.DidPlayerSucceed())
+                //{
+                //    this.ActualDestinationId = "dead";
+                //}
+            }
+
+
             if (this.ActualDestinationId.Equals("fight"))
             {
 
@@ -348,16 +286,25 @@ namespace TheSyndicate
                     player.AddLovePoints(0);//?? Love Points go to zero upon death.
                 }
             }
-            else if (this.Id.Equals("upload") ||
-                (this.Id.Equals("recyclerTruck") && this.ActualDestinationId.Equals("city")))
-            {
-                this.Action = new KeyPressAction();
-                Action.ExecuteAction();
-                if (!Action.DidPlayerSucceed())
-                {
-                    this.ActualDestinationId = "dead";
-                }
-            }
+            //else if (this.Id.Equals("upload") ||
+            //    (this.Id.Equals("recyclerTruck") && this.ActualDestinationId.Equals("city")))
+            //else if (this.Id.Equals("game"))
+            //{
+            //    this.Action = new KeyPressAction();
+            //    Action.ExecuteAction();
+            //    this.ActualDestinationId = "introScene";
+            //    //if (!Action.DidPlayerSucceed())
+            //    //{
+            //    //    this.ActualDestinationId = "dead";
+            //    //}
+            //}
+        }
+
+        private void PlayMiniGameAndUpdatePoints()
+        {
+            this.Action = new KeyPressAction();
+            Action.ExecuteAction();
+            player.AddLovePoints(Action.DidPlayerSucceed() ? 5 : -5);
         }
 
         public bool HasNextScenes()

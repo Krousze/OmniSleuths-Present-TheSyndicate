@@ -22,7 +22,7 @@ namespace TheSyndicate
         {
             this.CurrentSceneId = currentSceneId;
             this.BatteryPower = batteryPower;
-            this.LovePointTotal = MAXIMUM_LOVEPOINTS;
+            this.LovePointTotal = MAXIMUM_LOVEPOINTS / 2;
         }
 
         public static Player GetInstance()

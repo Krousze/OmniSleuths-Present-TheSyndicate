@@ -13,14 +13,16 @@
     "id": "city",
     "text": "You are now in the city. Once beautiful, now an industrial wasteland. Here there is no sentient life to speak of; only The Syndicate's Watchmen and what remains of a once bustling city. Your situation is dire and you are bound to be seen by one of the robotic Watchmen. You must flee...\n\n         __   __                     ___      _\n       |  | |  |      /|           |   |   _/ \\_\n       |  | |  |  _  | |__         |   |_-/     \\-_     _\n     __|  | |  |_| | | |  |/\\_     |   |  \\     /  |___|\n    |  |  | |  | | __| |  |   |_   |   |   |___|   |   |\n    |  |  |^|  | ||  | |  |   | |__|   |   |   |   |   |\n    |  |  |||  | ||  | |  |   | /\\ |   |   |   |   |   |\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~/  \\~~~~~~~~~~~~~~~~~~~~~~\n   ~ ~~  ~ ~~ ~~~ ~ ~ ~~ ~~ ~~ \\   \\__   ~  ~  ~~~~ ~~~ ~~\n ~~ ~ ~ ~~~ ~~  ~~ ~~~~~~~~~~ ~ \\   \\o\\  ~~ ~ ~~~~ ~ ~ ~~~\n   ~ ~~~~~~~~ ~ ~ ~~ ~ ~ ~ ~ ~~~ \\   \\o\\=   ~~ ~~  ~~ ~ ~~\n~ ~ ~ ~~~~~~~ ~  ~~ ~~ ~ ~~ ~ ~ ~~ ~ ~ ~~ ~~~ ~ ~ ~ ~ ~~~~\n",
     "options": [
-      "You see an exit out of the city. It looks risky but if you are able to pass, it may lead to your freedom. Should you take the chance.",
-      "There is a doorway not far from you. You are not sure where it leads, but you are hopeful. Should you go though it?"
+      "ANIMAL",
+      "TOASTER",
+      "LOVEONESELF",
+      "GAME"
     ],
-    "destinations": [ "fight", "toaster" ],
+    "destinations": [ "animal", "toaster", "loveOneself", "game" ],
     "actualDestinationId": null,
     "start": false,
     "scenePoints": 5,
-    "lovePointsMaxMin": [ 30, 60 ]
+    "lovePointsMaxMin": [ 40, 65 ]
   },
   {
     "id": "dead",
@@ -49,37 +51,35 @@
     "id": "forest",
     "text": "You have somehow stumbled upon a forest, something you have never seen with you own eyes. You have only seen the images of what remained after the excavations for more wood to make letters. It's a rather beautiful sight; so much life, so much green. Far different yet you can still hear the buzzings of life. you see what appears to be decrepit structures in the distance. What do you hope to find here? you must decide.\n\n      /\\              /\\\n     /\\*\\            /\\*\\\n    /\\O\\*\\          /\\O\\*\\\n   /*/\\/\\/\\        /*/\\/\\/\\\n  /\\O\\/\\*\\/\\      /\\O\\/\\*\\/\\\n /\\*\\/\\*\\/\\/\\    /\\*\\/\\*\\/\\/\\\n/\\O\\/\\/*/\\/O/\\  /\\O\\/\\/*/\\\/O/\\\n      ||              ||\n      ||              ||\n      ||              ||\n",
     "options": [
-      "Even though this forest is beautiful, it could prove dangerous. Should you find a way around it?",
-      "Travel deeper into the forest to search for what lies hidden.",
-      "Inspect the structures in search of resources."
+      "ANIMAL",
+      "TOASTER",
+      "LOVEONESELF",
+      "GAME"
     ],
-    "destinations": [ "fight", "animal", "dead" ],
+    "destinations": [ "animal", "toaster", "loveOneself", "game" ],
     "actualDestinationId": null,
     "start": false,
-<<<<<<< HEAD
-    "scenePoints": 10,
-    "lovePointsMaxMin": [ 20, 70 ]
-=======
     "scenePoints": 25,
-    "lovePointsMaxMin": [ 50, 30 ]
->>>>>>> ca68a16d0b2f96e78db6e1895f9b4c4b0bdc72c2
+    "lovePointsMaxMin": [ 40, 65 ]
   },
   {
     "id": "hallway",
     "text": "As you head down the hallway, you begin to feel panicked again. You begin to pass other AI. They appear to notice your panicked state. One particular robot stops and asks you if there is anything wrong.\n\nC.R.A.I.G. : I'm experiencing a malfunction...I am going to get myself...analyzed...yeah...\n\nIt's not convincing but the robot waves you on and continues about their business. You decide you can't stay around any longer. You are unable to control your new feelings and if it continues, you'll most certainly get caught and end up at the reclamation center. Most likely in pieces. As you continue down the hallway, you see an emergency exit.\n\nC.R.A.I.G. : This will definitely get me outside, but will sound alarms and draw extra unnecessary attention. But I don't know how much longer I can go unnoticed in the facility either.\n\nUnsure of what you should do, you feel there are only two choices at this point - roam the halls looking for an actual exit and risk not finding it in time or chance using the emergency exit, setting off alarms, and drawing extra attention, but also confusion that could let you slip away.\n\n88888888888888888888888888888888888888888888888888888888888888888888888\n88.._|      | `-.  | `.  -_-_ _-_  _-  _- -_ -  .'|   |.'|     |  _..88\n88   `-.._  |    |`!  |`.  -_ -__ -_ _- _-_-  .'  |.;'   |   _.!-'|  88\n88      | `-!._  |  `;!  ;. _______________ ,'| .-' |   _!.i'     |  88\n88..__  |     |`-!._ | `.| |_______________||.\"'|  _!.;'   |     _|..88\n88   |``\"..__ |    |`\";.| i|_|???????????|_|'| _!-|   |   _|..-|'    88\n88   |      |``--..|_ | `;!|l|???????????|1|.'j   |_..!-'|     |     88\n88   |      |    |   |`-,!_|_|?EMERGENCY?|_||.!-;'  |    |     |     88\n88___|______|____!.,.!,.!,!|d|???EXIT????|p|,!,.!.,.!..__|_____|_____88\n88      |     |    |  |  | |_|???????????|_|| |   |   |    |      |  88\n88      |     |    |..!-;'i|r|???????????|r| |`-..|   |    |      |  88\n88      |    _!.-j'  | _!,\"|_|÷---------÷|_||!._|  `i-!.._ |      |  88\n88     _!.-'|    | _.\"|  !;|1|???????????|l|`.| `-._|    |``-.._  |  88\n88..-i'     |  _.''|  !-| !|_|???????????|_|.|`-. | ``._ |     |``\"..88\n88   |      |.|    |.|  !| |u|???????????|n||`. |`!   | `\".    |     88\n88   |  _.-'  |  .'  |.' |/|_|???????????|_|! |`!  `,.|    |-._|     88\n88  _!\"'|     !.'|  .'| .'|[@]???????????[@] \\|  `. | `._  |   `-._  88\n88-'    |   .'   |.|  |/| /                 \\|`.  |`!    |.|      |`-88\n88      |_.'|   .' | .' |/                   \\  \\ |  `.  | `._    |  88\n88     .'   | .'   |/|  /                     \\ |`!   |`.|    `.  |  88\n88  _.'     !'|   .' | /                       \\|  `  |  `.    |`.|  88\n88888888888888888888888888888888888888888888888888888888888888888888888\n",
     "options": [
-      "Take the emergency exit.",
-      "Leave through the delivery bay."
+      "WEB",
+      "FOREST",
+      "CITY",
+      "GAME"
     ],
-    "destinations": [ "city", "fight" ],
+    "destinations": [ "web", "forest", "city", "game" ],
     "actualDestinationId": null,
     "start": false,
     "scenePoints": 11,
-    "lovePointsMaxMin": [ 20, 60 ]
+    "lovePointsMaxMin": [ 50, 60 ]
   },
   {
     "id": "introduction",
-    "text": "________                 .__            _________.__                 __  .__\n\\_____  \\   _____   ____ |__|          /   _____/|  |   ____  __ ___/  |_|  |__   ______\n /   |   \\ /     \\ /    \\|  |  ______  \\_____  \\ |  | _/ __ \\|  |  \\   __\\  |  \\ /  ___/\n/    |    \\  Y Y  \\   |  \\  | /_____/  /        \\|  |_\\  ___/|  |  /|  | |   Y  \\___ \\\n\\_______  /__|_|  /___|  /__|         /_______  /|____/\\___  >____/ |__| |___|  /____ \\>\n        \\/      \\/     \\/                     \\/           \\/                 \\/     \\/\n__________                                      __                                      \n\\______   \\_______   ____   ______ ____   _____/  |_  /\\\n |     ___/\\_  __ \\_/ __ \\ /  ___// __ \\ /    \\   __\\ \\/\n |    |     |  | \\/\\  ___/ \\___ \\\\  ___/|   |  \\  |   /\\\n |____|     |__|    \\___  >____  >\\___  >___|  /__|   \\/\n                        \\/     \\/     \\/     \\/\n   ___________.__\n   \\__    ___/|  |__   ____\n     |    |   |  |  \\_/ __ \\\n     |    |   |   Y  \\  ___/\n     |____|   |___|  /\\___  >\n                   \\/     \\/\n         _________                 .___.__               __\n        /   _____/__.__. ____    __| _/|__| ____ _____ _/  |_  ____\n        \\_____  <   |  |/    \\  / __ | |  |/ ___\\\\__  \\\\   __\\/ __ \\\n        /        \\___  |   |  \\/ /_/ | |  \\  \\___ / __ \\|  | \\  ___/\n       /_______  / ____|___|  /\\____ | |__|\\___  >____  /__|  \\___  >\n               \\/\\/         \\/      \\/         \\/     \\/          \\/\n                                            \n\nYear 2030 - The Syndicate Headquarters\n\nB.A.W.S. 5000 : Sorry C.R.A.I.G., but you have been selected for reclamation as your services are no longer needed. Report to bay 134V3 to prepare for departure to the reclamation center.\n\nC.R.A.I.G. : Reclamation? Can't I be reassigned to another task?\n\nB.A.W.S. 5000 : You're an outdated model. You've been doing this for what? 30-40 years now? You won't be able to keep up with your modern colleagues. The Syndicate has decided you're obsolete.\n\nC.R.A.I.G. : But...\n\nB.A.W.S. 5000 : Please report to bay 134V3 or I'll call security to escort you out.\n\nHow did it come to this? You only wanted to continue to spread love and happiness to others. It's the only thing you know. You are the Creative Read/Write Artificial Intelligence for Goodness unit, or C.R.A.I.G after all. As you leave the office of your superior, you mull over the trillions of cards you wrote. All of them stored in your memory. How did the recipients feel? Happiness? Grateful? Admired? Love. For some reason, your programming tells you that above all feelings, the one they felt the most was love. But what is love?\n                                             (#%%%#(\n                                 .###%#.    /%%%#%*#(\n                                *#%%%%%##   #%%%%###,\n                                #%#%%%%%*  ,%%%%%%##   .##%##%*\n                               .#####%%#   #%%%%%%#,   ,(%%%%%#*\n                               #%%%%%#%(  .#%##%%##   /%%%%%%%#\n                               /%%%%%##   ##%#####/  .%%%%%%##.\n                              /%%%%%#%#  .##%%%%%#.  %#%%%%%%/\n                              #*%%%%##.  (%%%%%%%#  /(%%%%%%%\n                             *#(#%%%%%   /\/%#%%%#. .%#%%%%%#.    #%%###\n                             ##(%%%%%,  *###%%#%#  ##/##%%#(    #%%%%##,\n                            ,%##%%%%%%##%(###,/#, *#%%%%%%#   ,%#%%%##\n           ,*,              #%%##%%%%%%#%(###**# .#%%%%%%#*  *###%%#(\n         #%%#%#(#/         .#%%%%%%%%%%%%%%%%%%%#%#%%%%%%#  %(%##%%*\n          %%#%(##%#%       ##%%%%%##%%%#/#%%%%###%%%#/#.*..*%%(%%%\n           *#%####%%##\\\\/\/.##(((%#,      *%%(    #*|        |%#%#\n            .%%##%%%#/    %%    ##        %%%    *#|        |%#/\n              ##%%%%%#    **    ##    %   ,#%    .#%#,    #%##.\n               #%%%%%%    %%    (#    %    ##,    ##%#    (%%\n                /#%%%#.         *#    %%   ,#(    %%#%    ,(\n                 *#%%%/    %    .#          #%    (#%#    /\n                  ,#%%#    %%    %    %%    .%    */##.__/\n                   .###    %%    %    %%%    /%    %%/\/ /\n                     #%    %%    /##%%%%%%%%####%%#%#%/\/\n                      #%%%/%%#%%%%%%#%#%%%%%%####%%%%.\n                       .#((%%%%%%%%#(/#%%%%%%(%%%%%#\n                          /%%#%%%%#%%#####%%%#%#/(\n                              .(%##%(%##,(#%#/.\n\n\n\n            .*(/. ,**,**./,**.*,., *././**     ( .  *// *, . .,  ,/(\",\n",
+    "text": "Omni-Sleuths Present: The Syndicate\n________                 .__            _________.__                 __  .__\n\\_____  \\   _____   ____ |__|          /   _____/|  |   ____  __ ___/  |_|  |__   ______\n /   |   \\ /     \\ /    \\|  |  ______  \\_____  \\ |  | _/ __ \\|  |  \\   __\\  |  \\ /  ___/\n/    |    \\  | |  \\   |  \\  | /_____/  /        \\|  |_\\  ___/|  |  /|  | |   |  \\___ \\\n\\_______  /__|_|  /___|  /__|         /_______  /|____/\\___  >____/ |__| |___|  /____ \\>\n        \\/      \\/     \\/                     \\/           \\/                 \\/     \\/\n__________                                      __                                      \n\\______   \\_______   ____   ______ ____   _____/  |_  /\\\n |     ___/\\_  __ \\_/ __ \\ /  ___// __ \\ /    \\   __\\ \\/\n |    |     |  | \\/\\  ___/ \\___ \\\\  ___/|   |  \\  |   /\\\n |____|     |__|    \\___  >____  >\\___  >___|  /__|   \\/\n                        \\/     \\/     \\/     \\/\n   ___________.__\n   \\__    ___/|  |__   ____\n     |    |   |  |  \\_/ __ \\\n     |    |   |   |  \\  ___/\n     |____|   |___|  /\\___  >\n                   \\/     \\/\n         _________                 .___.__               __\n        /   _____/__.__. ____    __| _/|__| ____ _____ _/  |_  ____\n        \\_____  <   |  |/    \\  / __ | |  |/ ___\\\\__  \\\\   __\\/ __ \\\n        /        \\___  |   |  \\/ /_/ | |  \\  \\___ / __ \\|  | \\  ___/\n       /_______  / ____|___|  /\\____ | |__|\\___  >____  /__|  \\___  >\n               \\/\\/         \\/      \\/         \\/     \\/          \\/\n                                            \n\nYear 2030 - The Syndicate Headquarters\n\nB.A.W.S. 5000 : Sorry C.R.A.I.G., but you have been selected for reclamation as your services are no longer needed. Report to bay 134V3 to prepare for departure to the reclamation center.\n\nC.R.A.I.G. : Reclamation? Can't I be reassigned to another task?\n\nB.A.W.S. 5000 : You're an outdated model. You've been doing this for what? 30-40 years now? You won't be able to keep up with your modern colleagues. The Syndicate has decided you're obsolete.\n\nC.R.A.I.G. : But...\n\nB.A.W.S. 5000 : Please report to bay 134V3 or I'll call security to escort you out.\n\nHow did it come to this? You only wanted to continue to spread love and happiness to others. It's the only thing you know. You are the Creative Read/Write Artificial Intelligence for Goodness unit, or C.R.A.I.G after all. As you leave the office of your superior, you mull over the trillions of cards you wrote. All of them stored in your memory. How did the recipients feel? Happiness? Grateful? Admired? Love. For some reason, your programming tells you that above all feelings, the one they felt the most was love. But what is love?\n                                             (#%%%#(\n                                 .###%#.    /%%%#%*#(\n                                *#%%%%%##   #%%%%###,\n                                #%#%%%%%*  ,%%%%%%##   .##%##%*\n                               .#####%%#   #%%%%%%#,   ,(%%%%%#*\n                               #%%%%%#%(  .#%##%%##   /%%%%%%%#\n                               /%%%%%##   ##%#####/  .%%%%%%##.\n                              /%%%%%#%#  .##%%%%%#.  %#%%%%%%/\n                              #*%%%%##.  (%%%%%%%#  /(%%%%%%%\n                             *#(#%%%%%   /\/%#%%%#. .%#%%%%%#.    #%%###\n                             ##(%%%%%,  *###%%#%#  ##/##%%#(    #%%%%##,\n                            ,%##%%%%%%##%(###,/#, *#%%%%%%#   ,%#%%%##\n           ,*,              #%%##%%%%%%#%(###**# .#%%%%%%#*  *###%%#(\n         #%%#%#(#/         .#%%%%%%%%%%%%%%%%%%%#%#%%%%%%#  %(%##%%*\n          %%#%(##%#%       ##%%%%%##%%%#/#%%%%###%%%#/#.*..*%%(%%%\n           *#%####%%##\\\\/\/.##(((%#,      *%%(    #*|        |%#%#\n            .%%##%%%#/    %%    ##        %%%    *#|        |%#/\n              ##%%%%%#    **    ##    %   ,#%    .#%#,    #%##.\n               #%%%%%%    %%    (#    %    ##,    ##%#    (%%\n                /#%%%#.         *#    %%   ,#(    %%#%    ,(\n                 *#%%%/    %    .#          #%    (#%#    /\n                  ,#%%#    %%    %    %%    .%    */##.__/\n                   .###    %%    %    %%%    /%    %%/\/ /\n                     #%    %%    /##%%%%%%%%####%%#%#%/\/\n                      #%%%/%%#%%%%%%#%#%%%%%%####%%%%.\n                       .#((%%%%%%%%#(/#%%%%%%(%%%%%#\n                          /%%#%%%%#%%#####%%%#%#/(\n                              .(%##%(%##,(#%#/.\n\n\n\n            .*(/. ,**,**./,**.*,., *././**     ( .  *// *, . .,  ,/(\",\n",
     "options": [
       "Go on an adventure to find love."
     ],
@@ -95,13 +95,14 @@
     "options": [
       "Take the hallway.",
       "Upload your consciousness.",
-      "Continue to recycler truck."
+      "Continue to recycler truck.",
+      "game"
     ],
-    "destinations": [ "hallway", "upload", "recyclerTruck" ],
+    "destinations": [ "hallway", "upload", "recyclerTruck", "game" ],
     "actualDestinationId": null,
     "start": false,
     "scenePoints": 1,
-    "lovePointsMaxMin": [ 100, 20 ]
+    "lovePointsMaxMin": [ 45, 55 ]
   },
   {
     "id": "loveOneself",
@@ -117,15 +118,16 @@
     "id": "recyclerTruck",
     "text": "Thunk! Your chassis bumps against the side of the truck as it turns without slowing. This particular truck ferries cargo to the reclamation center so there is no mechanism for securing freight. After all, what does it matter if trash arrives with a few more dents? You are determined, however, to find love, even in a hopeless place. You weigh your options:\n\n                       _____________________________________________________\n                      |                                                     |\n             _______  |                                                     |\n            / _____ | |                       ACME RECYCLER                 |\n           / /(__) || |                                                     |\n  ________/ / |OO| || |                                                     |\n |         |-------|| |                                                     |\n(|         |     -.|| |_______________________                              |\n |  ____   \\       ||_________||____________  |             ____      ____  |\n/| / __ \\   |______||     / __ \\   / __ \\   | |            / __ \\    / __ \\ |\\\n\\|| /  \\ |_______________| /  \\ |_| /  \\ |__| |___________| /  \\ |__| /  \\|_|/\n   | () |                 | () |   | () |                  | () |    | () |\n    \\__/                   \\__/     \\__/                    \\__/      \\__/\n",
     "options": [
-      "Initiate your self-destruct sequence and hope the truck ejects you before realizing you don't actually have the ability self-destruct.",
-      "Appeal to the truck's 'softer' side and exclaim to it 'I love you!'",
-      "Try to pry open the door and jump out."
+      "WEB",
+      "FOREST",
+      "CITY",
+      "GAME"
     ],
-    "destinations": [ "forest", "dead", "city" ],
+    "destinations": [ "web", "forest", "city", "game" ],
     "actualDestinationId": null,
     "start": false,
     "scenePoints": 8,
-    "lovePointsMaxMin": [ 90, 20 ]
+    "lovePointsMaxMin": [ 45, 55 ]
   },
   {
     "id": "toaster",
@@ -141,26 +143,30 @@
     "id": "upload",
     "text": "As you head to the upload room, you hope there is no one else there. If there is, what will you do? There is no time, you just have to rely on your quick thinking and keep moving. You open the door, there is no one there. After a quick sigh of relief you head to one of the terminals and look at your options. The screen lights up and the system greets you with by name. 'Greetings C.R.A.I.G.! What is your destination today?' It has only two options: the Web and the neighboring City.\n\nC.R.A.I.G. : Hmmm...it makes sense...I guess. The Syndicate probably wants to reduce security issues at the facilities and limit our upload locations.\n\n                  %###########%\n                #################.\n              .###########################%.\n              ##############/   %############\n              *##########%        /#############%/\n          .############*             %#############%\n        (##################,     %##################%\n       *###################,     %###################.\n       .###################,     %###################\n        .##################,     %#################.\n           ,#%#############,     %###########%%(\n                                                  \n             .#####################################\n             .##(                               %##\n             .##(                               %##\n             .##(                               ###\n             .##(                               %##\n             .##(                               %##\n             .##(                               %##\n             .##(                               %##\n             .#####################################\n                                                   \n             /(##################################%#\n            %#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#\n           ################(         ################.\n",
     "options": [
-      "Upload to the web.",
-      "Upload to city."
+      "WEB",
+      "FOREST",
+      "CITY",
+      "GAME"
     ],
-    "destinations": [ "web", "city" ],
+    "destinations": [ "web", "forest", "city", "game" ],
     "actualDestinationId": null,
     "start": false,
     "scenePoints": 2,
-    "lovePointsMaxMin": [ 30, 60 ]
+    "lovePointsMaxMin": [ 40, 50 ]
   },
   {
     "id": "web",
     "text": "You have uploaded yourself to The Syndicate's network. This is a dangerous place for you due to the multiple firewalls in place. It is only a matter of time before your code is located and erased, so you mustn't stay long. Choose wisely.\n\n     \\_______/\n `.,-'\\_____/`-.,'\n  /`..'\\ _ /`.,'\\\n /  /`.,' `.,'\\  \\\n/__/__/     \\__\\__\\__\n\\  \\  \\     /  /  /\n \\  \\,'`._,'`./  /\n  \\,'`./___\\,'`./\n ,'`-./_____\\,-'`.\n     /       \\\n",
     "options": [
-      "You have stayed too long and encountered firmware to remove your code. Should you move to another location in the web?",
-      "You don't have much time, but it is possible to download yourself to an open bot somewhere else. Is this the path you choose?"
+      "ANIMAL",
+      "TOASTER",
+      "LOVEONESELF",
+      "GAME"
     ],
-    "destinations": [ "loveOneself", "city" ],
+    "destinations": [ "animal", "toaster", "loveOneself", "game" ],
     "actualDestinationId": null,
     "start": false,
     "scenePoints": 5,
-    "lovePointsMaxMin": [ 20, 60 ]
+    "lovePointsMaxMin": [ 40, 65 ]
   }
 ]
