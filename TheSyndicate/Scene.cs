@@ -26,7 +26,7 @@ namespace TheSyndicate
         public int[] LovePointsMaxMin { get; private set; } /// Maximum allowable points for "evil" path, Minimum allowable
                                                             /// Love Points for 'love' path.
 
-        bool[] choiceArray = { true, true, true };
+        bool[] choiceArray = { true, true, true, true };
         private TextToSpeech tts = new TextToSpeech();
 
 
@@ -331,6 +331,17 @@ namespace TheSyndicate
         void SetDestinationId(int selectedOption)
         {
             this.ActualDestinationId = this.Destinations[selectedOption - 1];
+            if (selectedOption == 4)
+            {
+                this.ActualDestinationId = this.Id;
+                PlayMiniGameAndUpdatePoints();
+                //if (!Action.DidPlayerSucceed())
+                //{
+                //    this.ActualDestinationId = "dead";
+                //}
+            }
+
+
             if (this.ActualDestinationId.Equals("fight"))
             {
 
@@ -347,16 +358,25 @@ namespace TheSyndicate
                     player.AddLovePoints(0);//?? Love Points go to zero upon death.
                 }
             }
-            else if (this.Id.Equals("upload") ||
-                (this.Id.Equals("recyclerTruck") && this.ActualDestinationId.Equals("city")))
-            {
-                this.Action = new KeyPressAction();
-                Action.ExecuteAction();
-                if (!Action.DidPlayerSucceed())
-                {
-                    this.ActualDestinationId = "dead";
-                }
-            }
+            //else if (this.Id.Equals("upload") ||
+            //    (this.Id.Equals("recyclerTruck") && this.ActualDestinationId.Equals("city")))
+            //else if (this.Id.Equals("game"))
+            //{
+            //    this.Action = new KeyPressAction();
+            //    Action.ExecuteAction();
+            //    this.ActualDestinationId = "introScene";
+            //    //if (!Action.DidPlayerSucceed())
+            //    //{
+            //    //    this.ActualDestinationId = "dead";
+            //    //}
+            //}
+        }
+
+        private void PlayMiniGameAndUpdatePoints()
+        {
+            this.Action = new KeyPressAction();
+            Action.ExecuteAction();
+            player.AddLovePoints(Action.DidPlayerSucceed() ? 5 : -5);
         }
 
         public bool HasNextScenes()
