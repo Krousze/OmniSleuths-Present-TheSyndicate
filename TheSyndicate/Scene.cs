@@ -147,8 +147,8 @@ namespace TheSyndicate
             Console.WriteLine($"Press 0 at any point to save and quit.");
 
             // ??Test Love Points implementation.
-            sceneTextBox.SetBoxPosition(Console.WindowWidth - (Console.WindowWidth / 4), Console.WindowHeight - 3);
-            Console.WriteLine($"Love Points: {player.LovePointTotal}");
+            sceneTextBox.SetBoxPosition(Console.WindowWidth - (Console.WindowWidth / 3), Console.WindowHeight - 3);
+            Console.WriteLine($"Love Points: {player.LovePointTotal} | HateMax: {this.LovePointsMaxMin[0]} | LoveMin: {this.LovePointsMaxMin[1]}");
         }
 
         private void PrintAvailableOptions(TextBox sceneTextBox)
