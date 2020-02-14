@@ -1,9 +1,14 @@
 ﻿using System;
+<<<<<<< HEAD
 
 using System.Drawing;
 
 using System.Threading.Tasks;
 
+=======
+using System.Drawing;
+using System.Threading.Tasks;
+>>>>>>> Refactor
 using TheSyndicate.Actions;
 using CC = Colorful.Console;
 

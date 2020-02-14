@@ -60,7 +60,11 @@
     "actualDestinationId": null,
     "start": false,
     "scenePoints": 25,
+<<<<<<< HEAD
     "lovePointsMaxMin": [ 40, 65 ]
+=======
+    "lovePointsMaxMin": [ 50, 30 ]
+>>>>>>> Refactor
   },
   {
     "id": "hallway",
