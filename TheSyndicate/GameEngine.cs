@@ -16,6 +16,8 @@ namespace TheSyndicate
 
         public GameEngine()
         {
+            string gameMode = ChooseGameMode();
+            Player.SetInstance(gameMode);
             this.Player = Player.GetInstance();
             LoadScenes();
             LoadCurrentScene();
@@ -23,7 +25,6 @@ namespace TheSyndicate
 
         public void Start()
         {
-            //ConsoleWindow.ShowWindow(ConsoleWindow.ThisConsole, ConsoleWindow.MAXIMIZE);
             Console.ForegroundColor = ConsoleColor.Green;
             Console.CursorVisible = true;
             while (CurrentScene.HasNextScenes())
@@ -104,6 +105,18 @@ namespace TheSyndicate
                 }
             }
             return stateScene;
+        }
+
+        private string ChooseGameMode()
+        {
+            Console.WriteLine("a. new game | b. saved game");
+            string userChoice = "";
+            while(userChoice != "a" && userChoice != "b")
+            {
+                Console.WriteLine("You chose: " + userChoice);
+                userChoice = Console.ReadLine().ToLower();
+            }
+            return userChoice;
         }
 
         private void PlayScene()
