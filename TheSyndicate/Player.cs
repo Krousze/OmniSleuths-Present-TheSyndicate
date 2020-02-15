@@ -18,20 +18,32 @@ namespace TheSyndicate
 
         [JsonConstructor]
         private Player(string currentSceneId = null,
-                       int batteryPower = MAXIMUM_BATTERY_POWER)
+                       int batteryPower = MAXIMUM_BATTERY_POWER, int lovePointTotal = MAXIMUM_LOVEPOINTS / 2)
         {
             this.CurrentSceneId = currentSceneId;
             this.BatteryPower = batteryPower;
-            this.LovePointTotal = MAXIMUM_LOVEPOINTS / 2;
+            this.LovePointTotal = lovePointTotal;
         }
 
         public static Player GetInstance()
         {
-            if (_instance == null)
+            if(_instance == null)
+            {
+                _instance =  new Player();
+            }
+            return _instance;
+        }
+
+        public static void SetInstance(string gameMode)
+        {
+            if(gameMode == "a")
+            {
+                _instance = new Player();
+            }
+            else if (_instance == null)
             {
                 _instance = GetPlayerFromSaveState();
             }
-            return _instance;
         }
 
         private static Player GetPlayerFromSaveState()
