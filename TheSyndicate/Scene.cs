@@ -307,7 +307,8 @@ namespace TheSyndicate
         private void PlayMiniGameAndUpdatePoints()
         {
             //this.Action = new KeyPressAction();
-            this.Action = new SpeechAction();
+            //this.Action = new TongueTwister();
+            this.Action = new RiddleAction();
             Action.ExecuteActionAsync().Wait();
             player.AddLovePoints(Action.DidPlayerSucceed() ? 5 : -5);
         }

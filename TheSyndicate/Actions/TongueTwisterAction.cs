@@ -1,30 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace TheSyndicate.Actions
 {
-    public class SpeechAction : IAction
+    public class TongueTwister : IAction
     {
         string targetPhrase;
         string result;
         static List<string> phrases = new List<string>()
-        { "I am a robot", "The quick brown fox jumps over the lazy dog " };
+        { "Fred fed Ted bread, and Ted fed Fred bread",
+        "The quick brown fox jumps over a lazy dog"};
+        private TextToSpeech tts = new TextToSpeech();
 
-        public SpeechAction()
+
+        public TongueTwister()
         {
             SetTargetPhrase();
         }
 
         public bool DidPlayerSucceed()
         {
-            return result.ToLower().Contains(targetPhrase.ToLower());
+            string formattedResult = Regex.Replace(result.ToLower(), @"[^\w\s]", "");
+            string formattedTargetPhrase = Regex.Replace(targetPhrase.ToLower(), @"[^\w\s]", "");
+            return formattedResult.Contains(formattedTargetPhrase);
         }
 
         public async Task ExecuteActionAsync()
         {
             Console.Clear();
-            Console.WriteLine($"Please say '{targetPhrase}' to the microphone.");
+            string instruction = $"Please say '{targetPhrase}' to the microphone.";
+            Console.WriteLine(instruction);
+            //tts.HearText(instruction);
+           
             Console.WriteLine("Press ENTER when you are ready");
             Console.ReadLine();
             result = await SpeechToText.RecognizeSpeechAsync();
