@@ -191,6 +191,10 @@ namespace TheSyndicate
             int loveMin = this.LovePointsMaxMin[1];
             int hateMax = this.LovePointsMaxMin[0];
 
+            if(index == -1)
+            {
+                return true;
+            }
             if (index == 0)
             {
                 return player.LovePointTotal >= loveMin;

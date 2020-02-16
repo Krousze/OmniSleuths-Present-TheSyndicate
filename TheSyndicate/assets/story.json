@@ -14,11 +14,11 @@
     "text": "You are now in the city. Once beautiful, now an industrial wasteland. Here there is no sentient life to speak of; only The Syndicate's Watchmen and what remains of a once bustling city. Your situation is dire and you are bound to be seen by one of the robotic Watchmen. You must flee...\n\n         __   __                     ___      _\n       |  | |  |      /|           |   |   _/ \\_\n       |  | |  |  _  | |__         |   |_-/     \\-_     _\n     __|  | |  |_| | | |  |/\\_     |   |  \\     /  |___|\n    |  |  | |  | | __| |  |   |_   |   |   |___|   |   |\n    |  |  |^|  | ||  | |  |   | |__|   |   |   |   |   |\n    |  |  |||  | ||  | |  |   | /\\ |   |   |   |   |   |\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~/  \\~~~~~~~~~~~~~~~~~~~~~~\n   ~ ~~  ~ ~~ ~~~ ~ ~ ~~ ~~ ~~ \\   \\__   ~  ~  ~~~~ ~~~ ~~\n ~~ ~ ~ ~~~ ~~  ~~ ~~~~~~~~~~ ~ \\   \\o\\  ~~ ~ ~~~~ ~ ~ ~~~\n   ~ ~~~~~~~~ ~ ~ ~~ ~ ~ ~ ~ ~~~ \\   \\o\\=   ~~ ~~  ~~ ~ ~~\n~ ~ ~ ~~~~~~~ ~  ~~ ~~ ~ ~~ ~ ~ ~~ ~ ~ ~~ ~~~ ~ ~ ~ ~ ~~~~\n",
     "options": [
       "ANIMAL",
-      "TOASTER",
+      "DEAD",
       "LOVEONESELF",
       "GAME"
     ],
-    "destinations": [ "animal", "toaster", "loveOneself", "game" ],
+    "destinations": [ "animal", "dead", "loveOneself", "game" ],
     "actualDestinationId": null,
     "start": false,
     "scenePoints": 5,
@@ -52,11 +52,11 @@
     "text": "You have somehow stumbled upon a forest, something you have never seen with you own eyes. You have only seen the images of what remained after the excavations for more wood to make letters. It's a rather beautiful sight; so much life, so much green. Far different yet you can still hear the buzzings of life. you see what appears to be decrepit structures in the distance. What do you hope to find here? you must decide.\n\n      /\\              /\\\n     /\\*\\            /\\*\\\n    /\\O\\*\\          /\\O\\*\\\n   /*/\\/\\/\\        /*/\\/\\/\\\n  /\\O\\/\\*\\/\\      /\\O\\/\\*\\/\\\n /\\*\\/\\*\\/\\/\\    /\\*\\/\\*\\/\\/\\\n/\\O\\/\\/*/\\/O/\\  /\\O\\/\\/*/\\\/O/\\\n      ||              ||\n      ||              ||\n      ||              ||\n",
     "options": [
       "ANIMAL",
-      "TOASTER",
+      "DEAD",
       "LOVEONESELF",
       "GAME"
     ],
-    "destinations": [ "animal", "toaster", "loveOneself", "game" ],
+    "destinations": [ "animal", "dead", "loveOneself", "game" ],
     "actualDestinationId": null,
     "start": false,
     "scenePoints": 25,
@@ -158,12 +158,12 @@
     "id": "web",
     "text": "You have uploaded yourself to The Syndicate's network. This is a dangerous place for you due to the multiple firewalls in place. It is only a matter of time before your code is located and erased, so you mustn't stay long. Choose wisely.\n\n     \\_______/\n `.,-'\\_____/`-.,'\n  /`..'\\ _ /`.,'\\\n /  /`.,' `.,'\\  \\\n/__/__/     \\__\\__\\__\n\\  \\  \\     /  /  /\n \\  \\,'`._,'`./  /\n  \\,'`./___\\,'`./\n ,'`-./_____\\,-'`.\n     /       \\\n",
     "options": [
-      "ANIMAL",
       "TOASTER",
+      "DEAD",
       "LOVEONESELF",
       "GAME"
     ],
-    "destinations": [ "animal", "toaster", "loveOneself", "game" ],
+    "destinations": [ "toaster", "dead", "loveOneself", "game" ],
     "actualDestinationId": null,
     "start": false,
     "scenePoints": 5,
