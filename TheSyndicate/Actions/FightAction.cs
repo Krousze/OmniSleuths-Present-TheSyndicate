@@ -8,7 +8,7 @@ namespace TheSyndicate.Actions
     enum Attack { LeftHook, RightHook, LaserBeam}
     enum Dodge { DodgeRight, DodgeLeft, Duck, NoDodge }
 
-    class FightAction : IAction
+    class FightAction
     {
         private static int SECONDS_USER_HAS_TO_DODGE = 1;
         private static int TIMES_USER_MUST_DODGE_ATTACKS = 3;
@@ -30,7 +30,7 @@ namespace TheSyndicate.Actions
             this.Random = new Random();
         }
 
-        public void ExecuteAction()
+        public void ExecuteActionAsync()
         {
             Console.CursorVisible = false;
             RenderInstructions();

@@ -274,22 +274,22 @@ namespace TheSyndicate
             }
 
 
-            if (this.ActualDestinationId.Equals("fight"))
-            {
+            //if (this.ActualDestinationId.Equals("fight"))
+            //{
 
-                player.AddLovePoints(-5);//?? Lose Love Points for getting into fight
-                this.Action = new FightAction();
-                Action.ExecuteAction();
-                if (Action.DidPlayerSucceed())
-                {
-                    this.ActualDestinationId = "recyclerTruck";
-                }
-                else
-                {
-                    this.ActualDestinationId = "dead";
-                    player.AddLovePoints(0);//?? Love Points go to zero upon death.
-                }
-            }
+            //    player.AddLovePoints(-5);//?? Lose Love Points for getting into fight
+            //    this.Action = new FightAction();
+            //    Action.ExecuteActionAsync();
+            //    if (Action.DidPlayerSucceed())
+            //    {
+            //        this.ActualDestinationId = "recyclerTruck";
+            //    }
+            //    else
+            //    {
+            //        this.ActualDestinationId = "dead";
+            //        player.AddLovePoints(0);//?? Love Points go to zero upon death.
+            //    }
+            //}
             //else if (this.Id.Equals("upload") ||
             //    (this.Id.Equals("recyclerTruck") && this.ActualDestinationId.Equals("city")))
             //else if (this.Id.Equals("game"))
@@ -306,8 +306,9 @@ namespace TheSyndicate
 
         private void PlayMiniGameAndUpdatePoints()
         {
-            this.Action = new KeyPressAction();
-            Action.ExecuteAction();
+            //this.Action = new KeyPressAction();
+            this.Action = new SpeechAction();
+            Action.ExecuteActionAsync().Wait();
             player.AddLovePoints(Action.DidPlayerSucceed() ? 5 : -5);
         }
 
