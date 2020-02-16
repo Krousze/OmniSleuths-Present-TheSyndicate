@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace TheSyndicate.Actions
 {
@@ -22,7 +23,7 @@ namespace TheSyndicate.Actions
             this.Stopwatch = new Stopwatch();
         }
 
-        public void ExecuteAction()
+        public Task ExecuteActionAsync()
         {
             Console.CursorVisible = false;
             RenderInstructions();
@@ -30,6 +31,7 @@ namespace TheSyndicate.Actions
             HaveUserAlternatePressingSpacebarAndTab();
             RenderEndMessage();
             Console.CursorVisible = true;
+            return Task.Delay(0);
         }
         
         private void RenderInstructions()
