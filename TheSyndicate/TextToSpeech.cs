@@ -17,8 +17,8 @@ namespace TheSyndicate
         private string key = "0c685477e7a34e9a98bb25d61c815137";
         public string text { get; set; }
         public Queue<Dictionary<string, string>> q { get; private set; } = new Queue<Dictionary<string, string>>();
-        string[] voices = new string[] { "en-US-ZiraRUS" ,"en-GB-George-Apollo","en-GB-Susan-Apollo", "en-US-BenjaminRUS" };
-        Dictionary<string, string> voiceBank = new Dictionary<string, string>() { { "Narrator", "en-GB-Susan-Apollo" },{ "C.R.A.I.G.", "en-GB-George-Apollo" }, { "B.A.W.S. 5000", "en-US-ZiraRUS" },{ "Dog","en-US-BenjaminRUS"} };
+        string[] voices = new string[] { "en-US-ZiraRUS" ,"en-GB-George-Apollo","en-GB-Susan-Apollo", "en-US-BenjaminRUS","en-US-JessaNeural" };
+        Dictionary<string, string> voiceBank = new Dictionary<string, string>() { { "Narrator", "en-GB-Susan-Apollo" },{ "C.R.A.I.G.", "en-GB-George-Apollo" }, { "B.A.W.S. 5000", "en-US-ZiraRUS" },{ "Dog","en-US-BenjaminRUS"}, { "C.R.A.I.G. unit", "en-US-JessaNeural" } };
 
         public async void HearText(string words)
         {
