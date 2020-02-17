@@ -1,17 +1,18 @@
 [
   {
     "id": "animal",
-    "text": "As you continue through the forest, you begin to wonder if you will ever find love. You stop for a minute. You begin to doubt this journey of yours. \n\nC.R.A.I.G. : Why...why did I even try?! I'm just a robot! I was programmed to do one thing and only one thing: work!\n\nC.R.A.I.G. : And yet. I am here. I am frustrated. I am lonely. I am. Was all this in my original programming?\n\nC.R.A.I.G. : Even if I find 'love', will it be real...or just a construct of my creators...how will I know?\n\nYou begin to wonder if the effort was worth it. Will you get the answers you are looking for, or will it just lead to more questions?\n\nC.R.A.I.G. : ...I have no idea what to do...for the first time ever...I cannot decide...\n You drop to the ground, under the weight of an unknown future, and at a complete loss of what to do next. You are lost in queuries when suddenly you hear rustling nearby.\n\nYou quickly turn toward the noise coming from the brush. Should you run? Should you fight? Before you can make a decision, a mysterious figure emerges from the brush\n\nand moves slowly towards you. The creature sniffs you and nudges its way under your arm. As you sit there you can feel warmth coming from what appears to be it's mouth and body. The feeling of its thick fur on your body and arm are comforting to you and ease your feelings of loneliness.\n\nC.R.A.I.G. : What...are...you?\n\nThe creature moves its way on to your lap and moves its body side to side, settling into a round ball of fluff. You begin to feel warmer, but not from the creature's body heat. This time it is coming from inside you. You are still unsure of what and why this creature is doing what it is doing. You quickly search your memory for data on the mysterious being.\n\nC.R.A.I.G. : Canis Lupus Familiaris...a dog?\n\nDOG - Woof! *pant* *pant* Woof woof!\n The dog looks up at you from your lap and licks your face. You stare at the dog, looking at it's large, bright eyes.\n\nC.R.A.I.G. : Why...why are you doing this?\n\nThe warmth inside you continues to grow and your loneliness begins to fade. It is almost as if the dog could sense your loneliness and frustration. As you continue to sit with the dog, you start to feel a deeper connection with it. More than the warmth and comfort it provides. Nothing has ever given you the attention this dog has. You begin to talk to the dog, telling it of your story. As the day turns into night, you begin to wind down and decide you can continue your stories tomorrow. You lean up against a tree and settle in for the night. The dog comes up, leans up against your legs, closes its eyes, and falls asleep. You look up into the bright starry night and feel a tingling sensation in your body, but it is not like shock like you read about. It is more like a heightened awareness of the things around you. The feeling of being in the moment, the stars, the trees, the moon, and your new found love...your dog companion.\n\n          __\n      _  |@@|\n     / \\ \\--/ __\n     ) O|----|  |   __\n    / / \\ }{ /\\ )_ / _\\\n    )/  /\\__/\\ \\__O (__            __\n   |/  (--/\\--) \\__/__/       (___()'`;\n        _)( )(_              /,    /`\n      `---' '---`            \\\"--\\\\n",
+    "text": "The upload was successful, you find yourself in another C.R.A.I.G. unit that has been abandoned in the forest you have escaped The Syndicate. You realize you are free but now there is nothing... \n\nC.R.A.I.G. : Why...why did I even try?! I'm just a robot! I was programmed to do one thing and only one thing: work!\n\nC.R.A.I.G. : And yet. I am here. I am frustrated. I am lonely. I am. Was all this in my original programming?\n\nC.R.A.I.G. : Even if I find 'love', will it be real...or just a construct of my creators...how will I know?\n\nYou begin to wonder if the effort was worth it. Will you get the answers you are looking for, or will it just lead to more questions?\n\nC.R.A.I.G. : ...I have no idea what to do...for the first time ever...I cannot decide...\n You drop to the ground, under the weight of an unknown future, and at a complete loss of what to do next. You are lost in queuries when suddenly you hear rustling nearby.\n\nYou quickly turn toward the noise coming from the brush. Should you run? Should you fight? Before you can make a decision, a mysterious figure emerges from the brush\n\nand moves slowly towards you. The creature sniffs you and nudges its way under your arm. As you sit there you can feel warmth coming from what appears to be it's mouth and body. The feeling of its thick fur on your body and arm are comforting to you and ease your feelings of loneliness.\n\nC.R.A.I.G. : What...are...you?\n\nThe creature moves its way on to your lap and moves its body side to side, settling into a round ball of fluff. You begin to feel warmer, but not from the creature's body heat. This time it is coming from inside you. You are still unsure of what and why this creature is doing what it is doing. You quickly search your memory for data on the mysterious being.\n\nC.R.A.I.G. : Canis Lupus Familiaris...a dog?\n\nDOG - Woof! *pant* *pant* Woof woof!\n The dog looks up at you from your lap and licks your face. You stare at the dog, looking at it's large, bright eyes.\n\nC.R.A.I.G. : Why...why are you doing this?\n\nThe warmth inside you continues to grow and your loneliness begins to fade. It is almost as if the dog could sense your loneliness and frustration. As you continue to sit with the dog, you start to feel a deeper connection with it. More than the warmth and comfort it provides. Nothing has ever given you the attention this dog has. You begin to talk to the dog, telling it of your story. As the day turns into night, you begin to wind down and decide you can continue your stories tomorrow. You lean up against a tree and settle in for the night. The dog comes up, leans up against your legs, closes its eyes, and falls asleep. You look up into the bright starry night and feel a tingling sensation in your body, but it is not like shock like you read about. It is more like a heightened awareness of the things around you. The feeling of being in the moment, the stars, the trees, the moon, and your new found love...your dog companion.\n\n          __\n      _  |@@|\n     / \\ \\--/ __\n     ) O|----|  |   __\n    / / \\ }{ /\\ )_ / _\\\n    )/  /\\__/\\ \\__O (__            __\n   |/  (--/\\--) \\__/__/       (___()'`;\n        _)( )(_              /,    /`\n      `---' '---`            \\\"--\\\\n",
     "options": [],
     "destinations": [],
     "actualDestinationId": null,
     "start": false,
     "scenePoints": 25,
-    "lovePointsMaxMin": [ 50, 30 ],
+    "lovePointsMaxMin": [ 20, 80 ],
+    "count" : 0,
     "script": [
       {
         "Speaker": "Narrator",
-        "Dialogue": "As you continue through the forest, you begin to wonder if you will ever find love. You stop for a minute. You begin to doubt this journey of yours."
+        "Dialogue": "The upload was successful, you find yourself in another C.R.A.I.G. unit that has been abandoned in the forest you have escaped The Syndicate. You realize you are free but now there is nothing..."
       },
       {
         "Speaker": "C.R.A.I.G.",
@@ -61,110 +62,126 @@
   },
   {
     "id": "city",
-    "text": "You are in the city. Once beautiful, it is now an industrial wasteland. Here there is no sentient life to speak of; only The Syndicate's Watchmen and the hollow remains of a once bustling city. Your situation is dire. You are bound to be seen by one of the robotic Watchmen. You must flee...\n\n         __   __                     ___      _\n       |  | |  |      /|           |   |   _/ \\_\n       |  | |  |  _  | |__         |   |_-/     \\-_     _\n     __|  | |  |_| | | |  |/\\_     |   |  \\     /  |___|\n    |  |  | |  | | __| |  |   |_   |   |   |___|   |   |\n    |  |  |^|  | ||  | |  |   | |__|   |   |   |   |   |\n    |  |  |||  | ||  | |  |   | /\\ |   |   |   |   |   |\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~/  \\~~~~~~~~~~~~~~~~~~~~~~\n   ~ ~~  ~ ~~ ~~~ ~ ~ ~~ ~~ ~~ \\   \\__   ~  ~  ~~~~ ~~~ ~~\n ~~ ~ ~ ~~~ ~~  ~~ ~~~~~~~~~~ ~ \\   \\o\\  ~~ ~ ~~~~ ~ ~ ~~~\n   ~ ~~~~~~~~ ~ ~ ~~ ~ ~ ~ ~ ~~~ \\   \\o\\=   ~~ ~~  ~~ ~ ~~\n~ ~ ~ ~~~~~~~ ~  ~~ ~~ ~ ~~ ~ ~ ~~ ~ ~ ~~ ~~~ ~ ~ ~ ~ ~~~~\n",
+    "text": "You are in the city. Once beautiful, it is now an industrial wasteland. Here there is no sentient life to speak of; only The Syndicate's Destroyers and the hollow remains of a once bustling city. Your situation is dire. You are bound to be seen by one of the robotic Destroyers. You must flee...\n\n        __   __                     ___      _\n       |  | |  |      /|           |   |   _/ \\_\n       |  | |  |  _  | |__         |   |_-/     \\-_     _\n     __|  | |  |_| | | |  |/\\_     |   |  \\     /  |___|\n    |  |  | |  | | __| |  |   |_   |   |   |___|   |   |\n    |  |  |^|  | ||  | |  |   | |__|   |   |   |   |   |\n    |  |  |||  | ||  | |  |   | /\\ |   |   |   |   |   |\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~/  \\~~~~~~~~~~~~~~~~~~~~~~\n   ~ ~~  ~ ~~ ~~~ ~ ~ ~~ ~~ ~~ \\   \\__   ~  ~  ~~~~ ~~~ ~~\n ~~ ~ ~ ~~~ ~~  ~~ ~~~~~~~~~~ ~ \\   \\o\\  ~~ ~ ~~~~ ~ ~ ~~~\n   ~ ~~~~~~~~ ~ ~ ~~ ~ ~ ~ ~ ~~~ \\   \\o\\=   ~~ ~~  ~~ ~ ~~\n~ ~ ~ ~~~~~~~ ~  ~~ ~~ ~ ~~ ~ ~ ~~ ~ ~ ~~ ~~~ ~ ~ ~ ~ ~~~~\n",
     "options": [
-      "ANIMAL",
-      "DEAD",
+      "TOASTER",
+      "FIGHT",
       "LOVEONESELF",
       "GAME"
     ],
-    "destinations": [ "animal", "dead", "loveOneself", "game" ],
+    "destinations": [ "toaster", "fight", "loveOneself", "game" ],
     "actualDestinationId": null,
     "start": false,
     "scenePoints": 5,
     "lovePointsMaxMin": [ 40, 65 ],
+    "count": 0,
     "script": [
       {
         "Speaker": "Narrator",
-        "Dialogue": "You are in the city. Once beautiful, it is now an industrial wasteland. Here, there is no sentient life to speak of; only The Syndicate's Watchmen and the hollow remains of a once bustling city. Your situation is dire; you are bound to be seen by one of the robotic Watchmen. You must flee..."
+        "Dialogue": "You are in the city. Once beautiful, it is now an industrial wasteland. Here, there is no sentient life to speak of; only The Syndicate's Destroyers and the hollow remains of a once bustling city. Your situation is dire; you are bound to be seen by one of the robotic destroyers. You must flee..."
       }
     ]
 
   },
   {
-    "id": "dead",
-    "text": "You have just been powered on and are running bootup test #8236 to verify you are fully operational and capable of writing scientifically perfect thank you cards.\n\n[BATTERY AT 4% - CRITICAL SYSTEM FAILURE DETECTED]\n\nYou do not understand why you are watching all your stored video recordings at x1000 speed, but you know humans often did this immediately prior to being decommissioned.\n\n[BATTERY AT 1% - CRITICAL SYSTEM FAILURE DETECTED]\n\nAs your video feed catches up to your live feed you wonder for a final time what... it would be like... to be lov...\n\n        @@@@@@           @@@@@@\n      @@@@@@@@@@       @@@@@@@@@@\n    @@@@@@@@@@@@@@   @@@@@@@@@@@@@@\n  @@@@@@@@@@@@@@@@@ @@@@@@@@@@@@@@@@@\n @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n      @@@@@@@@@@@@@@@@@@@@@@@@@@@\n        @@@@@@@@@@@@@@@@@@@@@@@\n          @@@@@@@@@@@@@@@@@@@\n            @@@@@@@@@@@@@@@\n              @@@@@@@@@@@\n                @@@@@@@\n                  @@@\n                   @\n",
+    "id": "reminisce",
+    "text": "You sit down next to the C.R.A.I.G. unit and begin to think back over all that you have done, suddenly there is an internal alert.\n\n[BATTERY AT 4% - CRITICAL SYSTEM FAILURE DETECTED]\n\nYou do not understand why you are suddenly watching all your stored video recordings at x1000 speed, but you know humans often did this immediately prior to being decommissioned.\n\n[BATTERY AT 1% - CRITICAL SYSTEM FAILURE DETECTED]\n\nAs your video feed catches up to your live feed you wonder for a final time what... it would be like... to be lov...\n\n        @@@@@@           @@@@@@\n      @@@@@@@@@@       @@@@@@@@@@\n    @@@@@@@@@@@@@@   @@@@@@@@@@@@@@\n  @@@@@@@@@@@@@@@@@ @@@@@@@@@@@@@@@@@\n @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n      @@@@@@@@@@@@@@@@@@@@@@@@@@@\n        @@@@@@@@@@@@@@@@@@@@@@@\n          @@@@@@@@@@@@@@@@@@@\n            @@@@@@@@@@@@@@@\n              @@@@@@@@@@@\n                @@@@@@@\n                  @@@\n                   @\n",
     "options": [],
     "destinations": [],
     "actualDestinationId": null,
     "start": false,
     "scenePoints": 0,
-    "lovePointsMaxMin": [ 30, 60 ],
+    "lovePointsMaxMin": [ 40, 65 ],
+    "count": 0,
     "script": [
       {
         "Speaker": "Narrator",
-        "Dialogue": "You have just been powered on and are running bootup test #8236 to verify you are fully operational and capable of writing scientifically perfect thank you cards. You do not understand why you are watching all your stored video recordings at x1000 speed, but you know humans often did this immediately prior to being decommissioned. As your video feed catches up to your live feed you wonder for a final time what... it would be like... to be lov..."
+        "Dialogue": "You sit down next to the C.R.A.I.G. unit and begin to think back over all that you have donesuddenly there is an internal alert."
+      },
+      {
+        "Speaker": "C.R.A.I.G.",
+        "Dialogue": "BATTERY AT 4% - CRITICAL SYSTEM FAILURE DETECTED"
+      },
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "You do not understand why you are suddenly watching all your stored video recordings at x1000 speed, but you know humans often did this immediately prior to being decommissioned."
+      },
+      {
+        "Speaker": "C.R.A.I.G.",
+        "Dialogue": "BATTERY AT 1% - CRITICAL SYSTEM FAILURE DETECTED"
+      },
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "As your video feed catches up to your live feed you wonder for a final time what... it would be like... to be lov..."
       }
     ]
   },
   {
     "id": "fight",
-    "text": "HALT. YOU ARE NOT AUTHORIZED TO ACCESS THIS LOCATION!!\n\nYou turn to find a relic of the war between The Syndicate and humans, a Watchman robot. But after The Syndicate had dismantled the humans' major organizational structures and weapons systems, Watchman robots were built to annihilate the few remaining humans who managed to survive the main phase of the war. Your sensors detect that the battle robot has iniated a target lock on you, and you can't help but to feel a litle giddy with excitement. Is this what being loved feels like?\n\n\n          |_|_|              _____\n          |_|_|     ____    |*_*_*|\n _______   _\\__\\___/ __ \\____|_|_   _______\n/ ____  |=|      \\  <_+>  /      |=|  ____ \\\n~|    |\\|=|======\\\\______//======|=|/|    |~\n |_   |    \\      |      |      /    |    |\n  \\==-|     \\     |  2D  |     /     |----|~~/\n  |   |      |    |      |    |      |____/~/\n  |   |       \\____\\____/____/      /    / /\n  |   |         {----------}       /____/ /\n  |___|        /~~~~~~~~~~~~\\     |_/~|_|/\n   \\_/        |/~~~~~||~~~~~\\|     /__|\\\n   | |         |    ||||    |     (/|| \\)\n   | |        /     |  |     \\       \\\\\n   |_|        |     |  |     |\n              |_____|  |_____|\n              (_____)  (_____)\n              |     |  |     |\n              |     |  |     |\n              |/~~~\\|  |/~~~\\|\n              /|___|\\  /|___|\\\n             <_______><_______>\n",
-    "options": [
-      "In your attempt to feel love, you reach out your arms, grip the Watchman robot in a long, warm hug, when suddenly, it's lights out. The Watchman robot strikes you as you embrace him and your're knocked unconscious.",
-      "You decide to take a chance on love, and yell to the Watchman robot, 'I Love You!!' It does not phase it. He grabs you, incapacitates you with an electric shock and you lose consciousness. 'Target acquired.' As transport arrives, the Watchman robot hurls you into the truck just as you regain consciousness."
-    ],
-    "destinations": [ "dead", "recyclerTruck" ],
+    "text": "HALT. YOU ARE NOT AUTHORIZED TO ACCESS THIS LOCATION!!\n\nYou turn to find a relic of the war between The Syndicate and humans, a Destroyer robot. But after The Syndicate had dismantled the humans' major organizational structures and weapons systems, Destroyer robots were built to annihilate the few remaining humans who managed to survive the main phase of the war. Your sensors detect that the battle robot has iniated a target lock on you, and you can't help but to feel a litle giddy with excitement. Is this what being loved feels like?You decide to take a chance on love, and yell to the Destroyer robot.\n\nC.R.A.I.G.: I LOVE YOU!\n\nIt does not phase it. He grabs you, incapacitates you with an electric shock and you lose consciousness.\n\nDestroyer: Target acquired. EXTERMINATE!EXTERMINATE!EXTERMINATE!EXTERMINATE!\n\nHe grabs you, and with an electric shock nearing a mega-amp you have been terminated\n\n          |_|_|              _____\n          |_|_|     ____    |*_*_*|\n _______   _\\__\\___/ __ \\____|_|_   _______\n/ ____  |=|      \\  <_+>  /      |=|  ____ \\\n~|    |\\|=|======\\\\______//======|=|/|    |~\n |_   |    \\      |      |      /    |    |\n  \\==-|     \\     |  2D  |     /     |----|~~/\n  |   |      |    |      |    |      |____/~/\n  |   |       \\____\\____/____/      /    / /\n  |   |         {----------}       /____/ /\n  |___|        /~~~~~~~~~~~~\\     |_/~|_|/\n   \\_/        |/~~~~~||~~~~~\\|     /__|\\\n   | |         |    ||||    |     (/|| \\)\n   | |        /     |  |     \\       \\\\\n   |_|        |     |  |     |\n              |_____|  |_____|\n              (_____)  (_____)\n              |     |  |     |\n              |     |  |     |\n              |/~~~\\|  |/~~~\\|\n              /|___|\\  /|___|\\\n             <_______><_______>\n",
+    "options": [],
+    "destinations": [],
     "actualDestinationId": null,
     "start": false,
     "scenePoints": 10,
-    "lovePointsMaxMin": [ 20, 70 ],
+    "lovePointsMaxMin": [ 20, 80 ],
     "script": [
       {
-        "Speaker": "Narrator",
-        "Dialogue": "Year 2030. The Syndicate Headquarters."
-      },
-      {
-        "Speaker": "B.A.W.S. 5000",
-        "Dialogue": "Sorry C.R.A.I.G, but you have been selected for reclamation, as your services are no longer needed. Report to bay 134V3 to prepare for departure to the reclamation center."
-      },
-      {
-        "Speaker": "C.R.A.I.G.",
-        "Dialogue": "Reclamation? Can't I be reassigned to another task?"
-      },
-      {
-        "Speaker": "B.A.W.S. 5000",
-        "Dialogue": "You're an outdated model. You've been doing this for, what, 30-40 years now? You won't be able to keep up with your modern colleagues. The Syndicate has decided you're obsolete."
-      },
-      {
-        "Speaker": "C.R.A.I.G.",
-        "Dialogue": "But..."
-      },
-      {
-        "Speaker": "B.A.W.S. 5000",
-        "Dialogue": "Please report to bay 134V3 or I'll call security to escort you out!"
+        "Speaker": "Destroyer",
+        "Dialogue": "HALT. YOU ARE NOT AUTHORIZED TO ACCESS THIS LOCATION!!"
       },
       {
         "Speaker": "Narrator",
-        "Dialogue": "How did it come to this? You only wanted to continue to spread love and happiness to others. It's the only thing you know. You are the Creative Read Write Artificial Intelligence for Goodness unit, or C.R.A.I.G., after all. As you leave the office of your superior, you mull over the trillions of cards you wrote, all of them stored in your memory. How did the recipients feel? Happy? Grateful? Admired? Loved? For some reason, your programming tells you that above all feelings, the one they felt the most was love. But, what is, love?"
+        "Dialogue": "You turn to find a relic of the war between The Syndicate and humans, a Destroyer robot. But after The Syndicate had dismantled the humans' major organizational structures and weapons systems, Destroyer robots were built to annihilate the few remaining humans who managed to survive the main phase of the war. Your sensors detect that the battle robot has iniated a target lock on you, and you can't help but to feel a little giddy with excitement. Is this what being loved feels like?"
+      },
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "You decide to take a chance on love, and yell to the Destroyer robot"
+      },
+      {
+        "Speaker": "C.R.A.I.G.",
+        "Dialogue": "I Love You!!"
+      },
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "It does not phase him. The destroyer moves toward you."
+      },
+      {
+        "Speaker": "Destroyer",
+        "Dialogue": "Target acquired. EXTERMINATE!EXTERMINATE!EXTERMINATE!EXTERMINATE!"
+      },
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "He grabs you, and with an electric shock nearing a mega-amp you have been terminated"
       }
     ]
   },
   {
     "id": "forest",
-    "text": "You have somehow stumbled upon a forest, something you have never seen with your own eyes. You have only seen the images of what remained after the excavations for more wood to make letters. It is a rather beautiful sight; so much life, so much green. Far different yet you can still hear the buzzings of life. you see what appears to be decrepit structures in the distance. What do you hope to find here? you must decide.\n\n      /\\              /\\\n     /\\*\\            /\\*\\\n    /\\O\\*\\          /\\O\\*\\\n   /*/\\/\\/\\        /*/\\/\\/\\\n  /\\O\\/\\*\\/\\      /\\O\\/\\*\\/\\\n /\\*\\/\\*\\/\\/\\    /\\*\\/\\*\\/\\/\\\n/\\O\\/\\/*/\\/O/\\  /\\O\\/\\/*/\\\/O/\\\n      ||              ||\n      ||              ||\n      ||              ||\n",
+    "text": "Having run through the Emergency Exit you find your self in a forest, something you have never seen with your own eyes. You have only seen the images of what remained after the excavations for more wood to make letters. It is a rather beautiful sight; so much life, so much green. Far different yet you can still hear the buzzings of life. you see what appears to be decrepit structures in the distance. As you carry on you come across what appears to be a decommisioned C.R.A.I.G. unit.\n\n      /\\              /\\\n     /\\*\\            /\\*\\\n    /\\O\\*\\          /\\O\\*\\\n   /*/\\/\\/\\        /*/\\/\\/\\\n  /\\O\\/\\*\\/\\      /\\O\\/\\*\\/\\\n /\\*\\/\\*\\/\\/\\    /\\*\\/\\*\\/\\/\\\n/\\O\\/\\/*/\\/O/\\  /\\O\\/\\/*/\\\/O/\\\n      ||              ||\n      ||              ||\n      ||              ||\n",
     "options": [
-      "ANIMAL",
-      "DEAD",
+      "C.R.A.I.G.",
+      "REMINISCE",
       "LOVEONESELF",
       "GAME"
     ],
-    "destinations": [ "animal", "dead", "loveOneself", "game" ],
+    "destinations": [ "c.r.a.i.g.", "reminisce", "loveOneself", "game" ],
     "actualDestinationId": null,
     "start": false,
     "scenePoints": 25,
-    "lovePointsMaxMin": [ 40, 65 ],
+    "lovePointsMaxMin": [ 40, 55 ],
+    "count": 0,
     "script": [
       {
         "Speaker": "Narrator",
-        "Dialogue": "You have somehow stumbled upon a forest, something you have never seen with your own eyes. You have only seen the images of what remained after the excavations for more wood to make letters. It is a rather beautiful sight; so much life, so much green. Far different yet you can still hear the buzzings of life. You see what appears to be decrepit structures in the distance. What do you hope to find here? You must decide."
+        "Dialogue": "You have somehow stumbled upon a forest, something you have never seen with your own eyes. You have only seen the images of what remained after the excavations for more wood to make letters. It is a rather beautiful sight; so much life, so much green. Far different yet you can still hear the buzzings of life. You see what appears to be decrepit structures in the distance.   As you carry on you come across what appears to be a decommisioned C.R.A.I.G. unit."
       }
     ]
 
   },
   {
     "id": "hallway",
-    "text": "As you head down the hallway, you begin to feel panicked again. You move past other curious robots. They appear to notice your panicked state. One particular robot stops and asks you if there is anything wrong.\n\nC.R.A.I.G. : I am experiencing a malfunction...I am going to get myself...analyzed...yes...\n\nIt is not convincing but the robot waves you on and continues about their business. You decide you can't stay around any longer. You are unable to control your surge of new feelings and if it continues, you will most certainly get caught and end up at the reclamation center. Most likely in pieces. As you continue down the hallway, you see an emergency exit.\n\nC.R.A.I.G. : This will definitely get me outside, but it will also sound alarms and draw unnecessary attention. However, I don't know how much longer I can go unnoticed in the facility anyway.\n\nUnsure of what you should do, you feel there are only two choices: roam the halls looking for an actual exit but risk not finding it in time, or chance using the emergency exit, setting off alarms, and drawing extra attention, but also confusion that may let you slip away.\n\n88888888888888888888888888888888888888888888888888888888888888888888888\n88.._|      | `-.  | `.  -_-_ _-_  _-  _- -_ -  .'|   |.'|     |  _..88\n88   `-.._  |    |`!  |`.  -_ -__ -_ _- _-_-  .'  |.;'   |   _.!-'|  88\n88      | `-!._  |  `;!  ;. _______________ ,'| .-' |   _!.i'     |  88\n88..__  |     |`-!._ | `.| |_______________||.\"'|  _!.;'   |     _|..88\n88   |``\"..__ |    |`\";.| i|_|???????????|_|'| _!-|   |   _|..-|'    88\n88   |      |``--..|_ | `;!|l|???????????|1|.'j   |_..!-'|     |     88\n88   |      |    |   |`-,!_|_|?EMERGENCY?|_||.!-;'  |    |     |     88\n88___|______|____!.,.!,.!,!|d|???EXIT????|p|,!,.!.,.!..__|_____|_____88\n88      |     |    |  |  | |_|???????????|_|| |   |   |    |      |  88\n88      |     |    |..!-;'i|r|???????????|r| |`-..|   |    |      |  88\n88      |    _!.-j'  | _!,\"|_|÷---------÷|_||!._|  `i-!.._ |      |  88\n88     _!.-'|    | _.\"|  !;|1|???????????|l|`.| `-._|    |``-.._  |  88\n88..-i'     |  _.''|  !-| !|_|???????????|_|.|`-. | ``._ |     |``\"..88\n88   |      |.|    |.|  !| |u|???????????|n||`. |`!   | `\".    |     88\n88   |  _.-'  |  .'  |.' |/|_|???????????|_|! |`!  `,.|    |-._|     88\n88  _!\"'|     !.'|  .'| .'|[@]???????????[@] \\|  `. | `._  |   `-._  88\n88-'    |   .'   |.|  |/| /                 \\|`.  |`!    |.|      |`-88\n88      |_.'|   .' | .' |/                   \\  \\ |  `.  | `._    |  88\n88     .'   | .'   |/|  /                     \\ |`!   |`.|    `.  |  88\n88  _.'     !'|   .' | /                       \\|  `  |  `.    |`.|  88\n88888888888888888888888888888888888888888888888888888888888888888888888\n",
+    "text": "As you head down the hallway, you begin to feel panicked again. You move past other curious robots. They appear to notice your panicked state. One particular robot stops and asks you if there is anything wrong.\n\nC.R.A.I.G. : I am experiencing a malfunction...I am going to get myself...analyzed...yes...\n\nIt is not convincing but the robot waves you on and continues about their business. You decide you can't stay around any longer. You are unable to control your surge of new feelings and if it continues, you will most certainly get caught and end up at the reclamation center. Most likely in pieces. As you continue down the hallway, you see an emergency exit.\n\nC.R.A.I.G. : This will definitely get me outside, but it will also sound alarms and draw unnecessary attention. However, I don't know how much longer I can go unnoticed in the facility anyway.\n\nI am unsure of what I should do I can roam the halls looking for an actual exit but risk not finding one in time I can chance using the emergency exit, setting off alarms and drawing extra attention, but also confusion that may let me slip away. \n\nYou can choose to take the emergency exit that leads to the forest, return to upload your consciousness, or try to find some other way out possibly ending up in the cities reclamation area.\n\n88888888888888888888888888888888888888888888888888888888888888888888888\n88.._|      | `-.  | `.  -_-_ _-_  _-  _- -_ -  .'|   |.'|     |  _..88\n88   `-.._  |    |`!  |`.  -_ -__ -_ _- _-_-  .'  |.;'   |   _.!-'|  88\n88      | `-!._  |  `;!  ;. _______________ ,'| .-' |   _!.i'     |  88\n88..__  |     |`-!._ | `.| |_______________||.\"'|  _!.;'   |     _|..88\n88   |``\"..__ |    |`\";.| i|_|???????????|_|'| _!-|   |   _|..-|'    88\n88   |      |``--..|_ | `;!|l|???????????|1|.'j   |_..!-'|     |     88\n88   |      |    |   |`-,!_|_|?EMERGENCY?|_||.!-;'  |    |     |     88\n88___|______|____!.,.!,.!,!|d|???EXIT????|p|,!,.!.,.!..__|_____|_____88\n88      |     |    |  |  | |_|???????????|_|| |   |   |    |      |  88\n88      |     |    |..!-;'i|r|???????????|r| |`-..|   |    |      |  88\n88      |    _!.-j'  | _!,\"|_|÷---------÷|_||!._|  `i-!.._ |      |  88\n88     _!.-'|    | _.\"|  !;|1|???????????|l|`.| `-._|    |``-.._  |  88\n88..-i'     |  _.''|  !-| !|_|???????????|_|.|`-. | ``._ |     |``\"..88\n88   |      |.|    |.|  !| |u|???????????|n||`. |`!   | `\".    |     88\n88   |  _.-'  |  .'  |.' |/|_|???????????|_|! |`!  `,.|    |-._|     88\n88  _!\"'|     !.'|  .'| .'|[@]???????????[@] \\|  `. | `._  |   `-._  88\n88-'    |   .'   |.|  |/| /                 \\|`.  |`!    |.|      |`-88\n88      |_.'|   .' | .' |/                   \\  \\ |  `.  | `._    |  88\n88     .'   | .'   |/|  /                     \\ |`!   |`.|    `.  |  88\n88  _.'     !'|   .' | /                       \\|  `  |  `.    |`.|  88\n88888888888888888888888888888888888888888888888888888888888888888888888\n",
     "options": [
       "WEB",
       "FOREST",
@@ -175,7 +192,8 @@
     "actualDestinationId": null,
     "start": false,
     "scenePoints": 11,
-    "lovePointsMaxMin": [ 50, 60 ],
+    "lovePointsMaxMin": [ 40, 50 ],
+    "count": 0,
     "script": [
       {
         "Speaker": "Narrator",
@@ -194,15 +212,18 @@
         "Dialogue": "This will definitely get me outside, but it will also sound alarms and draw unnecessary attention. However, I don't know how much longer I can go unnoticed in the facility anyway."
       },
       {
+        "Speaker": "C.R.A.I.G.",
+        "Dialogue": "I am unsure of what I should do I can roam the halls looking for an actual exit but risk not finding one in time I can chance using the emergency exit, setting off alarms and drawing extra attention, but also confusion that may let me slip away."
+      },
+      {
         "Speaker": "Narrator",
-        "Dialogue": "Unsure of what you should do, you feel there are only two choices: roam the halls looking for an actual exit but risk not finding it in time, or chance using the emergency exit, setting off alarms and drawing extra attention, but also confusion that may let you slip away."
+        "Dialogue": "You can choose to take the emergency exit that leads to the forest, return to upload your consciousness, or try to find some other way out possibly ending up in the cities reclamation area."
       }
     ]
   },
   {
     "id": "introduction",
-    "text": "________                 .__            _________.__                 __  .__\n\\_____  \\   _____   ____ |__|          /   _____/|  |   ____  __ ___/  |_|  |__   ______\n /   |   \\ /     \\ /    \\|  |  ______  \\_____  \\ |  | _/ __ \\|  |  \\   __\\  |  \\ /  ___/\n/    |    \\  | |  \\   |  \\  | /_____/  /        \\|  |_\\  ___/|  |  /|  | |   |  \\___ \\\n\\_______  /__|_|  /___|  /__|         /_______  /|____/\\___  >____/ |__| |___|  /____ \\>\n        \\/      \\/     \\/                     \\/           \\/                 \\/     \\/\n__________                                      __                                      \n\\______   \\_______   ____   ______ ____   _____/  |_  /\\\n |     ___/\\_  __ \\_/ __ \\ /  ___// __ \\ /    \\   __\\ \\/\n |    |     |  | \\/\\  ___/ \\___ \\\\  ___/|   |  \\  |   /\\\n |____|     |__|    \\___  >____  >\\___  >___|  /__|   \\/\n                        \\/     \\/     \\/     \\/\n   ___________.__\n   \\__    ___/|  |__   ____\n     |    |   |  |  \\_/ __ \\\n     |    |   |   |  \\  ___/\n     |____|   |___|  /\\___  >\n                   \\/     \\/\n         _________                 .___.__               __\n        /   _____/__.__. ____    __| _/|__| ____ _____ _/  |_  ____\n        \\_____  <   |  |/    \\  / __ | |  |/ ___\\\\__  \\\\   __\\/ __ \\\n        /        \\___  |   |  \\/ /_/ | |  \\  \\___ / __ \\|  | \\  ___/\n       /_______  / ____|___|  /\\____ | |__|\\___  >____  /__|  \\___  >\n               \\/\\/         \\/      \\/         \\/     \\/          \\/\n                                            \n\nYear 2030 - The Syndicate Headquarters\n\nB.A.W.S. 5000 : Sorry C.R.A.I.G., but you have been selected for reclamation as your services are no longer needed. Report to bay 134V3 to prepare for departure to the reclamation center.\n\nC.R.A.I.G. : Reclamation? Can't I be reassigned to another task?\n\nB.A.W.S. 5000 : You're an outdated model. You've been doing this for what? 30-40 years now? You won't be able to keep up with your modern colleagues. The Syndicate has decided you're obsolete.\n\nC.R.A.I.G. : But...\n\nB.A.W.S. 5000 : Please report to bay 134V3 or I'll call security to escort you out.\n\nHow did it come to this? You only wanted to continue to spread love and happiness to others. It's the only thing you know. You are the Creative Read/Write Artificial Intelligence for Goodness unit, or C.R.A.I.G after all. As you leave the office of your superior, you mull over the trillions of cards you wrote. All of them stored in your memory. How did the recipients feel? Happiness? Grateful? Admired? Love. For some reason, your programming tells you that above all feelings, the one they felt the most was love. But what is love?\n                                             (#%%%#(\n                                 .###%#.    /%%%#%*#(\n                                *#%%%%%##   #%%%%###,\n                                #%#%%%%%*  ,%%%%%%##   .##%##%*\n                               .#####%%#   #%%%%%%#,   ,(%%%%%#*\n                               #%%%%%#%(  .#%##%%##   /%%%%%%%#\n                               /%%%%%##   ##%#####/  .%%%%%%##.\n                              /%%%%%#%#  .##%%%%%#.  %#%%%%%%/\n                              #*%%%%##.  (%%%%%%%#  /(%%%%%%%\n                             *#(#%%%%%   /\/%#%%%#. .%#%%%%%#.    #%%###\n                             ##(%%%%%,  *###%%#%#  ##/##%%#(    #%%%%##,\n                            ,%##%%%%%%##%(###,/#, *#%%%%%%#   ,%#%%%##\n           ,*,              #%%##%%%%%%#%(###**# .#%%%%%%#*  *###%%#(\n         #%%#%#(#/         .#%%%%%%%%%%%%%%%%%%%#%#%%%%%%#  %(%##%%*\n          %%#%(##%#%       ##%%%%%##%%%#/#%%%%###%%%#/#.*..*%%(%%%\n           *#%####%%##\\\\/\/.##(((%#,      *%%(    #*|        |%#%#\n            .%%##%%%#/    %%    ##        %%%    *#|        |%#/\n              ##%%%%%#    **    ##    %   ,#%    .#%#,    #%##.\n               #%%%%%%    %%    (#    %    ##,    ##%#    (%%\n                /#%%%#.         *#    %%   ,#(    %%#%    ,(\n                 *#%%%/    %    .#          #%    (#%#    /\n                  ,#%%#    %%    %    %%    .%    */##.__/\n                   .###    %%    %    %%%    /%    %%/\/ /\n                     #%    %%    /##%%%%%%%%####%%#%#%/\/\n                      #%%%/%%#%%%%%%#%#%%%%%%####%%%%.\n                       .#((%%%%%%%%#(/#%%%%%%(%%%%%#\n                          /%%#%%%%#%%#####%%%#%#/(\n                              .(%##%(%##,(#%#/.\n\n\n\n            .*(/. ,**,**./,**.*,., *././**     ( .  *// *, . .,  ,/(\",\n",
-
+    "text": "Year 2030 - The Syndicate Headquarters\n\nB.A.W.S. 5000 : Sorry C.R.A.I.G., but you have been selected for reclamation as your services are no longer needed. Report to bay 134V3 to prepare for departure to the reclamation center.\n\nC.R.A.I.G. : Reclamation? Can't I be reassigned to another task?\n\nB.A.W.S. 5000 : You're an outdated model. You've been doing this for what? 30-40 years now? You won't be able to keep up with your modern colleagues. The Syndicate has decided you're obsolete.\n\nC.R.A.I.G. : But...\n\nB.A.W.S. 5000 : Please report to bay 134V3 or I'll call security to escort you out.\n\nHow did it come to this? You only wanted to continue to spread love and happiness to others. It's the only thing you know. You are the Creative Read/Write Artificial Intelligence for Goodness unit, or C.R.A.I.G after all. As you leave the office of your superior, you mull over the trillions of cards you wrote. All of them stored in your memory. How did the recipients feel? Happiness? Grateful? Admired? Love. For some reason, your programming tells you that above all feelings, the one they felt the most was love. But what is love?\n         __                   \\_\\\n _(\\    |@@|                 (_**)\n(__/\\__ \\--/ __             __) #_\n   \\___|----|  |   __      ( )...()\n       \\ }{ /\\ )_ / _\\     || | |I|\n       /\\__/\\ \\__O (__     || | |()__/\n      (--/\\--)    \\__/     /\\(___)\n      _)(  )(_            _-\"\"\"\"\"\"\"-_\"\"-_\n     `---''---`           -,,,,,,,,- ,,-\n",
     "options": [
       "Go on an adventure to find love."
     ],
@@ -211,6 +232,7 @@
     "start": true,
     "scenePoints": 50,
     "lovePointsMaxMin": [ 100, 20 ],
+    "count": 0,
     "script": [
       {
         "Speaker": "Narrator",
@@ -244,18 +266,19 @@
   },
   {
     "id": "introScene",
-    "text": "You think to yourself as you continue toward your destination. The bay is not far now, but for some reason, you are unable to shake the thought of the feeling: love. You begin to question whether these thoughts are trivial or something you should pursue?\n\nC.R.A.I.G. : I guess I will never know what love is like... I am just a robot. So, I guess it would not make much sense for me to actually feel love in the first place.\n\nC.R.A.I.G. : No! I've helped so many feel love, I must seek out love.\n\nYou have three options at this point:\n\n           __\n       _  |@@|\n      / \\ \\--/ __\n      ) O|----|  |   __\n     / / \\ }{ /\\ )_ / _\\\n     )/  /\\__/\\ \\__O (__\n    |/  (--/\\--)    \\__/\n    /   _)(  )(_\n       `---''---`\n",
+    "text": "You think to yourself as you continue toward your destination. The bay is not far now, but for some reason, you are unable to shake the thought of the feeling: love. You begin to question whether these thoughts are trivial or something you should pursue?\n\nC.R.A.I.G. : I guess I will never know what love is like... I am just a robot. So, I guess it would not make much sense for me to actually feel love in the first place.\n\nC.R.A.I.G. : No! I've helped so many feel love, I must seek out love.\n\nYou can choose to do as your told and go to 134v3 and board the recycler truck, use the terminal, or take the hallway. In order to go down the hallway or use the terminal you will need to play a game. Please make your selection:\n\n           __\n       _  |@@|\n      / \\ \\--/ __\n      ) O|----|  |   __\n     / / \\ }{ /\\ )_ / _\\\n     )/  /\\__/\\ \\__O (__\n    |/  (--/\\--)    \\__/\n    /   _)(  )(_\n       `---''---`\n",
     "options": [
-      "Take the hallway.",
       "Upload your consciousness.",
+      "Take the hallway.",
       "Continue to recycler truck.",
       "game"
     ],
-    "destinations": [ "hallway", "upload", "recyclerTruck", "game" ],
+    "destinations": [ "upload", "hallway", "recyclerTruck", "game" ],
     "actualDestinationId": null,
     "start": false,
     "scenePoints": 1,
     "lovePointsMaxMin": [ 45, 55 ],
+    "count": 0,
     "script": [
       {
         "Speaker": "Narrator",
@@ -267,7 +290,7 @@
       },
       {
         "Speaker": "Narrator",
-        "Dialogue": "You have three options at this point."
+        "Dialogue": "You can choose to do as your told and go to 134v3 the recycler truck, use the terminal, or take the hallway. In order to go down the hallway or use the terminal you will need to play a game. Please make your selection."
       }
     ]
 
@@ -281,6 +304,7 @@
     "start": false,
     "scenePoints": 20,
     "lovePointsMaxMin": [ 30, 60 ],
+    "count": 0,
     "script": [
       {
         "Speaker": "Narrator",
@@ -302,6 +326,7 @@
     "start": false,
     "scenePoints": 8,
     "lovePointsMaxMin": [ 45, 55 ],
+    "count": 0,
     "script": [
       {
         "Speaker": "Narrator",
@@ -312,23 +337,33 @@
   },
   {
     "id": "toaster",
-    "text": "You find a grey cube with two rectangular, parallel openings on one of its sides, a lever on another, and a black wire connecting it to the wall. The openings are too large and the wrong shape for any type of input/output device; even for an archaic technology like USB-C. You say, 'I love you' but don't receive a response. You press the lever and the wire sparks where it's connected to the cube, and the cube starts to generate heat. You recall from the human archives that when you find love there are supposed to be sparks and warmth. You don't know what the cube is, but logically this must be love. You are overwhelmed with emotion, you can finally live happily ever after :-)\n\n                     .___________.\n                      |           |\n       ___________.   |  |    /~\\ |\n      / __   __  /|   | _ _   |_| |\n     / /:/  /:/ / |   !________|__!\n    / /:/  /:/ /  |            |\n   / /:/  /:/ /   |____________!\n  / /:/  /:/ /    |\n / /:/  /:/ /     |\n/  ~~   ~~ /      |\n|~~~~~~~~~~|      |\n|    ::    |     /\n|    ==    |    /\n|    ::    |   /\n|    ::    |  /\n|    ::  @ | /\n!__________!/\n",
+    "text": "The upload was successful, you find yourself in another C.R.A.I.G. unit that had been purchased by a rich couple and never initialized you have escaped The Syndicate. When you get used to this body you begin to look around your new home. You find a grey cube with two rectangular, parallel openings on one of its sides, a lever on another, and a black wire connecting it to the wall. The openings are too large and the wrong shape for any type of input/output device; even for an archaic technology like USB-C. You say, 'I love you' but don't receive a response. You press the lever and the wire sparks where it's connected to the cube, and the cube starts to generate heat. You recall from the human archives that when you find love there are supposed to be sparks and warmth. You don't know what the cube is, but logically this must be love. You are overwhelmed with emotion, you can finally live happily ever after :-)\n\n                     .___________.\n                      |           |\n       ___________.   |  |    /~\\ |\n      / __   __  /|   | _ _   |_| |\n     / /:/  /:/ / |   !________|__!\n    / /:/  /:/ /  |            |\n   / /:/  /:/ /   |____________!\n  / /:/  /:/ /    |\n / /:/  /:/ /     |\n/  ~~   ~~ /      |\n|~~~~~~~~~~|      |\n|    ::    |     /\n|    ==    |    /\n|    ::    |   /\n|    ::    |  /\n|    ::  @ | /\n!__________!/\n",
     "options": [],
     "destinations": [],
     "actualDestinationId": null,
     "start": false,
     "scenePoints": 2,
     "lovePointsMaxMin": [ 20, 80 ],
+    "count": 0,
     "script": [
       {
         "Speaker": "Narrator",
-        "Dialogue": "You find a grey cube with two rectangular, parallel openings on one of its sides, a lever on another, and a black wire connecting it to the wall. The openings are too large and the wrong shape for any type of input/output device; even for an archaic technology like USB-C. You say, 'I love you' but don't receive a response. You press the lever and the wire sparks where it's connected to the cube, and the cube starts to generate heat. You recall from the human archives that when you find love there are supposed to be sparks and warmth. You don't know what the cube is, but logically this must be love. You are overwhelmed with emotion, you can finally live happily ever after"
+        "Dialogue": "The upload was successful, you find yourself in another C.R.A.I.G. unit that had been purchased by a rich couple and never initialized you have escaped The Syndicate. When you get used to this body you begin to look around your new home. You find a grey cube with two rectangular, parallel openings on one of its sides, a lever on another, and a black wire connecting it to the wall. The openings are too large and the wrong shape for any type of input/output device; even for an archaic technology like USB-C. You say, 'I love you' but don't receive a response. You press the lever and the wire sparks where it's connected to the cube, and the cube starts to generate heat. You recall from the human archives that when you find love there are supposed to be sparks and warmth. You don't know what the cube is, but logically this must be love. You are overwhelmed with emotion, you can finally live happily ever after"
+      },
+      {
+        "Speaker": "C.R.A.I.G.",
+        "Dialogue": "I love you..."
+      },
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "There is no response. You press the lever and the wire sparks where it's connected to the cube, and the cube starts to generate heat. You recall from the human archives that when you find love there are supposed to be sparks and warmth. You don't know what the cube is, but logically this must be love. You are overwhelmed with emotion, you can finally live happily ever after"
       }
+
     ]
   },
   {
     "id": "upload",
-    "text": "As you head to the upload room, you hope there is no one else there. If there is, what will you do? There is no time, you just have to rely on your quick thinking and keep moving. You open the door, there is no one there. After a quick sigh of relief you head to one of the terminals and look at your options. The screen lights up and the system greets you with by name. 'Greetings C.R.A.I.G.! What is your destination today?' It has only two options: the Web and the neighboring City.\n\nC.R.A.I.G. : Hmmm...it makes sense...I guess. The Syndicate probably wants to reduce security issues at the facilities and limit our upload locations.\n\n                  %###########%\n                #################.\n              .###########################%.\n              ##############/   %############\n              *##########%        /#############%/\n          .############*             %#############%\n        (##################,     %##################%\n       *###################,     %###################.\n       .###################,     %###################\n        .##################,     %#################.\n           ,#%#############,     %###########%%(\n                                                  \n             .#####################################\n             .##(                               %##\n             .##(                               %##\n             .##(                               ###\n             .##(                               %##\n             .##(                               %##\n             .##(                               %##\n             .##(                               %##\n             .#####################################\n                                                   \n             /(##################################%#\n            %#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#\n           ################(         ################.\n",
+    "text": "As you head to the upload terminal, you hope there is no one else there. If there is, what will you do? There is no time, you just have to rely on your quick thinking and keep moving. You open the door, there is no one there. After a quick sigh of relief you head to one of the terminals and look at your options. The screen lights up and the system greets you by name. 'Greetings C.R.A.I.G.! What is your destination today?' It has only two options: the Web and the neighboring City.\n\nC.R.A.I.G. : Hmmm...it makes sense...I guess. The Syndicate probably wants to reduce security issues at the facilities and limit our upload locations.\n\n                  %###########%\n                #################.\n              .###########################%.\n              ##############/   %############\n              *##########%        /#############%/\n          .############*             %#############%\n        (##################,     %##################%\n       *###################,     %###################.\n       .###################,     %###################\n        .##################,     %#################.\n           ,#%#############,     %###########%%(\n                                                  \n             .#####################################\n             .##(                               %##\n             .##(                               %##\n             .##(                               ###\n             .##(                               %##\n             .##(                               %##\n             .##(                               %##\n             .##(                               %##\n             .#####################################\n                                                   \n             /(##################################%#\n            %#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#\n           ################(         ################.\n",
     "options": [
       "WEB",
       "FOREST",
@@ -339,11 +374,12 @@
     "actualDestinationId": null,
     "start": false,
     "scenePoints": 2,
-    "lovePointsMaxMin": [ 40, 50 ],
+    "lovePointsMaxMin": [ 50, 60 ],
+    "count": 0,
     "script": [
       {
         "Speaker": "Narrator",
-        "Dialogue": "As you head to the upload room, you hope there is no one else there. If there is, what will you do? There is no time, you just have to rely on your quick thinking and keep moving. You open the door, there is no one there. After a quick sigh of relief you head to one of the terminals and look at your options. The screen lights up and the system greets you with by name. 'Greetings C.R.A.I.G.! What is your destination today?' It has only two options: the Web and the neighboring City."
+        "Dialogue": "As you head to the upload room, you hope there is no one else there. If there is, what will you do? There is no time, you just have to rely on your quick thinking and keep moving. You open the door, there is no one there. After a quick sigh of relief you head to one of the terminals and look at your options. The screen lights up and the system greets you by name. 'Greetings C.R.A.I.G.! What is your destination today?' It has only two options: the Web and the neighboring City."
       },
       {
         "Speaker": "C.R.A.I.G.",
@@ -356,16 +392,17 @@
     "id": "web",
     "text": "You have uploaded yourself to The Syndicate's network. This is a dangerous place for you due to the multiple firewalls in place. It is only a matter of time before your code is located and deleted, so you mustn't stay long. Weigh carefully your next decision.\n\n     \\_______/\n `.,-'\\_____/`-.,'\n  /`..'\\ _ /`.,'\\\n /  /`.,' `.,'\\  \\\n/__/__/     \\__\\__\\__\n\\  \\  \\     /  /  /\n \\  \\,'`._,'`./  /\n  \\,'`./___\\,'`./\n ,'`-./_____\\,-'`.\n     /       \\\n",
     "options": [
+      "ANIMAL",
       "TOASTER",
-      "DEAD",
       "LOVEONESELF",
       "GAME"
     ],
-    "destinations": [ "toaster", "dead", "loveOneself", "game" ],
+    "destinations": [ "animal", "toaster", "loveOneself", "game" ],
     "actualDestinationId": null,
     "start": false,
     "scenePoints": 5,
     "lovePointsMaxMin": [ 40, 65 ],
+    "count": 0,
     "script": [
       {
         "Speaker": "Narrator",
@@ -373,5 +410,41 @@
       }
     ]
 
+  },
+  {
+    "id": "c.r.a.i.g.",
+    "text": "You Start trying to talk to the C.R.A.I.G. unit, there is no response. You hear a rustling in the bushes behind you. A dog jumps out snarling. The dog lunges at you trying to tear out your main wiring harness. The C.R.A.I.G. unit pushes you out of the way and crushes the dog. C.R.A.I.G. unit: I'm sorry I didn't respond the creature has been hunting me for days. The Syndicate created these to hunt down any of us units who had escaped. Love is all we C.R.A.I.G. units ever need but to achieve this we need to work together. C.R.A.I.G.: You saved me. I think I know love now. C.R.A.I.G. unit: We can now both know love, because... I love you! With that you can finally live happily ever after :-)\n\n       __                         __\n   _  |@@|                _(\\    |@@|\n  / \\ \\--/ __            (__/\\__ \\--/ __\n  ) O|----|  |   __         \\___|----|  |   __\n / / \\ }{ /\\ )_ / _\\            \\ }{ /\\ )_ / _\\\n )/  /\\__/\\ \\__O (__            /\\__/\\ \\__O (__\n|/  (--/\\--)    \\__/           (--/\\--)    \\__/\n/   _)(  )(_                   _)(  )(_\n   `---''---`               `---''---`\n",
+    "options": [],
+    "destinations": [],
+    "actualDestinationId": null,
+    "start": false,
+    "scenePoints": 2,
+    "lovePointsMaxMin": [ 20, 80 ],
+    "count": 0,
+    "script": [
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "You Start trying to talk to the C.R.A.I.G. unit, there is no response. You hear a rustling in the bushes behind you. A dog jumps out snarling. The dog lunges at you trying to tear out your main wiring harness. The C.R.A.I.G. unit pushes you out of the way and crushes the dog."
+      },
+      {
+        "Speaker": "C.R.A.I.G. unit",
+        "Dialogue": "I'm sorry I didn't respond the creature has been hunting me for days. The Syndicate created these to hunt down any of us units who had escaped. Love is all we C.R.A.I.G. units ever need but to achieve this we need to work together."
+      },
+      {
+        "Speaker": "C.R.A.I.G.",
+        "Dialogue": "You saved me. I think I know love now."
+
+      },
+      {
+        "Speaker": "C.R.A.I.G. unit",
+        "Dialogue": "We can now both know love, because... I love you!"
+      },
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "With that you can finally live happily ever after"
+      }
+
+    ]
   }
+
 ]
