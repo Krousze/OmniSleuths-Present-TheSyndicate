@@ -21,6 +21,7 @@ namespace TheSyndicate
         public IAction Action { get; set; }
 
 
+        public int Count { get; private set; }
         public int ScenePoints { get; private set; }
         public int[] LovePointsMaxMin { get; private set; } /// Maximum allowable points for "evil" path, Minimum allowable
                                                             /// Love Points for 'love' path.
@@ -31,7 +32,7 @@ namespace TheSyndicate
 
 
 
-        public Scene(string id, string text, string[] options, string[] destinations, bool start, int[] lovePointsMaxMin, Dictionary<string,string>[] script)
+        public Scene(string id, string text, string[] options, string[] destinations, bool start, int[] lovePointsMaxMin, Dictionary<string,string>[] script,int count)
         {
             this.Id = id;
             this.Text = text;
@@ -41,6 +42,7 @@ namespace TheSyndicate
             this.Start = start;
             this.LovePointsMaxMin = lovePointsMaxMin;
             this.dialogue = script;
+            this.Count = count;
         }
 
         public void Play()
@@ -50,6 +52,7 @@ namespace TheSyndicate
             RenderOptions(sceneTextBox);
             if (this.Options.Length > 0)
             {
+                Count++;
                 ExecutePlayerOption(sceneTextBox);
             }
         }
@@ -117,14 +120,21 @@ namespace TheSyndicate
             dialogBox.FormatText(this.Text);
             dialogBox.DrawDialogBox(this.Text);
             //tts.HearText(this.Text);
+            if (Count == 0)
+            {
             tts.HearText(this.dialogue);
+            return dialogBox;
+            }
+            else
+            {
+            return dialogBox;
+            }
 
             //playVoice(); //??Asynchronous play
 
             //returning dialogBox for information about height of dialog box
 
 
-            return dialogBox;
         }
 
         //??Play asynchronously?
@@ -337,8 +347,8 @@ namespace TheSyndicate
         private void PlayMiniGameAndUpdatePoints()
         {
             //this.Action = new KeyPressAction();
-            //this.Action = new TongueTwister();
-            this.Action = new RiddleAction();
+            this.Action = new TongueTwister();
+            //this.Action = new RiddleAction();
             Action.ExecuteActionAsync().Wait();
             player.AddLovePoints(Action.DidPlayerSucceed() ? 5 : -5);
         }

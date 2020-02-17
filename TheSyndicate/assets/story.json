@@ -8,6 +8,7 @@
     "start": false,
     "scenePoints": 25,
     "lovePointsMaxMin": [ 20, 80 ],
+    "count" : 0,
     "script": [
       {
         "Speaker": "Narrator",
@@ -61,35 +62,37 @@
   },
   {
     "id": "city",
-    "text": "You are in the city. Once beautiful, it is now an industrial wasteland. Here there is no sentient life to speak of; only The Syndicate's Watchmen and the hollow remains of a once bustling city. Your situation is dire. You are bound to be seen by one of the robotic Watchmen. You must flee...\n\n        __   __                     ___      _\n       |  | |  |      /|           |   |   _/ \\_\n       |  | |  |  _  | |__         |   |_-/     \\-_     _\n     __|  | |  |_| | | |  |/\\_     |   |  \\     /  |___|\n    |  |  | |  | | __| |  |   |_   |   |   |___|   |   |\n    |  |  |^|  | ||  | |  |   | |__|   |   |   |   |   |\n    |  |  |||  | ||  | |  |   | /\\ |   |   |   |   |   |\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~/  \\~~~~~~~~~~~~~~~~~~~~~~\n   ~ ~~  ~ ~~ ~~~ ~ ~ ~~ ~~ ~~ \\   \\__   ~  ~  ~~~~ ~~~ ~~\n ~~ ~ ~ ~~~ ~~  ~~ ~~~~~~~~~~ ~ \\   \\o\\  ~~ ~ ~~~~ ~ ~ ~~~\n   ~ ~~~~~~~~ ~ ~ ~~ ~ ~ ~ ~ ~~~ \\   \\o\\=   ~~ ~~  ~~ ~ ~~\n~ ~ ~ ~~~~~~~ ~  ~~ ~~ ~ ~~ ~ ~ ~~ ~ ~ ~~ ~~~ ~ ~ ~ ~ ~~~~\n",
+    "text": "You are in the city. Once beautiful, it is now an industrial wasteland. Here there is no sentient life to speak of; only The Syndicate's Destroyers and the hollow remains of a once bustling city. Your situation is dire. You are bound to be seen by one of the robotic Destroyers. You must flee...\n\n        __   __                     ___      _\n       |  | |  |      /|           |   |   _/ \\_\n       |  | |  |  _  | |__         |   |_-/     \\-_     _\n     __|  | |  |_| | | |  |/\\_     |   |  \\     /  |___|\n    |  |  | |  | | __| |  |   |_   |   |   |___|   |   |\n    |  |  |^|  | ||  | |  |   | |__|   |   |   |   |   |\n    |  |  |||  | ||  | |  |   | /\\ |   |   |   |   |   |\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~/  \\~~~~~~~~~~~~~~~~~~~~~~\n   ~ ~~  ~ ~~ ~~~ ~ ~ ~~ ~~ ~~ \\   \\__   ~  ~  ~~~~ ~~~ ~~\n ~~ ~ ~ ~~~ ~~  ~~ ~~~~~~~~~~ ~ \\   \\o\\  ~~ ~ ~~~~ ~ ~ ~~~\n   ~ ~~~~~~~~ ~ ~ ~~ ~ ~ ~ ~ ~~~ \\   \\o\\=   ~~ ~~  ~~ ~ ~~\n~ ~ ~ ~~~~~~~ ~  ~~ ~~ ~ ~~ ~ ~ ~~ ~ ~ ~~ ~~~ ~ ~ ~ ~ ~~~~\n",
     "options": [
-      "ANIMAL",
-      "DEAD",
+      "TOASTER",
+      "FIGHT",
       "LOVEONESELF",
       "GAME"
     ],
-    "destinations": [ "animal", "dead", "loveOneself", "game" ],
+    "destinations": [ "toaster", "fight", "loveOneself", "game" ],
     "actualDestinationId": null,
     "start": false,
     "scenePoints": 5,
     "lovePointsMaxMin": [ 40, 65 ],
+    "count": 0,
     "script": [
       {
         "Speaker": "Narrator",
-        "Dialogue": "You are in the city. Once beautiful, it is now an industrial wasteland. Here, there is no sentient life to speak of; only The Syndicate's Watchmen and the hollow remains of a once bustling city. Your situation is dire; you are bound to be seen by one of the robotic Watchmen. You must flee..."
+        "Dialogue": "You are in the city. Once beautiful, it is now an industrial wasteland. Here, there is no sentient life to speak of; only The Syndicate's Destroyers and the hollow remains of a once bustling city. Your situation is dire; you are bound to be seen by one of the robotic destroyers. You must flee..."
       }
     ]
 
   },
   {
     "id": "reminisce",
-    "text": "You sit down next to the C.R.A.I.G. unit and begin to think back over all that you have donesuddenly there is an internal alert.\n\n[BATTERY AT 4% - CRITICAL SYSTEM FAILURE DETECTED]\n\nYou do not understand why you are suddenly watching all your stored video recordings at x1000 speed, but you know humans often did this immediately prior to being decommissioned.\n\n[BATTERY AT 1% - CRITICAL SYSTEM FAILURE DETECTED]\n\nAs your video feed catches up to your live feed you wonder for a final time what... it would be like... to be lov...\n\n        @@@@@@           @@@@@@\n      @@@@@@@@@@       @@@@@@@@@@\n    @@@@@@@@@@@@@@   @@@@@@@@@@@@@@\n  @@@@@@@@@@@@@@@@@ @@@@@@@@@@@@@@@@@\n @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n      @@@@@@@@@@@@@@@@@@@@@@@@@@@\n        @@@@@@@@@@@@@@@@@@@@@@@\n          @@@@@@@@@@@@@@@@@@@\n            @@@@@@@@@@@@@@@\n              @@@@@@@@@@@\n                @@@@@@@\n                  @@@\n                   @\n",
+    "text": "You sit down next to the C.R.A.I.G. unit and begin to think back over all that you have done, suddenly there is an internal alert.\n\n[BATTERY AT 4% - CRITICAL SYSTEM FAILURE DETECTED]\n\nYou do not understand why you are suddenly watching all your stored video recordings at x1000 speed, but you know humans often did this immediately prior to being decommissioned.\n\n[BATTERY AT 1% - CRITICAL SYSTEM FAILURE DETECTED]\n\nAs your video feed catches up to your live feed you wonder for a final time what... it would be like... to be lov...\n\n        @@@@@@           @@@@@@\n      @@@@@@@@@@       @@@@@@@@@@\n    @@@@@@@@@@@@@@   @@@@@@@@@@@@@@\n  @@@@@@@@@@@@@@@@@ @@@@@@@@@@@@@@@@@\n @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n      @@@@@@@@@@@@@@@@@@@@@@@@@@@\n        @@@@@@@@@@@@@@@@@@@@@@@\n          @@@@@@@@@@@@@@@@@@@\n            @@@@@@@@@@@@@@@\n              @@@@@@@@@@@\n                @@@@@@@\n                  @@@\n                   @\n",
     "options": [],
     "destinations": [],
     "actualDestinationId": null,
     "start": false,
     "scenePoints": 0,
-    "lovePointsMaxMin": [ 40, 65],
+    "lovePointsMaxMin": [ 40, 65 ],
+    "count": 0,
     "script": [
       {
         "Speaker": "Narrator",
@@ -115,50 +118,47 @@
   },
   {
     "id": "fight",
-    "text": "HALT. YOU ARE NOT AUTHORIZED TO ACCESS THIS LOCATION!!\n\nYou turn to find a relic of the war between The Syndicate and humans, a Watchman robot. But after The Syndicate had dismantled the humans' major organizational structures and weapons systems, Watchman robots were built to annihilate the few remaining humans who managed to survive the main phase of the war. Your sensors detect that the battle robot has iniated a target lock on you, and you can't help but to feel a litle giddy with excitement. Is this what being loved feels like?\n\n\n          |_|_|              _____\n          |_|_|     ____    |*_*_*|\n _______   _\\__\\___/ __ \\____|_|_   _______\n/ ____  |=|      \\  <_+>  /      |=|  ____ \\\n~|    |\\|=|======\\\\______//======|=|/|    |~\n |_   |    \\      |      |      /    |    |\n  \\==-|     \\     |  2D  |     /     |----|~~/\n  |   |      |    |      |    |      |____/~/\n  |   |       \\____\\____/____/      /    / /\n  |   |         {----------}       /____/ /\n  |___|        /~~~~~~~~~~~~\\     |_/~|_|/\n   \\_/        |/~~~~~||~~~~~\\|     /__|\\\n   | |         |    ||||    |     (/|| \\)\n   | |        /     |  |     \\       \\\\\n   |_|        |     |  |     |\n              |_____|  |_____|\n              (_____)  (_____)\n              |     |  |     |\n              |     |  |     |\n              |/~~~\\|  |/~~~\\|\n              /|___|\\  /|___|\\\n             <_______><_______>\n",
-    "options": [
-      "In your attempt to feel love, you reach out your arms, grip the Watchman robot in a long, warm hug, when suddenly, it's lights out. The Watchman robot strikes you as you embrace him and your're knocked unconscious.",
-      "You decide to take a chance on love, and yell to the Watchman robot, 'I Love You!!' It does not phase it. He grabs you, incapacitates you with an electric shock and you lose consciousness. 'Target acquired.' As transport arrives, the Watchman robot hurls you into the truck just as you regain consciousness."
-    ],
-    "destinations": [ "dead", "recyclerTruck" ],
+    "text": "HALT. YOU ARE NOT AUTHORIZED TO ACCESS THIS LOCATION!!\n\nYou turn to find a relic of the war between The Syndicate and humans, a Destroyer robot. But after The Syndicate had dismantled the humans' major organizational structures and weapons systems, Destroyer robots were built to annihilate the few remaining humans who managed to survive the main phase of the war. Your sensors detect that the battle robot has iniated a target lock on you, and you can't help but to feel a litle giddy with excitement. Is this what being loved feels like?You decide to take a chance on love, and yell to the Destroyer robot.\n\nC.R.A.I.G.: I LOVE YOU!\n\nIt does not phase it. He grabs you, incapacitates you with an electric shock and you lose consciousness.\n\nDestroyer: Target acquired. EXTERMINATE!EXTERMINATE!EXTERMINATE!EXTERMINATE!\n\nHe grabs you, and with an electric shock nearing a mega-amp you have been terminated\n\n          |_|_|              _____\n          |_|_|     ____    |*_*_*|\n _______   _\\__\\___/ __ \\____|_|_   _______\n/ ____  |=|      \\  <_+>  /      |=|  ____ \\\n~|    |\\|=|======\\\\______//======|=|/|    |~\n |_   |    \\      |      |      /    |    |\n  \\==-|     \\     |  2D  |     /     |----|~~/\n  |   |      |    |      |    |      |____/~/\n  |   |       \\____\\____/____/      /    / /\n  |   |         {----------}       /____/ /\n  |___|        /~~~~~~~~~~~~\\     |_/~|_|/\n   \\_/        |/~~~~~||~~~~~\\|     /__|\\\n   | |         |    ||||    |     (/|| \\)\n   | |        /     |  |     \\       \\\\\n   |_|        |     |  |     |\n              |_____|  |_____|\n              (_____)  (_____)\n              |     |  |     |\n              |     |  |     |\n              |/~~~\\|  |/~~~\\|\n              /|___|\\  /|___|\\\n             <_______><_______>\n",
+    "options": [],
+    "destinations": [],
     "actualDestinationId": null,
     "start": false,
     "scenePoints": 10,
-    "lovePointsMaxMin": [ 20, 70 ],
+    "lovePointsMaxMin": [ 20, 80 ],
     "script": [
       {
-        "Speaker": "Narrator",
-        "Dialogue": "Year 2030. The Syndicate Headquarters."
-      },
-      {
-        "Speaker": "B.A.W.S. 5000",
-        "Dialogue": "Sorry C.R.A.I.G, but you have been selected for reclamation, as your services are no longer needed. Report to bay 134V3 to prepare for departure to the reclamation center."
-      },
-      {
-        "Speaker": "C.R.A.I.G.",
-        "Dialogue": "Reclamation? Can't I be reassigned to another task?"
-      },
-      {
-        "Speaker": "B.A.W.S. 5000",
-        "Dialogue": "You're an outdated model. You've been doing this for, what, 30-40 years now? You won't be able to keep up with your modern colleagues. The Syndicate has decided you're obsolete."
-      },
-      {
-        "Speaker": "C.R.A.I.G.",
-        "Dialogue": "But..."
-      },
-      {
-        "Speaker": "B.A.W.S. 5000",
-        "Dialogue": "Please report to bay 134V3 or I'll call security to escort you out!"
+        "Speaker": "Destroyer",
+        "Dialogue": "HALT. YOU ARE NOT AUTHORIZED TO ACCESS THIS LOCATION!!"
       },
       {
         "Speaker": "Narrator",
-        "Dialogue": "How did it come to this? You only wanted to continue to spread love and happiness to others. It's the only thing you know. You are the Creative Read Write Artificial Intelligence for Goodness unit, or C.R.A.I.G., after all. As you leave the office of your superior, you mull over the trillions of cards you wrote, all of them stored in your memory. How did the recipients feel? Happy? Grateful? Admired? Loved? For some reason, your programming tells you that above all feelings, the one they felt the most was love. But, what is, love?"
+        "Dialogue": "You turn to find a relic of the war between The Syndicate and humans, a Destroyer robot. But after The Syndicate had dismantled the humans' major organizational structures and weapons systems, Destroyer robots were built to annihilate the few remaining humans who managed to survive the main phase of the war. Your sensors detect that the battle robot has iniated a target lock on you, and you can't help but to feel a little giddy with excitement. Is this what being loved feels like?"
+      },
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "You decide to take a chance on love, and yell to the Destroyer robot"
+      },
+      {
+        "Speaker": "C.R.A.I.G.",
+        "Dialogue": "I Love You!!"
+      },
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "It does not phase him. The destroyer moves toward you."
+      },
+      {
+        "Speaker": "Destroyer",
+        "Dialogue": "Target acquired. EXTERMINATE!EXTERMINATE!EXTERMINATE!EXTERMINATE!"
+      },
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "He grabs you, and with an electric shock nearing a mega-amp you have been terminated"
       }
     ]
   },
   {
     "id": "forest",
-    "text": "Having run through the Emergency Exit yo ufind your self in a forest, something you have never seen with your own eyes. You have only seen the images of what remained after the excavations for more wood to make letters. It is a rather beautiful sight; so much life, so much green. Far different yet you can still hear the buzzings of life. you see what appears to be decrepit structures in the distance. As you carry on you come across what appears to be a decommisioned C.R.A.I.G. unit.\n\n      /\\              /\\\n     /\\*\\            /\\*\\\n    /\\O\\*\\          /\\O\\*\\\n   /*/\\/\\/\\        /*/\\/\\/\\\n  /\\O\\/\\*\\/\\      /\\O\\/\\*\\/\\\n /\\*\\/\\*\\/\\/\\    /\\*\\/\\*\\/\\/\\\n/\\O\\/\\/*/\\/O/\\  /\\O\\/\\/*/\\\/O/\\\n      ||              ||\n      ||              ||\n      ||              ||\n",
+    "text": "Having run through the Emergency Exit you find your self in a forest, something you have never seen with your own eyes. You have only seen the images of what remained after the excavations for more wood to make letters. It is a rather beautiful sight; so much life, so much green. Far different yet you can still hear the buzzings of life. you see what appears to be decrepit structures in the distance. As you carry on you come across what appears to be a decommisioned C.R.A.I.G. unit.\n\n      /\\              /\\\n     /\\*\\            /\\*\\\n    /\\O\\*\\          /\\O\\*\\\n   /*/\\/\\/\\        /*/\\/\\/\\\n  /\\O\\/\\*\\/\\      /\\O\\/\\*\\/\\\n /\\*\\/\\*\\/\\/\\    /\\*\\/\\*\\/\\/\\\n/\\O\\/\\/*/\\/O/\\  /\\O\\/\\/*/\\\/O/\\\n      ||              ||\n      ||              ||\n      ||              ||\n",
     "options": [
       "C.R.A.I.G.",
       "REMINISCE",
@@ -170,6 +170,7 @@
     "start": false,
     "scenePoints": 25,
     "lovePointsMaxMin": [ 40, 55 ],
+    "count": 0,
     "script": [
       {
         "Speaker": "Narrator",
@@ -192,6 +193,7 @@
     "start": false,
     "scenePoints": 11,
     "lovePointsMaxMin": [ 40, 50 ],
+    "count": 0,
     "script": [
       {
         "Speaker": "Narrator",
@@ -230,6 +232,7 @@
     "start": true,
     "scenePoints": 50,
     "lovePointsMaxMin": [ 100, 20 ],
+    "count": 0,
     "script": [
       {
         "Speaker": "Narrator",
@@ -275,6 +278,7 @@
     "start": false,
     "scenePoints": 1,
     "lovePointsMaxMin": [ 45, 55 ],
+    "count": 0,
     "script": [
       {
         "Speaker": "Narrator",
@@ -300,6 +304,7 @@
     "start": false,
     "scenePoints": 20,
     "lovePointsMaxMin": [ 30, 60 ],
+    "count": 0,
     "script": [
       {
         "Speaker": "Narrator",
@@ -321,6 +326,7 @@
     "start": false,
     "scenePoints": 8,
     "lovePointsMaxMin": [ 45, 55 ],
+    "count": 0,
     "script": [
       {
         "Speaker": "Narrator",
@@ -338,6 +344,7 @@
     "start": false,
     "scenePoints": 2,
     "lovePointsMaxMin": [ 20, 80 ],
+    "count": 0,
     "script": [
       {
         "Speaker": "Narrator",
@@ -368,6 +375,7 @@
     "start": false,
     "scenePoints": 2,
     "lovePointsMaxMin": [ 50, 60 ],
+    "count": 0,
     "script": [
       {
         "Speaker": "Narrator",
@@ -394,6 +402,7 @@
     "start": false,
     "scenePoints": 5,
     "lovePointsMaxMin": [ 40, 65 ],
+    "count": 0,
     "script": [
       {
         "Speaker": "Narrator",
@@ -411,6 +420,7 @@
     "start": false,
     "scenePoints": 2,
     "lovePointsMaxMin": [ 20, 80 ],
+    "count": 0,
     "script": [
       {
         "Speaker": "Narrator",
