@@ -30,6 +30,7 @@ namespace TheSyndicate
             //SpeechToText.RecognizeSpeechAsync().Wait();
             //Console.WriteLine("Please press <Return> to continue.");
             //Console.ReadLine();
+            Console.ForegroundColor = ConsoleColor.Gray;
             GameEngine gameEngine = new GameEngine();
             gameEngine.Start();
 
