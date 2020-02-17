@@ -25,8 +25,7 @@ namespace TheSyndicate
 
         public void Start()
         {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.CursorVisible = true;
+            //Console.CursorVisible = true;
             while (CurrentScene.HasNextScenes())
             {
                 PlayScene();
