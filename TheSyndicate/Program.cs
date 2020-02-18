@@ -28,8 +28,10 @@ namespace TheSyndicate
                 ConsoleWindow.SetMacWindow();
                 ASSETS_PATH = @"../../../../assets/";
             }
+            Console.CursorVisible = false;
             GameEngine gameEngine = new GameEngine();
             gameEngine.Start();
+
 
         }
 

@@ -14,6 +14,7 @@ namespace TheSyndicate
         private Scene CurrentScene { get; set; }
         private Player Player { get; set; }
         public static bool UseVoiceInput = false;
+        public  enum StartMenuOptions{ START, SETTING, HELP, QUIT };
 
         public GameEngine()
         {
@@ -119,12 +120,107 @@ namespace TheSyndicate
         private string ChooseGameMode()
         {
             Console.WriteLine("________                 .__            _________.__                 __  .__\n\\_____  \\   _____   ____ |__|          /   _____/|  |   ____  __ ___/  |_|  |__   ______\n /   |   \\ /     \\ /    \\|  |  ______  \\_____  \\ |  | _/ __ \\|  |  \\   __\\  |  \\ /  ___/\n/    |    \\  | |  \\   |  \\  | /_____/  /        \\|  |_\\  ___/|  |  /|  | |   |  \\___ \\\n\\_______  /__|_|  /___|  /__|         /_______  /|____/\\___  >____/ |__| |___|  /____ \\>\n        \\/      \\/     \\/                     \\/           \\/                 \\/     \\/\n__________                                      __                                      \n\\______   \\_______   ____   ______ ____   _____/  |_  /\\\n |     ___/\\_  __ \\_/ __ \\ /  ___// __ \\ /    \\   __\\ \\/\n |    |     |  | \\/\\  ___/ \\___ \\\\  ___/|   |  \\  |   /\\\n |____|     |__|    \\___  >____  >\\___  >___|  /__|   \\/\n                        \\/     \\/     \\/     \\/\n   ___________.__\n   \\__    ___/|  |__   ____\n     |    |   |  |  \\_/ __ \\\n     |    |   |   |  \\  ___/\n     |____|   |___|  /\\___  >\n                   \\/     \\/\n         _________                 .___.__               __\n        /   _____/__.__. ____    __| _/|__| ____ _____ _/  |_  ____\n        \\_____  <   |  |/    \\  / __ | |  |/ ___\\\\__  \\\\   __\\/ __ \\\n        /        \\___  |   |  \\/ /_/ | |  \\  \\___ / __ \\|  | \\  ___/\n       /_______  / ____|___|  /\\____ | |__|\\___  >____  /__|  \\___  >\n               \\/\\/         \\/      \\/         \\/     \\/          \\/\n                                            \n\na. new game | b. saved game");
+
             string userChoice = "";
-            while(userChoice != "a" && userChoice != "b")
+
+            string cursorSymbol = "\uD83D\uDC36";
+            int top = 25;
+            int cur = top;
+            var curIdx = 0;
+            int left = (Program.WINDOW_WIDTH - 7) / 2;
+            Console.SetCursorPosition(left - 2, top + curIdx);
+            Console.Write(cursorSymbol);
+            for (int i = 0; i < 4; i++)
             {
-                Console.WriteLine("You chose: " + userChoice);
-                userChoice = Console.ReadLine().ToLower();
+                Console.SetCursorPosition(left, cur++);
+                Console.WriteLine((StartMenuOptions)i);
             }
+            var input = ConsoleKey.Spacebar;
+            
+            
+           
+
+            while (input != ConsoleKey.Enter)
+            {
+                input = Console.ReadKey().Key;
+                if (input == ConsoleKey.DownArrow)
+                {
+                    Console.SetCursorPosition(left - 2, top + curIdx);
+                    Console.Write("  ");
+                    curIdx = (curIdx + 1) % 4;
+                    Console.SetCursorPosition(left - 2, top + curIdx);
+                    Console.Write(cursorSymbol);
+
+                }
+                else if (input == ConsoleKey.UpArrow)
+                {
+                    Console.SetCursorPosition(left - 2, top + curIdx);
+                    Console.Write("  ");
+                    curIdx = (curIdx + 3) % 4;
+                    Console.SetCursorPosition(left - 2, top + curIdx);
+                    Console.Write(cursorSymbol);
+
+                }
+
+            }
+
+            switch (curIdx)
+            {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    Environment.Exit(0);
+                    break;
+                default:
+                    break;
+
+            }
+
+
+            //Console.SetCursorPosition(30,30);
+            //Console.BackgroundColor = ConsoleColor.Blue;
+            //Console.WriteLine("New Game");
+            //Console.ResetColor();
+            //Console.SetCursorPosition(40, 30);
+            //Console.WriteLine("Saved Game");
+            //var input = ConsoleKey.Spacebar;
+            //while (input != ConsoleKey.Enter)
+            //{
+            //    input = Console.ReadKey().Key;
+            //    if(input == ConsoleKey.LeftArrow)
+            //    {
+            //        userChoice = "a";
+            //        Console.SetCursorPosition(30, 30);
+            //        Console.BackgroundColor = ConsoleColor.Blue;
+            //        Console.WriteLine("New Game");
+            //        Console.ResetColor();
+            //        Console.SetCursorPosition(40, 30);
+            //        Console.WriteLine("Saved Game");
+            //        Console.ResetColor();
+
+            //    }
+            //    else if (input == ConsoleKey.RightArrow)
+            //    {
+            //        userChoice = "b";
+            //        Console.SetCursorPosition(30, 30);
+            //        Console.WriteLine("New Game");
+            //        Console.BackgroundColor = ConsoleColor.Blue;
+            //        Console.SetCursorPosition(40, 30);
+            //        Console.WriteLine("Saved Game");
+            //        Console.ResetColor();
+            //    }
+
+            //}
+
+
+            
+            //while(userChoice != "a" && userChoice != "b")
+            //{
+            //    Console.WriteLine("You chose: " + userChoice);
+            //    userChoice = Console.ReadLine().ToLower();
+            //}
             return userChoice;
         }
 

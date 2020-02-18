@@ -61,7 +61,7 @@ namespace TheSyndicate
 
                 try
                 {
-                    var longRunningTask = LongRunningCancellableOperation(100, cancellationTokenSource.Token);
+                    var longRunningTask = LongRunningCancellableOperation(500, cancellationTokenSource.Token);
 
                     var result = await longRunningTask;
                     Console.WriteLine("Result {0}", result);
