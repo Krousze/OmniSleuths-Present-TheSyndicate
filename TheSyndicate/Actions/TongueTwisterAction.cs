@@ -10,8 +10,14 @@ namespace TheSyndicate.Actions
         string targetPhrase;
         string result;
         static List<string> phrases = new List<string>()
-        { "Fred fed Ted bread, and Ted fed Fred bread",
-        "The quick brown fox jumps over a lazy dog"};
+        { 
+            "Fred fed Ted bread, and Ted fed Fred bread",
+            "The quick brown fox jumps over a lazy dog",
+            "How much wood would a woodchuck chuck if a woodchuck could chuck wood?",
+            "Susie works in a shoeshine shop. Where she shines she sits, and where she sits she shines",
+            "I have got a date at a quarter to eight; I’ll see you at the gate, so don’t be late",
+            "Can you can a can as a canner can can a can?"
+        };
         private TextToSpeech tts = new TextToSpeech();
 
 

@@ -28,7 +28,6 @@ namespace TheSyndicate
                 ConsoleWindow.SetMacWindow();
                 ASSETS_PATH = @"../../../../assets/";
             }
-            Console.ForegroundColor = ConsoleColor.Gray;
             GameEngine gameEngine = new GameEngine();
             gameEngine.Start();
 

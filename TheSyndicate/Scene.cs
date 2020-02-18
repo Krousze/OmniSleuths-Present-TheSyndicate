@@ -26,7 +26,7 @@ namespace TheSyndicate
 
         public int Count { get; private set; }
         public int ScenePoints { get; private set; }
-        public int[] LovePointsMaxMin { get; private set; } /// Maximum allowable points for "evil" path, Minimum allowable
+        public int[] HumanityPointsMaxMin { get; private set; } /// Maximum allowable points for "evil" path, Minimum allowable
                                                             /// Love Points for 'love' path.
 
         private TextToSpeech tts = new TextToSpeech();
@@ -42,7 +42,7 @@ namespace TheSyndicate
             this.Destinations = destinations;
             this.ActualDestinationId = null;
             this.Start = start;
-            this.LovePointsMaxMin = lovePointsMaxMin;
+            this.HumanityPointsMaxMin = lovePointsMaxMin;
             this.dialogue = script;
             this.Count = count;
         }
@@ -75,8 +75,8 @@ namespace TheSyndicate
             char POINT_METER_BLOCK = '\u2588';
             int cursorX = Program.WINDOW_WIDTH - 10;
             int cursorY = Program.WINDOW_HEIGHT - 25;
-            Console.SetCursorPosition(cursorX - 1, cursorY--);
-            CC.Write("EVIL", Color.Red);
+            Console.SetCursorPosition(cursorX - 7, cursorY--);
+            CC.Write("Syndicate Bot", Color.Red);
             for (int i = 0; i <= 19; i++)
             {
                 Console.SetCursorPosition(cursorX, cursorY--);
@@ -90,12 +90,12 @@ namespace TheSyndicate
                 }
                 if (i == blocks)
                 {
-                    CC.Write(" <--", Color.Gray);
+                    CC.Write(" <--", Color.White);
                 }
             }
-            Console.SetCursorPosition(cursorX - 1, cursorY);
-            CC.Write("Good", Color.Green);
-            CC.ForegroundColor = Color.Gray;
+            Console.SetCursorPosition(cursorX - 4, cursorY);
+            CC.Write("Humanity", Color.Green);
+            CC.ForegroundColor = Color.White;
         }
 
         TextBox RenderText()
@@ -109,7 +109,7 @@ namespace TheSyndicate
             //tts.HearText(this.Text);
             if (Count == 0)
             {
-                tts.HearText(this.dialogue);
+                //tts.HearText(this.dialogue);
                 return dialogBox;
             }
             else
@@ -172,7 +172,7 @@ namespace TheSyndicate
 
             // ??Test Love Points implementation.
             sceneTextBox.SetBoxPosition(Console.WindowWidth - (Console.WindowWidth / 3), Console.WindowHeight - 3);
-            Console.WriteLine($"Love Points: {player.LovePointTotal} | HateMax: {this.LovePointsMaxMin[0]} | LoveMin: {this.LovePointsMaxMin[1]}");
+            Console.WriteLine($"Humanity Points: {player.LovePointTotal} | SyndicateManMax: {this.HumanityPointsMaxMin[0]} | HumanityMin: {this.HumanityPointsMaxMin[1]}");
         }
 
         private void PrintAvailableOptions(TextBox sceneTextBox)
@@ -191,8 +191,8 @@ namespace TheSyndicate
 
         private bool IsOptionAvailable(int index)
         {
-            int loveMin = this.LovePointsMaxMin[1];
-            int hateMax = this.LovePointsMaxMin[0];
+            int loveMin = this.HumanityPointsMaxMin[1];
+            int hateMax = this.HumanityPointsMaxMin[0];
 
             if(index == -1)
             {
