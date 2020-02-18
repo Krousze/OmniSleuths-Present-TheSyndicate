@@ -14,7 +14,7 @@ namespace TheSyndicate
 {
     class TextToSpeech
     {
-        private string key = "0c685477e7a34e9a98bb25d61c815137";
+        private string key = "cdd4859020d94d1ab919ad18e313cab5";
         public string text { get; set; }
         public Queue<Dictionary<string, string>> q { get; private set; } = new Queue<Dictionary<string, string>>();
         string[] voices = new string[] { "en-US-ZiraRUS" ,"en-GB-George-Apollo","en-GB-Susan-Apollo", "en-US-BenjaminRUS","en-US-JessaNeural" };

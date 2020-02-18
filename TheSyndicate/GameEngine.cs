@@ -13,10 +13,12 @@ namespace TheSyndicate
         private Dictionary<string, Scene> Scenes { get; set; }
         private Scene CurrentScene { get; set; }
         private Player Player { get; set; }
+        public static bool UseVoiceInput = false;
 
         public GameEngine()
         {
             string gameMode = ChooseGameMode();
+            ChooseVoiceAssistance();
             Player.SetInstance(gameMode);
             this.Player = Player.GetInstance();
             LoadScenes();
@@ -29,8 +31,16 @@ namespace TheSyndicate
             while (CurrentScene.HasNextScenes())
             {
                 PlayScene();
+
             }
             PlayFinalScene();
+        }
+
+        private void ChooseVoiceAssistance()
+        {
+            Console.WriteLine("Would you like to use voice assistance? (Y/N)");
+            string input = Console.ReadLine().ToLower();
+            UseVoiceInput = input == "y" ? true : false;
         }
 
         private void LoadScenes()

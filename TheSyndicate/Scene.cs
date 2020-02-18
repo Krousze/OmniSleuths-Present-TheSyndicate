@@ -5,6 +5,8 @@ using System.Collections.Generic;
 
 using TheSyndicate.Actions;
 using CC = Colorful.Console;
+using System.Text.RegularExpressions;
+using System.Threading;
 
 namespace TheSyndicate
 {
@@ -26,7 +28,6 @@ namespace TheSyndicate
         public int[] LovePointsMaxMin { get; private set; } /// Maximum allowable points for "evil" path, Minimum allowable
                                                             /// Love Points for 'love' path.
 
-        bool[] choiceArray = { true, true, true, true };
         private TextToSpeech tts = new TextToSpeech();
         public Dictionary<string,string>[] dialogue { get; private set; }
 
@@ -55,6 +56,14 @@ namespace TheSyndicate
                 Count++;
                 ExecutePlayerOption(sceneTextBox);
             }
+        }
+
+        private async Task<string> GetVoiceInput()
+        {
+            Console.WriteLine("Say something...Press ENTER when you are ready.");
+            Console.ReadLine();
+            string voiceInput = await SpeechToText.RecognizeSpeechAsync();
+            return Regex.Replace(voiceInput.ToLower(), @"[^\w\s]", "");
         }
 
         public void RenderProgressBar()
@@ -98,7 +107,7 @@ namespace TheSyndicate
             //tts.HearText(this.Text);
             if (Count == 0)
             {
-            tts.HearText(this.dialogue);
+            //tts.HearText(this.dialogue);
             return dialogBox;
             }
             else
@@ -243,7 +252,19 @@ namespace TheSyndicate
                 sceneTextBox.SetBoxPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY + 2);
                 Console.Write(spaces);
                 sceneTextBox.SetBoxPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY + 2);
-                if (Int32.TryParse(Console.ReadLine(), out int xInput))
+                string words = "";
+                if (GameEngine.UseVoiceInput)
+                {
+                    Task<string> inputTask = GetVoiceInput();
+                    inputTask.Wait();
+                    words = inputTask.Result;
+                }
+                else
+                {
+                    words = Console.ReadLine();
+                }
+
+                if (Int32.TryParse(words, out int xInput))
                 {
                     userInput = xInput;
                 }
