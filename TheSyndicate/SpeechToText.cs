@@ -8,7 +8,7 @@ namespace TheSyndicate
     {
         public static async Task<string> RecognizeSpeechAsync()
         {
-            var config = SpeechConfig.FromSubscription("0c685477e7a34e9a98bb25d61c815137", "westus2");
+            var config = SpeechConfig.FromSubscription("cdd4859020d94d1ab919ad18e313cab5", "westus2");
 
             using (var recognizer = new SpeechRecognizer(config))
             {

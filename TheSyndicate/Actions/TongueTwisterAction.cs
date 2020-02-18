@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace TheSyndicate.Actions
 {
-    public class TongueTwister : IAction
+    public class TongueTwisterAction : IAction
     {
         string targetPhrase;
         string result;
@@ -15,9 +15,9 @@ namespace TheSyndicate.Actions
         private TextToSpeech tts = new TextToSpeech();
 
 
-        public TongueTwister()
+        public TongueTwisterAction()
         {
-            SetTargetPhrase();
+           
         }
 
         public bool DidPlayerSucceed()
@@ -29,6 +29,7 @@ namespace TheSyndicate.Actions
 
         public async Task ExecuteActionAsync()
         {
+            SetTargetPhrase();
             Console.Clear();
             string instruction = $"Please say '{targetPhrase}' to the microphone.";
             Console.WriteLine(instruction);

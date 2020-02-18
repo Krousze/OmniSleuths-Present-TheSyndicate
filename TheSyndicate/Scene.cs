@@ -5,6 +5,8 @@ using System.Collections.Generic;
 
 using TheSyndicate.Actions;
 using CC = Colorful.Console;
+using System.Text.RegularExpressions;
+using System.Threading;
 
 namespace TheSyndicate
 {
@@ -19,6 +21,7 @@ namespace TheSyndicate
         public string ActualDestinationId { get; private set; }
         public bool Start { get; private set; }
         public IAction Action { get; set; }
+        public static List<IAction> Games = new List<IAction>() { new RiddleAction(), new TongueTwisterAction(), new KeyPressAction()};
 
 
         public int Count { get; private set; }
@@ -26,7 +29,6 @@ namespace TheSyndicate
         public int[] LovePointsMaxMin { get; private set; } /// Maximum allowable points for "evil" path, Minimum allowable
                                                             /// Love Points for 'love' path.
 
-        bool[] choiceArray = { true, true, true, true };
         private TextToSpeech tts = new TextToSpeech();
         public Dictionary<string,string>[] dialogue { get; private set; }
 
@@ -57,6 +59,14 @@ namespace TheSyndicate
             }
         }
 
+        private async Task<string> GetVoiceInput()
+        {
+            Console.WriteLine("Say something...Press ENTER when you are ready.");
+            Console.ReadLine();
+            string voiceInput = await SpeechToText.RecognizeSpeechAsync();
+            return Regex.Replace(voiceInput.ToLower(), @"[^\w\s]", "");
+        }
+
         public void RenderProgressBar()
         {
             
@@ -85,6 +95,7 @@ namespace TheSyndicate
             }
             Console.SetCursorPosition(cursorX - 1, cursorY);
             CC.Write("Good", Color.Green);
+            CC.ForegroundColor = Color.Gray;
         }
 
         TextBox RenderText()
@@ -98,12 +109,12 @@ namespace TheSyndicate
             //tts.HearText(this.Text);
             if (Count == 0)
             {
-            tts.HearText(this.dialogue);
-            return dialogBox;
+                tts.HearText(this.dialogue);
+                return dialogBox;
             }
             else
             {
-            return dialogBox;
+                return dialogBox;
             }
 
             //playVoice(); //??Asynchronous play
@@ -243,7 +254,19 @@ namespace TheSyndicate
                 sceneTextBox.SetBoxPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY + 2);
                 Console.Write(spaces);
                 sceneTextBox.SetBoxPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY + 2);
-                if (Int32.TryParse(Console.ReadLine(), out int xInput))
+                string words = "";
+                if (GameEngine.UseVoiceInput)
+                {
+                    Task<string> inputTask = GetVoiceInput();
+                    inputTask.Wait();
+                    words = inputTask.Result;
+                }
+                else
+                {
+                    words = Console.ReadLine();
+                }
+
+                if (Int32.TryParse(words, out int xInput))
                 {
                     userInput = xInput;
                 }
@@ -322,9 +345,9 @@ namespace TheSyndicate
 
         private void PlayMiniGameAndUpdatePoints()
         {
-            //this.Action = new KeyPressAction();
-            this.Action = new TongueTwister();
-            //this.Action = new RiddleAction();
+            Random rd = new Random();
+            int gameIdx = rd.Next(0, Games.Count);
+            this.Action = Games[gameIdx];
             Action.ExecuteActionAsync().Wait();
             player.AddLovePoints(Action.DidPlayerSucceed() ? 5 : -5);
         }

@@ -21,8 +21,7 @@ namespace TheSyndicate.Actions
 
         public RiddleAction()
         {
-            guessesRemaining = 3;
-            SetTargetRiddle();
+           
         }
 
         private void SetTargetRiddle()
@@ -34,6 +33,9 @@ namespace TheSyndicate.Actions
 
         public async Task ExecuteActionAsync()
         {
+            guessesRemaining = 3;
+            SetTargetRiddle();
+
             Console.Clear();
             string instruction = $"Here's my riddle: '{targetRiddle}' ";
             Console.WriteLine(instruction);
