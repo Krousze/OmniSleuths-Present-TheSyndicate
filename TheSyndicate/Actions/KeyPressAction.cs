@@ -11,20 +11,21 @@ namespace TheSyndicate.Actions
         private static int SECONDS_TO_PRESS_KEYS = 3;
         private static int TIMES_KEYS_MUST_BE_PRESSED = 20;
         private static string INSTRUCTIONS = $"In order to successfully complete your action you must alternate pressing the Spacebar and Tab keys at least {TIMES_KEYS_MUST_BE_PRESSED} times in {SECONDS_TO_PRESS_KEYS} seconds.";   
-        private Stopwatch Stopwatch { get; }
+        private Stopwatch Stopwatch { get; set; }
         private ConsoleKey CurrentKeyPressed { get; set; }
         private SpacebarOrTab LastKeyPressed {get; set;}
         private int SpacebarAndTabPresses { get; set; }
         
         public KeyPressAction()
         {
-            this.LastKeyPressed = SpacebarOrTab.Neither;
-            this.SpacebarAndTabPresses = 0;
-            this.Stopwatch = new Stopwatch();
+            
         }
 
         public Task ExecuteActionAsync()
         {
+            this.LastKeyPressed = SpacebarOrTab.Neither;
+            this.SpacebarAndTabPresses = 0;
+            this.Stopwatch = new Stopwatch();
             Console.CursorVisible = false;
             RenderInstructions();
             WaitForPlayerToPressEnter();

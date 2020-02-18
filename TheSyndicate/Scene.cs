@@ -21,6 +21,7 @@ namespace TheSyndicate
         public string ActualDestinationId { get; private set; }
         public bool Start { get; private set; }
         public IAction Action { get; set; }
+        public static List<IAction> Games = new List<IAction>() { new RiddleAction(), new TongueTwisterAction(), new KeyPressAction()};
 
 
         public int Count { get; private set; }
@@ -343,9 +344,9 @@ namespace TheSyndicate
 
         private void PlayMiniGameAndUpdatePoints()
         {
-            //this.Action = new KeyPressAction();
-            this.Action = new TongueTwister();
-            //this.Action = new RiddleAction();
+            Random rd = new Random();
+            int gameIdx = rd.Next(0, Games.Count);
+            this.Action = Games[gameIdx];
             Action.ExecuteActionAsync().Wait();
             player.AddLovePoints(Action.DidPlayerSucceed() ? 5 : -5);
         }
