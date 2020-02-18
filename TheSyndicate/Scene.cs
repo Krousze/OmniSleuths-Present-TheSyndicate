@@ -95,6 +95,7 @@ namespace TheSyndicate
             }
             Console.SetCursorPosition(cursorX - 1, cursorY);
             CC.Write("Good", Color.Green);
+            CC.ForegroundColor = Color.Gray;
         }
 
         TextBox RenderText()
@@ -108,12 +109,12 @@ namespace TheSyndicate
             //tts.HearText(this.Text);
             if (Count == 0)
             {
-            //tts.HearText(this.dialogue);
-            return dialogBox;
+                tts.HearText(this.dialogue);
+                return dialogBox;
             }
             else
             {
-            return dialogBox;
+                return dialogBox;
             }
 
             //playVoice(); //??Asynchronous play
