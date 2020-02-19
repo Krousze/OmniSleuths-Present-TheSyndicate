@@ -54,6 +54,7 @@ namespace TheSyndicate
                 {
                     Console.WriteLine("Press enter to cancel");
                     Console.ReadKey();
+                    
 
                     // Cancel the task
                     cancellationTokenSource.Cancel();
