@@ -172,7 +172,7 @@ namespace TheSyndicate
 
             // ??Test Love Points implementation.
             sceneTextBox.SetBoxPosition(Console.WindowWidth - (Console.WindowWidth / 3), Console.WindowHeight - 3);
-            Console.WriteLine($"Humanity Points: {player.LovePointTotal} | SyndicateManMax: {this.HumanityPointsMaxMin[0]} | HumanityMin: {this.HumanityPointsMaxMin[1]}");
+            Console.WriteLine($"Humanity Points: {player.LovePointTotal} | SyndicateBotMax: {this.HumanityPointsMaxMin[0]} | HumanityMin: {this.HumanityPointsMaxMin[1]}");
         }
 
         private void PrintAvailableOptions(TextBox sceneTextBox)
