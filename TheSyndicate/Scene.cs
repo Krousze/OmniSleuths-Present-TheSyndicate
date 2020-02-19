@@ -62,10 +62,12 @@ namespace TheSyndicate
 
         private async Task<string> GetVoiceInput()
         {
+            string msg = "Press ENTER when you are ready.";
             //Console.WriteLine("Press ENTER to stop the screen reader.");
             //Console.ReadLine();
             //Voice.StopMusic();
-            Console.WriteLine("Press ENTER when you are ready to make a selection.");
+            Console.WriteLine(msg);
+            tts.SynthesisToSpeakerAsync("Narrator", msg).Wait();
             Console.ReadLine();
             string voiceInput = await SpeechToText.RecognizeSpeechAsync();
             //Voice.pl.Resume();
@@ -142,7 +144,10 @@ namespace TheSyndicate
             if (this.Options.Length > 0)
             {
                 RenderUserOptions(sceneTextBox);
+                if (GameEngine.UseVoiceInput)
+                {
                 tts.HearText(this.dialogue2).Wait();
+                }
             }
             else
             {
@@ -198,11 +203,22 @@ namespace TheSyndicate
 
         private void RenderInstructions(TextBox sceneTextBox)
         {
-            string msg = "What will you do next? Enter the number next to the option and press enter:";
+            string msg = "What will you do next? Enter to speak the number next to the option you wish to choose:";
+            string msg1 = "What will you do next? Enter the number next to the option and press enter:";
+            string hpa = $"Your humanity points are, {player.LovePointTotal}";
             sceneTextBox.TextBoxY += 2;
             sceneTextBox.SetBoxPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY);
+            if (GameEngine.UseVoiceInput)
+            {
             Console.WriteLine(msg);
-            tts.SynthesisToSpeakerAsync("Narrator", msg).Wait();
+            tts.SynthesisToSpeakerAsync("Narrator", msg).Wait(); 
+            tts.SynthesisToSpeakerAsync("Narrator", hpa).Wait();
+            }
+            else
+            {
+                Console.WriteLine(msg1);
+            }
+
         }
 
         private void RenderQuitMessage(TextBox sceneTextBox)
@@ -328,7 +344,7 @@ namespace TheSyndicate
                     break;
                 default:
                     isValid = false;
-                    msg = "Not a valid option. Please enter again";
+                    msg = "Not a valid option.";
                     break;
 
             }
@@ -386,8 +402,8 @@ namespace TheSyndicate
         private void PlayMiniGameAndUpdatePoints()
         {
             Random rd = new Random();
-            int gameIdx = GameEngine.UseVoiceInput ? rd.Next(0,Games.Count-1) : 2;
-            this.Action = Games[gameIdx];
+            //int gameIdx = GameEngine.UseVoiceInput ? rd.Next(0,Games.Count-1) : 2;
+            this.Action = Games[1];
             Action.ExecuteActionAsync().Wait();
             player.AddLovePoints(Action.DidPlayerSucceed() ? 5 : -5);
         }

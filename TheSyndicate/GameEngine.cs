@@ -162,11 +162,13 @@ namespace TheSyndicate
             }
 
             file.Close();
-            string cursorSymbol = "\uD83D\uDC36";
+            string cursorSymbol = ">>>";
             int top = 30;
             //int left = (Program.WINDOW_WIDTH - 7) / 2;
-            Console.SetCursorPosition(optionLeft - 2, top + (int)curOption);
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.SetCursorPosition(optionLeft - 4, top + (int)curOption);
             Console.Write(cursorSymbol);
+            Console.ForegroundColor = ConsoleColor.White;
             for (int i = 0; i < 4; i++)
             {
                 Console.SetCursorPosition(optionLeft, top++);

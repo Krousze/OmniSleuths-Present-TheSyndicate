@@ -11,12 +11,12 @@ namespace TheSyndicate.Actions
         string result;
         static List<string> phrases = new List<string>()
         { 
-            "Fred fed Ted bread, and Ted fed Fred bread                            ",
-            "The quick brown fox jumps ove a lazy dog                              ",
+            "Fred fed Ted bread, and Ted fed Fred bread",
+            "The quick brown fox jumps ove a lazy dog",
             "How much wood would a woodchuck chuck if a wood chuck could chuck wood?",
             "Susie works in a shoeshine shop. Where she shines she sits, and where she sits she shines",
             "I have got a date at a quarter to eight; I’ll see you at the gate, so don’t be late",
-            "Can you can a can as a canner can can a can?                          "
+            "Can you can a can as a canner can can a can?"
         };
         private TextToSpeech tts = new TextToSpeech();
 
@@ -37,7 +37,7 @@ namespace TheSyndicate.Actions
         {
             SetTargetPhrase();
             Console.Clear();
-            string instruction = $"Please say '{targetPhrase}',\n to the microphone. Press ENTER when you are ready.";
+            string instruction = $"Please say '{targetPhrase}', to the microphone. Press ENTER when you are ready.";
             TextBox instructions = new TextBox(instruction, Program.WINDOW_WIDTH / 2, 2, Program.WINDOW_WIDTH / 4, Program.WINDOW_HEIGHT / 3);
             Console.Clear();
             instructions.SetBoxPosition(instructions.TextBoxX, instructions.TextBoxY);
@@ -78,7 +78,7 @@ namespace TheSyndicate.Actions
         {
             Random rd = new Random();
             int targetPhraseIndex = rd.Next(0, phrases.Count);
-            targetPhrase = phrases[targetPhraseIndex];
+            targetPhrase = phrases[0];
 
         }
     }
