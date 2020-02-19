@@ -1,0 +1,22 @@
+﻿Normal Game:
+-Choose New Game or Resume Game and then press "Enter"
+-Make your Selections by pressing the the Number corresponding with your choice
+-If you would choose to play a game Follow on screen prompts to play, for Riddles you will get 3 chances to answer, before each answer you press "Enter" then speak you answer.
+-For Tongue Twisters you will only get one chance to speak the correct answer, be deliberate with your anunciation.
+-For Key Input Games you will will need to hit the keys as instructed.
+
+Accessibility Game:
+-Go to Setting and toggle the Voice Assistant to "Yes" and press "Enter"
+-Then Choose New Game or Resume Game and then press "Enter"
+-Make your Selections by pressing "Enter" then speaking the Number corresponding with your choice
+-If you would choose to play a game Follow on screen prompts to play, for Riddles you will get 3 chances to answer, before each answer you press "Enter" then speak you answer.
+-For Tongue Twisters you will only get one chance to speak the correct answer, be deliberate with your anunciation.
+-Key input games are disabled in Accessibility mode
+
+Both Modes:
+-When Navigating through the story winning a game will increase you Humanity, losing will decrease your Humanity and make you more a Syndicate Bot.
+-Option #1 will require a certain level of Humanity to choose, refer to the bottom right hand corner for Minimum
+-Option #2 will require a certain level of Syndicate Bot to choose, refer to the bottom right hand corner for Maximum Humanity/Syndicate Bot levels
+-Option #3 Will follow orders and does not require game play
+-Option #4 will enter you into the game mode
+
