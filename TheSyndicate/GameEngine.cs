@@ -12,15 +12,15 @@ namespace TheSyndicate
         private string PATH_TO_STORY = Program.ASSETS_PATH + "story.json";
         private Dictionary<string, Scene> Scenes { get; set; }
         private Scene CurrentScene { get; set; }
-        private Player Player { get; set; }
+        private player Player { get; set; }
         public static bool UseVoiceInput = false;
 
         public GameEngine()
         {
             string gameMode = ChooseGameMode();
             ChooseVoiceAssistance();
-            Player.SetInstance(gameMode);
-            this.Player = Player.GetInstance();
+            player.SetInstance(gameMode);
+            this.Player = player.GetInstance();
             LoadScenes();
             LoadCurrentScene();
         }

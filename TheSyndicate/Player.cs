@@ -4,9 +4,9 @@ using System.IO;
 
 namespace TheSyndicate
 {
-    public class Player
+    public class player
     {
-        private static Player _instance;
+        private static player _instance;
         private const int MAXIMUM_BATTERY_POWER = 4;
         private static string PATH_TO_SAVE_STATE = Program.ASSETS_PATH + "SaveState.json";
         public string CurrentSceneId { get; private set; }
@@ -17,7 +17,7 @@ namespace TheSyndicate
         public int LovePointTotal { get; private set; }
 
         [JsonConstructor]
-        private Player(string currentSceneId = null,
+        private player(string currentSceneId = null,
                        int batteryPower = MAXIMUM_BATTERY_POWER, int lovePointTotal = MAXIMUM_LOVEPOINTS / 2)
         {
             this.CurrentSceneId = currentSceneId;
@@ -25,11 +25,11 @@ namespace TheSyndicate
             this.LovePointTotal = lovePointTotal;
         }
 
-        public static Player GetInstance()
+        public static player GetInstance()
         {
             if(_instance == null)
             {
-                _instance =  new Player();
+                _instance =  new player();
             }
             return _instance;
         }
@@ -38,7 +38,7 @@ namespace TheSyndicate
         {
             if(gameMode == "a")
             {
-                _instance = new Player();
+                _instance = new player();
             }
             else if (_instance == null)
             {
@@ -46,7 +46,7 @@ namespace TheSyndicate
             }
         }
 
-        private static Player GetPlayerFromSaveState()
+        private static player GetPlayerFromSaveState()
         {
             try
             {
@@ -54,14 +54,14 @@ namespace TheSyndicate
             }
             catch
             {
-                return new Player();
+                return new player();
             }
         }
 
-        private static Player ConvertSaveStateToPlayer()
+        private static player ConvertSaveStateToPlayer()
         {
             string savedPlayerDataAsJson = GetSaveState();
-            return JsonConvert.DeserializeObject<Player>(savedPlayerDataAsJson);
+            return JsonConvert.DeserializeObject<player>(savedPlayerDataAsJson);
         }
 
         public static string GetSaveState()

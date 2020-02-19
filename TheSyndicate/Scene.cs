@@ -13,7 +13,7 @@ namespace TheSyndicate
     public class Scene
     {
         public static int SAVE_OPTION = 0;
-        Player player = Player.GetInstance();
+        player player = player.GetInstance();
         public string Id { get; private set; }
         public string Text { get; private set; }
         public string[] Options { get; private set; }
@@ -109,7 +109,8 @@ namespace TheSyndicate
             //tts.HearText(this.Text);
             if (Count == 0)
             {
-                tts.HearText(this.dialogue);
+                //tts.HearText(this.dialogue);
+                Voice.PlayMusic(this.Id);
                 //return dialogBox;
             }
             //else
@@ -266,7 +267,10 @@ namespace TheSyndicate
                 {
                     words = Console.ReadLine();
                 }
-
+                if(words == "s")
+                {
+                    Voice.StopMusic();
+                }
                 if (Int32.TryParse(words, out int xInput))
                 {
                     userInput = xInput;
