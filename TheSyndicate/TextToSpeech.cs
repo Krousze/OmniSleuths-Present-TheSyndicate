@@ -85,7 +85,10 @@ namespace TheSyndicate
             while (q.Count > 0)
             {
                 if (cToken.IsCancellationRequested)
+                {
+                    q.Clear();
                     throw new TaskCanceledException("Canceled Thread");
+                }
                 var actor = q.Dequeue();
                 string spkr = actor["Speaker"];
                 string dlog = actor["Dialogue"];
@@ -94,8 +97,6 @@ namespace TheSyndicate
             //await SynthesisToSpeakerAsync();
 
         }
-
-
         public async Task SynthesisToSpeakerAsync(string actor, string actorWords)
         {
 

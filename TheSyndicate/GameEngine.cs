@@ -320,8 +320,8 @@ namespace TheSyndicate
 
         private void PlayFinalScene()
         {
-            string firstSceneId = GetFirstScene().Id;
-            player.ResetPlayerData(firstSceneId);
+            //string firstSceneId = GetFirstScene().Id;
+            //player.ResetPlayerData(firstSceneId);
             CurrentScene.Play();
         }
     }

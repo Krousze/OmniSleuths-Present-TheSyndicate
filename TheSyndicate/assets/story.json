@@ -8,7 +8,7 @@
     "start": false,
     "scenePoints": 25,
     "lovePointsMaxMin": [ 20, 80 ],
-    "count" : 0,
+    "count": 0,
     "script": [
       {
         "Speaker": "Narrator",
@@ -79,6 +79,25 @@
       {
         "Speaker": "Narrator",
         "Dialogue": "You are in the city. Once beautiful, it is now an industrial wasteland. Here, there is no sentient life to speak of; only The Syndicate's Destroyers and the hollow remains of a once bustling city. Your situation is dire; you are bound to be seen by one of the robotic destroyers. You must flee..."
+      }
+    ],
+    "optionsScript": [
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "Option 1: Upload to the City(Humanity Required 65)"
+      },
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "Option 2: Approach the incoming Robot(Syndicate Bot Required 45)"
+      },
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "Option 3: Enter The Apartment(Level of Humanity and Syndicate Bot N/A)"
+      },
+      {
+
+        "Speaker": "Narrator",
+        "Dialogue": "Option 4: Play a Game Winning adds 5 to your Humanity losing takes 5 Making you more a Syndicate Bot"
       }
     ]
 
@@ -174,14 +193,32 @@
     "script": [
       {
         "Speaker": "Narrator",
-        "Dialogue": "You have somehow stumbled upon a forest, something you have never seen with your own eyes. You have only seen the images of what remained after the excavations for more wood to make letters. It is a rather beautiful sight; so much life, so much green. Far different yet you can still hear the buzzings of life. You see what appears to be decrepit structures in the distance.   As you carry on you come across what appears to be a decommisioned C.R.A.I.G. unit."
+        "Dialogue": "Having run through the Emergency Exit you find your self in a forest, something you have never seen with your own eyes. You have only seen the images of what remained after the excavations for more wood to make letters. It is a rather beautiful sight; so much life, so much green. Far different yet you can still hear the buzzings of life. You see what appears to be decrepit structures in the distance.   As you carry on you come across what appears to be a decommisioned C.R.A.I.G. unit."
+      }
+    ],
+    "optionsScript": [
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "Option 1: Speak to the Decomissioned C.R.A.I.G. unit.(Humanity Required 55)"
+      },
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "Option 2: Sit and Reminisce(Syndicate Bot Required 40)"
+      },
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "Option 3: Return to 134V3 and board the Recycler Truck.(Level of Humanity and Syndicate Bot N/A))"
+      },
+      {
+
+        "Speaker": "Narrator",
+        "Dialogue": "Option 4: Play a Game Winning adds 5 to your Humanity losing takes 5 Making you more a Syndicate Bot"
       }
     ]
-
   },
   {
     "id": "hallway",
-    "text": "As you head down the hallway, you begin to feel panicked again. You move past other curious robots. They appear to notice your panicked state. One particular robot stops and asks you if there is anything wrong.\n\nC.R.A.I.G. : I am experiencing a malfunction...I am going to get myself...analyzed...yes...\n\nIt is not convincing but the robot waves you on and continues about their business. You decide you can't stay around any longer. You are unable to control your surge of new feelings and if it continues, you will most certainly get caught and end up at the reclamation center. Most likely in pieces. As you continue down the hallway, you see an emergency exit.\n\nC.R.A.I.G. : This will definitely get me outside, but it will also sound alarms and draw unnecessary attention. However, I don't know how much longer I can go unnoticed in the facility anyway.I am unsure of what I should do I can roam the halls looking for an actual exit but risk not finding one in time I can chance using the emergency exit, setting off alarms and drawing extra attention, but also confusion that may let me slip away. \n\nYou can choose to take the emergency exit that leads to the forest, return to upload your consciousness, or Return to 134V3 and board the Recycler Truck.\n\n88888888888888888888888888888888888888888888888888888888888888888888888\n88.._|      | `-.  | `.  -_-_ _-_  _-  _- -_ -  .'|   |.'|     |  _..88\n88   `-.._  |    |`!  |`.  -_ -__ -_ _- _-_-  .'  |.;'   |   _.!-'|  88\n88      | `-!._  |  `;!  ;. _______________ ,'| .-' |   _!.i'     |  88\n88..__  |     |`-!._ | `.| |_______________||.\"'|  _!.;'   |     _|..88\n88   |``\"..__ |    |`\";.| i|_|???????????|_|'| _!-|   |   _|..-|'    88\n88   |      |``--..|_ | `;!|l|???????????|1|.'j   |_..!-'|     |     88\n88   |      |    |   |`-,!_|_|?EMERGENCY?|_||.!-;'  |    |     |     88\n88___|______|____!.,.!,.!,!|d|???EXIT????|p|,!,.!.,.!..__|_____|_____88\n88      |     |    |  |  | |_|???????????|_|| |   |   |    |      |  88\n88      |     |    |..!-;'i|r|???????????|r| |`-..|   |    |      |  88\n88      |    _!.-j'  | _!,\"|_|÷---------÷|_||!._|  `i-!.._ |      |  88\n88     _!.-'|    | _.\"|  !;|1|???????????|l|`.| `-._|    |``-.._  |  88\n88..-i'     |  _.''|  !-| !|_|???????????|_|.|`-. | ``._ |     |``\"..88\n88   |      |.|    |.|  !| |u|???????????|n||`. |`!   | `\".    |     88\n88   |  _.-'  |  .'  |.' |/|_|???????????|_|! |`!  `,.|    |-._|     88\n88  _!\"'|     !.'|  .'| .'|[@]???????????[@] \\|  `. | `._  |   `-._  88\n88-'    |   .'   |.|  |/| /                 \\|`.  |`!    |.|      |`-88\n88      |_.'|   .' | .' |/                   \\  \\ |  `.  | `._    |  88\n88     .'   | .'   |/|  /                     \\ |`!   |`.|    `.  |  88\n88  _.'     !'|   .' | /                       \\|  `  |  `.    |`.|  88\n88888888888888888888888888888888888888888888888888888888888888888888888\n",
+    "text": "As you head down the hallway, you begin to feel panicked again. You move past other curious robots. They appear to notice your panicked state. One particular robot stops you.\n\nParticular robot: Is there something wrong with you? Are you currently malfunctioning? Do you need system analysis?\n\nC.R.A.I.G. : Experiencing a malfunction...I am going to get myself...analyzed...yes...\n\nIt is not convincing but the robot waves you on and continues about their business. You decide you can't stay around any longer. You are unable to control your surge of new feelings and if it continues, you will most certainly get caught and end up at the reclamation center. Most likely in pieces. As you continue down the hallway, you see an emergency exit.\n\nC.R.A.I.G. : This will definitely get me outside, but it will also sound alarms and draw unnecessary attention. However, I don't know how much longer I can go unnoticed in the facility anyway.I am unsure of what I should do I can roam the halls looking for an actual exit but risk not finding one in time I can chance using the emergency exit, setting off alarms and drawing extra attention, but also confusion that may let me slip away. \n\nYou can choose to take the emergency exit that leads to the forest, return to upload your consciousness, or Return to 134V3 and board the Recycler Truck.\n\n88888888888888888888888888888888888888888888888888888888888888888888888\n88.._|      | `-.  | `.  -_-_ _-_  _-  _- -_ -  .'|   |.'|     |  _..88\n88   `-.._  |    |`!  |`.  -_ -__ -_ _- _-_-  .'  |.;'   |   _.!-'|  88\n88      | `-!._  |  `;!  ;. _______________ ,'| .-' |   _!.i'     |  88\n88..__  |     |`-!._ | `.| |_______________||.\"'|  _!.;'   |     _|..88\n88   |``\"..__ |    |`\";.| i|_|???????????|_|'| _!-|   |   _|..-|'    88\n88   |      |``--..|_ | `;!|l|???????????|1|.'j   |_..!-'|     |     88\n88   |      |    |   |`-,!_|_|?EMERGENCY?|_||.!-;'  |    |     |     88\n88___|______|____!.,.!,.!,!|d|???EXIT????|p|,!,.!.,.!..__|_____|_____88\n88      |     |    |  |  | |_|???????????|_|| |   |   |    |      |  88\n88      |     |    |..!-;'i|r|???????????|r| |`-..|   |    |      |  88\n88      |    _!.-j'  | _!,\"|_|÷---------÷|_||!._|  `i-!.._ |      |  88\n88     _!.-'|    | _.\"|  !;|1|???????????|l|`.| `-._|    |``-.._  |  88\n88..-i'     |  _.''|  !-| !|_|???????????|_|.|`-. | ``._ |     |``\"..88\n88   |      |.|    |.|  !| |u|???????????|n||`. |`!   | `\".    |     88\n88   |  _.-'  |  .'  |.' |/|_|???????????|_|! |`!  `,.|    |-._|     88\n88  _!\"'|     !.'|  .'| .'|[@]???????????[@] \\|  `. | `._  |   `-._  88\n88-'    |   .'   |.|  |/| /                 \\|`.  |`!    |.|      |`-88\n88      |_.'|   .' | .' |/                   \\  \\ |  `.  | `._    |  88\n88     .'   | .'   |/|  /                     \\ |`!   |`.|    `.  |  88\n88  _.'     !'|   .' | /                       \\|  `  |  `.    |`.|  88\n88888888888888888888888888888888888888888888888888888888888888888888888\n",
     "options": [
       "Upload your consciousness.(Humanity Required 50)",
       "Use Emergency Exit.(Syndicate Bot Required 40)",
@@ -197,11 +234,15 @@
     "script": [
       {
         "Speaker": "Narrator",
-        "Dialogue": "As you head down the hallway, you begin to feel panicked again. You move past other curious robots. They appear to notice your panicked state. One particular robot stops and asks you if there is anything wrong."
+        "Dialogue": "As you head down the hallway, you begin to feel panicked again. You move past other curious robots. They appear to notice your panicked state. One particular robot stops you."
+      },
+      {
+        "Speaker": "Destroyer",
+        "Dialogue": "Is there something wrong with you? Are you currently malfunctioning? Do you need system analysis?"
       },
       {
         "Speaker": "C.R.A.I.G.",
-        "Dialogue": "I am experiencing a malfunction. I am going to get myself,analyzed,yes."
+        "Dialogue": "Experiencing a malfunction. I am going to get myself,analyzed,yes."
       },
       {
         "Speaker": "Narrator",
@@ -219,7 +260,27 @@
         "Speaker": "Narrator",
         "Dialogue": "You can choose to take the emergency exit that leads to the forest, return to upload your consciousness, or Return to 134V3 and board the Recycler Truck.."
       }
+    ],
+    "optionsScript": [
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "Option 1: Upload your consciousness.(Humanity Required 50)"
+      },
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "Option 2: Use Emergency Exit.(Syndicate Bot Required 40)"
+      },
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "Option 3: Return to 134V3 and board the Recycler Truck.(Level of Humanity and Syndicate Bot N/A)"
+      },
+      {
+
+        "Speaker": "Narrator",
+        "Dialogue": "Option 4: Play a Game Winning adds 5 to your Humanity losing takes 5 Making you more a Syndicate Bot"
+      }
     ]
+
   },
   {
     "id": "introduction",
@@ -262,7 +323,14 @@
         "Speaker": "Narrator",
         "Dialogue": "How did it come to this? You only wanted to continue to spread love and happiness to others. It's the only thing you know. After all, you are the Creative Read Write Artificial Intelligence for Goodness unit, or C.R.A.I.G. . As you leave the office of your superior, you mull over the trillions of cards you wrote, all of them stored in your memory. How did the recipients feel? Happy? Grateful? Admired? Loved? For some reason, your programming tells you that above all feelings, the one they felt the most was love. But, what is, love?"
       }
+    ],
+    "optionsScript": [
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "Option 1: Go on an adventure to find love"
+      }
     ]
+
   },
   {
     "id": "introScene",
@@ -292,7 +360,27 @@
         "Speaker": "Narrator",
         "Dialogue": "You can choose to do as your told and go to 134V3 and board the recycler truck, use the terminal, or take the hallway. In order to go down the hallway or use the terminal you will need to play a game. Please make your selection."
       }
+    ],
+    "optionsScript": [
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "Option 1: Upload your consciousness.(Humanity Required 55)"
+      },
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "Option 2: Take the hallway.(Syndicate Bot Required 45)"
+      },
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "Option 3: Continue to recycler truck.(Level of Humanity and Syndicate Bot N/A)"
+      },
+      {
+
+        "Speaker": "Narrator",
+        "Dialogue": "Option 4: Play a Game Winning adds 5 to your Humanity losing takes 5 Making you more a Syndicate Bot"
+      }
     ]
+
 
   },
   {
@@ -332,7 +420,27 @@
         "Speaker": "Narrator",
         "Dialogue": "Thunk! Your chassis bumps against the side of the truck, as it turns without slowing. This particular truck transports cargo to the reclamation center, so there is no mechanism for securing freight. After all, what does it matter if trash arrives with a few more dents? But, you are not trash. You are determined. Determined to find love, even in a hopeless place. As you arrive you consider your options: You see a terminal nearby, a Forest on the edge of town or you can enter the city."
       }
+    ],
+    "optionsScript": [
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "Option 1: Use nearby terminal to upload consciousness outside of the city(Humanity Required 55)"
+      },
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "Option 2: Make a break for the Forest(Syndicate Bot Required 45)"
+      },
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "Option 3: Continue into the City(Level of Humanity and Syndicate Bot N/A)"
+      },
+      {
+
+        "Speaker": "Narrator",
+        "Dialogue": "Option 4: Play a Game Winning adds 5 to your Humanity losing takes 5 Making you more a Syndicate Bot"
+      }
     ]
+
 
   },
   {
@@ -390,7 +498,27 @@
         "Dialogue": "You can also return and use the Emergency Exit or Return to 134V3 and board the Recycler Truck."
       }
 
+    ],
+    "optionsScript": [
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "Option 1: Upload to the WEB(Humanity Required 60)"
+      },
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "Option 2: Return and use Emergency Exit(Syndicate Bot Required 50)"
+      },
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "Option 3: Return to 134V3 and Board Recycler Truck(Level of Humanity and Syndicate Bot N/A)"
+      },
+      {
+
+        "Speaker": "Narrator",
+        "Dialogue": "Option 4: Play a Game Winning adds 5 to your Humanity losing takes 5 Making you more a Syndicate Bot"
+      }
     ]
+
 
   },
   {
@@ -398,7 +526,7 @@
     "text": "You have uploaded yourself to The Syndicate's network. This is a dangerous place for you due to the multiple firewalls in place. It is only a matter of time before your code is located and deleted, so you mustn't stay long. Weigh carefully your next decision.\n\n     \\_______/\n `.,-'\\_____/`-.,'\n  /`..'\\ _ /`.,'\\\n /  /`.,' `.,'\\  \\\n/__/__/     \\__\\__\\__\n\\  \\  \\     /  /  /\n \\  \\,'`._,'`./  /\n  \\,'`./___\\,'`./\n ,'`-./_____\\,-'`.\n     /       \\\n",
     "options": [
       "Upload to the ping outside the City(Humanity Required 65)",
-      "Upload to the City(Syndicate Bot Required 50)",
+      "Upload to the ping in the City(Syndicate Bot Required 50)",
       "Be Indecisive(Level of Humanity and Syndicate Bot N/A)",
       "Play a Game Winning adds 5 to your Humanity losing takes 5 Making you more a Syndicate Bot"
     ],
@@ -413,7 +541,27 @@
         "Speaker": "Narrator",
         "Dialogue": "You have uploaded yourself to The Syndicate's network. This is a dangerous place for you, due to the multiple firewalls in place. It is only a matter of time before your code is located and deleted, so you must not stay long. Weigh carefully your next decision."
       }
+    ],
+    "optionsScript": [
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "Option 1: Upload to the ping outside the City(Humanity Required 65)"
+      },
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "Option 2: Upload to the ping in the City(Syndicate Bot Required 50)"
+      },
+      {
+        "Speaker": "Narrator",
+        "Dialogue": "Option 3: Be Indecisive(Level of Humanity and Syndicate Bot N/A)"
+      },
+      {
+
+        "Speaker": "Narrator",
+        "Dialogue": "Option 4: Play a Game Winning adds 5 to your Humanity losing takes 5 Making you more a Syndicate Bot"
+      }
     ]
+
 
   },
   {

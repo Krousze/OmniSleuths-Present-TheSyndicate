@@ -32,9 +32,10 @@ namespace TheSyndicate
         private TextToSpeech tts = new TextToSpeech();
         public Dictionary<string, string>[] dialogue { get; private set; }
 
+        public Dictionary<string, string>[] dialogue2 { get; private set; }
 
 
-        public Scene(string id, string text, string[] options, string[] destinations, bool start, int[] lovePointsMaxMin, Dictionary<string, string>[] script, int count)
+        public Scene(string id, string text, string[] options, string[] destinations, bool start, int[] lovePointsMaxMin, Dictionary<string, string>[] script, Dictionary<string, string>[] optionsScript, int count)
         {
             this.Id = id;
             this.Text = text;
@@ -44,9 +45,9 @@ namespace TheSyndicate
             this.Start = start;
             this.HumanityPointsMaxMin = lovePointsMaxMin;
             this.dialogue = script;
+            this.dialogue2 = optionsScript;
             this.Count = count;
         }
-
         public void Play()
         {
             TextBox sceneTextBox = RenderText();
@@ -113,16 +114,13 @@ namespace TheSyndicate
             //tts.HearText(this.Text);
             if (Count == 0 && GameEngine.UseVoiceInput)
             {
-                tts.HearText(this.dialogue);
-                //Voice.PlayMusic(this.Id);
-                //return dialogBox;
+                tts.HearText(this.dialogue).Wait();
+                return dialogBox;
             }
-            //else
-            //{
-            //    return dialogBox;
-            //}
-            return dialogBox;
-
+            else
+            {
+                return dialogBox;
+            }
             //playVoice(); //??Asynchronous play
 
             //returning dialogBox for information about height of dialog box
@@ -144,6 +142,7 @@ namespace TheSyndicate
             if (this.Options.Length > 0)
             {
                 RenderUserOptions(sceneTextBox);
+                tts.HearText(this.dialogue2).Wait();
             }
             else
             {
@@ -199,10 +198,11 @@ namespace TheSyndicate
 
         private void RenderInstructions(TextBox sceneTextBox)
         {
+            string msg = "What will you do next? Enter the number next to the option and press enter:";
             sceneTextBox.TextBoxY += 2;
             sceneTextBox.SetBoxPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY);
-            string instruction = "What will you do next? Enter the number next to the option and press enter:";
-            Console.WriteLine(instruction);
+            Console.WriteLine(msg);
+            tts.SynthesisToSpeakerAsync("Narrator", msg).Wait();
         }
 
         private void RenderQuitMessage(TextBox sceneTextBox)
