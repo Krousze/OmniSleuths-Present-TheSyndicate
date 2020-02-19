@@ -17,7 +17,7 @@ namespace TheSyndicate
         public int LovePointTotal { get; private set; }
 
         [JsonConstructor]
-        private GamePlayer(string currentSceneId = null,
+        public GamePlayer(string currentSceneId = null,
                        int batteryPower = MAXIMUM_BATTERY_POWER, int lovePointTotal = MAXIMUM_LOVEPOINTS / 2)
         {
             this.CurrentSceneId = currentSceneId;

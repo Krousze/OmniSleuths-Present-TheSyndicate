@@ -37,32 +37,75 @@ namespace TheSyndicate
             }
             using (var cts = new CancellationTokenSource())
             {
+                //var keyBoardTask = Task.Run(() =>
+                //{
+                //    int cursorX = 0;
+                //    int cursorY = Program.WINDOW_HEIGHT - 3;
+                //    Console.SetCursorPosition(cursorX, cursorY);
+                //    Console.WriteLine("Press 's' to cancel active Text to Speech");
+                //    char ch;
+                //    do
+                //    {
+                //        ch = Console.ReadKey(true).KeyChar;
+
+                //        if (ch == 's')
+                //        {
+                //            // Cancel the task
+                //            Console.WriteLine("active Text to Speech Cancelling");
+                //            cts.Cancel();
+
+                //        }
+
+                //    } while (ch != 's');
+
+                //});
+
                 var keyBoardTask = Task.Run(() =>
                 {
                     int cursorX = 0;
                     int cursorY = Program.WINDOW_HEIGHT - 3;
                     Console.SetCursorPosition(cursorX, cursorY);
-                    Console.WriteLine("Press 's' to cancel active Text to Speech");
-                    char ch;
-                    do
+                    Console.WriteLine("Press any key to cancel Text-to-Speech");
+                    //char ch = 'r';
+                    //do
+                    //{
+
+                    //    ch = Console.ReadKey().KeyChar ?? 'x';//;
+
+                    //    if (ch == 's')
+                    //    {
+                    //        // Cancel the task
+                    //        Console.WriteLine("Continued");
+                    //        cts.Cancel();
+
+                    //    }
+                    //    if (this.q.Count == 0)
+                    //    {
+                    //        ch = 's';
+                    //    }
+
+                    //} while (ch != 's');
+
+                    while (!Console.KeyAvailable)
                     {
-                        ch = Console.ReadKey(true).KeyChar;
-
-                        if (ch == 's')
+                        if (this.q.Count == 0)
                         {
-                            // Cancel the task
-                            Console.WriteLine("active Text to Speech Cancelling");
-                            cts.Cancel();
-
+                            break;
                         }
-                       
-                    } while (ch != 's');
+                    }
+                    if (this.q.Count > 0)
+                    {
+                        ConsoleKeyInfo cki = Console.ReadKey(true);
+                        Console.WriteLine("active Text to Speech Cancelling");
+                    }
+
+                    cts.Cancel();
 
                 });
 
                 try
                 {
-                    await GetSpeechAsync(cts.Token);
+                    GetSpeechAsync(cts.Token).Wait();//??
 
                 }
                 catch (Exception e)
