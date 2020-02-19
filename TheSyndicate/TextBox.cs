@@ -99,49 +99,57 @@ namespace TheSyndicate
             int textStartY = TextBufferY + TextBoxY;
 
             int lastSpaceInALine;
-
-
-            while (startIndex < text.Length)
+            if (text.Length < lineWidth)
             {
-                lastSpaceInALine = CheckForLastSpaceInALine(lineWidth, endIndex);
+                boxText.Append(text);
+                SetBoxPosition(textStartX, textStartY);
+                Console.Write(boxText.ToString());
+                boxText.Clear();
+            }
 
-                newLineIndex = NEW_LINE_PATTERN.Match(text, startIndex, endIndex - startIndex).Index;
+            else {
+                while (startIndex < text.Length)
+                {
+                    lastSpaceInALine = CheckForLastSpaceInALine(lineWidth, endIndex);
 
-                //checks if \n appears before maximum lineWidth, if so, then renders up to \n and continues to next line
-                if (newLineIndex < endIndex && newLineIndex != 0)
-                {
-                    boxText.Append(text, startIndex, newLineIndex - startIndex);
-                    SetBoxPosition(textStartX, textStartY);
-                    Console.Write(boxText.ToString());
-                    startIndex = newLineIndex + 1;
-                    endIndex = startIndex + lineWidth > text.Length ? text.Length : startIndex + lineWidth;
-                    textStartY++;
-                    this.Height += 1;
-                    boxText.Clear();
-                }
-                //checks if last space in a line < endIndex, if so, renders up to last space index so it does not split words
-                //at the end of a line
-                else if (lastSpaceInALine < endIndex && endIndex - startIndex >= lineWidth)
-                {
-                    boxText.Append(text, startIndex, lastSpaceInALine - startIndex);
-                    SetBoxPosition(textStartX, textStartY);
-                    Console.Write(boxText.ToString());
-                    startIndex = lastSpaceInALine + 1;
-                    endIndex = startIndex + lineWidth > text.Length ? text.Length : startIndex + lineWidth;
-                    textStartY++;
-                    this.Height += 1;
-                    boxText.Clear();
-                }
-                else
-                {
-                    boxText.Append(text, startIndex, endIndex - startIndex);
-                    SetBoxPosition(textStartX, textStartY);
-                    Console.Write(boxText.ToString());
-                    startIndex = endIndex;
-                    endIndex = startIndex + lineWidth > text.Length ? text.Length : startIndex + lineWidth;
-                    textStartY++;
-                    this.Height += 1;
-                    boxText.Clear();
+                    newLineIndex = NEW_LINE_PATTERN.Match(text, startIndex, endIndex - startIndex).Index;
+
+                    //checks if \n appears before maximum lineWidth, if so, then renders up to \n and continues to next line
+                    if (newLineIndex < endIndex && newLineIndex != 0)
+                    {
+                        boxText.Append(text, startIndex, newLineIndex - startIndex);
+                        SetBoxPosition(textStartX, textStartY);
+                        Console.Write(boxText.ToString());
+                        startIndex = newLineIndex + 1;
+                        endIndex = startIndex + lineWidth > text.Length ? text.Length : startIndex + lineWidth;
+                        textStartY++;
+                        this.Height += 1;
+                        boxText.Clear();
+                    }
+                    //checks if last space in a line < endIndex, if so, renders up to last space index so it does not split words
+                    //at the end of a line
+                    else if (lastSpaceInALine < endIndex && endIndex - startIndex >= lineWidth)
+                    {
+                        boxText.Append(text, startIndex, lastSpaceInALine - startIndex);
+                        SetBoxPosition(textStartX, textStartY);
+                        Console.Write(boxText.ToString());
+                        startIndex = lastSpaceInALine + 1;
+                        endIndex = startIndex + lineWidth > text.Length ? text.Length : startIndex + lineWidth;
+                        textStartY++;
+                        this.Height += 1;
+                        boxText.Clear();
+                    }
+                    else
+                    {
+                        boxText.Append(text, startIndex, endIndex - startIndex);
+                        SetBoxPosition(textStartX, textStartY);
+                        Console.Write(boxText.ToString());
+                        startIndex = endIndex;
+                        endIndex = startIndex + lineWidth > text.Length ? text.Length : startIndex + lineWidth;
+                        textStartY++;
+                        this.Height += 1;
+                        boxText.Clear();
+                    }
                 }
             }
 

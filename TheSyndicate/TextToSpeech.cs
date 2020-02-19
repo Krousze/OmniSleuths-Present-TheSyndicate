@@ -39,7 +39,10 @@ namespace TheSyndicate
             {
                 var keyBoardTask = Task.Run(() =>
                 {
-                    Console.WriteLine("Press 's' to cancel TTS");
+                    int cursorX = 0;
+                    int cursorY = Program.WINDOW_HEIGHT - 3;
+                    Console.SetCursorPosition(cursorX, cursorY);
+                    Console.WriteLine("Press 's' to cancel active Text to Speech");
                     char ch;
                     do
                     {
@@ -48,7 +51,7 @@ namespace TheSyndicate
                         if (ch == 's')
                         {
                             // Cancel the task
-                            Console.WriteLine("TTS Cancelled");
+                            Console.WriteLine("active Text to Speech Cancelling");
                             cts.Cancel();
 
                         }
@@ -87,6 +90,9 @@ namespace TheSyndicate
                 if (cToken.IsCancellationRequested)
                 {
                     q.Clear();
+                    Console.SetCursorPosition(0, Program.WINDOW_HEIGHT - 3);
+                    Console.WriteLine("                                          ");
+                    Console.WriteLine("                                          ");
                     throw new TaskCanceledException("Canceled Thread");
                 }
                 var actor = q.Dequeue();
