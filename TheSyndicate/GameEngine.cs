@@ -20,11 +20,7 @@ namespace TheSyndicate
         public GameEngine()
         {
 
-            //string gameMode = StartScreen();
-            //ChooseVoiceAssistance();
             StartScreen();
-
-            //Player.SetInstance(gameMode);
             this.player = GamePlayer.GetInstance();
             LoadScenes();
             LoadCurrentScene();
@@ -32,7 +28,6 @@ namespace TheSyndicate
 
         public void Start()
         {
-            //Console.CursorVisible = true;
             while (CurrentScene.HasNextScenes())
             {
                 PlayScene();
@@ -46,12 +41,6 @@ namespace TheSyndicate
             
         }
 
-        private void ChooseVoiceAssistance()
-        {
-            Console.WriteLine("Would you like to use voice assistance? (Y/N)");
-            string input = Console.ReadLine().ToLower();
-            UseVoiceInput = input == "y" ? true : false;
-        }
 
         private void LoadScenes()
         {

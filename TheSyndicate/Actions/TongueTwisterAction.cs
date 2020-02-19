@@ -38,8 +38,6 @@ namespace TheSyndicate.Actions
             SetTargetPhrase();
             Console.Clear();
             string instruction = $"Please say '{targetPhrase}' to the microphone. Press ENTER when you are ready.";
-            //Console.WriteLine(instruction);
-            //tts.HearText(instruction);
             TextBox instructions = new TextBox(instruction, Program.WINDOW_WIDTH / 2, 2, Program.WINDOW_WIDTH / 4, Program.WINDOW_HEIGHT / 3);
             Console.Clear();
             instructions.SetBoxPosition(instructions.TextBoxX, instructions.TextBoxY);
@@ -50,7 +48,6 @@ namespace TheSyndicate.Actions
             }
             Console.ReadLine();
             result = await SpeechToText.RecognizeSpeechAsync();
-            //result = "test";
             Console.SetCursorPosition((Program.WINDOW_WIDTH - 50) / 2, instructions.TextBoxY + 7);
             string msg = "";
             if (DidPlayerSucceed())
@@ -61,9 +58,6 @@ namespace TheSyndicate.Actions
             {
                 msg = "You lost, -5 points. ";
             }
-
-            //Console.SetCursorPosition((Program.WINDOW_WIDTH - 50) / 2, instructions.TextBoxY + 10);
-            //Console.WriteLine(result);
             msg += "Press ENTER to return";
             Console.WriteLine(msg);
             if (GameEngine.UseVoiceInput)
@@ -84,8 +78,7 @@ namespace TheSyndicate.Actions
         {
             Random rd = new Random();
             int targetPhraseIndex = rd.Next(0, phrases.Count);
-            //targetPhrase = phrases[targetPhraseIndex];
-            targetPhrase = phrases[5];
+            targetPhrase = phrases[targetPhraseIndex];
 
         }
     }
