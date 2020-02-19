@@ -21,20 +21,20 @@ namespace TheSyndicate
         public string ActualDestinationId { get; private set; }
         public bool Start { get; private set; }
         public IAction Action { get; set; }
-        public static List<IAction> Games = new List<IAction>() { new RiddleAction(), new TongueTwisterAction(), new KeyPressAction()};
+        public static List<IAction> Games = new List<IAction>() { new RiddleAction(), new TongueTwisterAction(), new KeyPressAction() };
 
 
         public int Count { get; private set; }
         public int ScenePoints { get; private set; }
         public int[] HumanityPointsMaxMin { get; private set; } /// Maximum allowable points for "evil" path, Minimum allowable
-                                                            /// Love Points for 'love' path.
+                                                                /// Love Points for 'love' path.
 
         private TextToSpeech tts = new TextToSpeech();
-        public Dictionary<string,string>[] dialogue { get; private set; }
+        public Dictionary<string, string>[] dialogue { get; private set; }
 
 
 
-        public Scene(string id, string text, string[] options, string[] destinations, bool start, int[] lovePointsMaxMin, Dictionary<string,string>[] script,int count)
+        public Scene(string id, string text, string[] options, string[] destinations, bool start, int[] lovePointsMaxMin, Dictionary<string, string>[] script, int count)
         {
             this.Id = id;
             this.Text = text;
@@ -69,7 +69,7 @@ namespace TheSyndicate
 
         public void RenderProgressBar()
         {
-            
+
             int blocks = player.LovePointTotal * 20 / 100;
 
             char POINT_METER_BLOCK = '\u2588';
@@ -109,13 +109,14 @@ namespace TheSyndicate
             //tts.HearText(this.Text);
             if (Count == 0)
             {
-                //tts.HearText(this.dialogue);
-                return dialogBox;
+                tts.HearText(this.dialogue);
+                //return dialogBox;
             }
-            else
-            {
-                return dialogBox;
-            }
+            //else
+            //{
+            //    return dialogBox;
+            //}
+            return dialogBox;
 
             //playVoice(); //??Asynchronous play
 
@@ -194,7 +195,7 @@ namespace TheSyndicate
             int loveMin = this.HumanityPointsMaxMin[1];
             int hateMax = this.HumanityPointsMaxMin[0];
 
-            if(index == -1)
+            if (index == -1)
             {
                 return true;
             }
@@ -211,7 +212,7 @@ namespace TheSyndicate
                 return true;
             }
             return false;
-           
+
         }
 
         private void RenderInstructions(TextBox sceneTextBox)
@@ -246,11 +247,11 @@ namespace TheSyndicate
 
         private int GetValidUserInput(TextBox sceneTextBox)
         {
-            int userInput=-1;//Unassigned, userInput is zero.
+            int userInput = -1;//Unassigned, userInput is zero.
 
             do
             {
-                string spaces = "                                          ";
+                string spaces = "                                                                       ";
                 sceneTextBox.SetBoxPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY + 2);
                 Console.Write(spaces);
                 sceneTextBox.SetBoxPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY + 2);
@@ -280,14 +281,14 @@ namespace TheSyndicate
         public bool IsValidInput(int userInput)
         {
             int numberOfOptions = this.Options.Length;
-            bool isValid = IsOptionAvailable(userInput-1);
+            bool isValid = IsOptionAvailable(userInput - 1);
             if (!isValid)
             {
                 string msg = "Pick again...";
                 //Console.Write(spaces);
                 Console.Write(msg);
                 Console.ReadKey();
-                
+
                 //Console.SetCursorPosition(Console.CursorLeft-msg.Length, Console.CursorTop);
                 //Console.Write(spaces);
             }
