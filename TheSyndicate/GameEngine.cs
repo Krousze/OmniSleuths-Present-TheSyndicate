@@ -299,6 +299,27 @@ namespace TheSyndicate
         {
             Console.Clear();
             Console.WriteLine("This is the help info. Press Enter to return");
+            StreamReader file = new StreamReader(Program.ASSETS_PATH + "helpContent.txt");
+            string line;
+            while ((line = file.ReadLine()) != null)
+            {
+                if (line.Contains("Normal Game"))
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                }
+                else if (line.Contains("Accessibility Game"))
+                {
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                }
+                else if (line.Contains("Both Modes"))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                }
+                Console.WriteLine(line);
+            }
+                Console.ForegroundColor = ConsoleColor.White;
+
+            file.Close();
             Console.ReadLine();
         }
 
