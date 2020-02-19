@@ -13,7 +13,7 @@ namespace TheSyndicate
     public class Scene
     {
         public static int SAVE_OPTION = 0;
-        Player player = Player.GetInstance();
+        GamePlayer player = GamePlayer.GetInstance();
         public string Id { get; private set; }
         public string Text { get; private set; }
         public string[] Options { get; private set; }
@@ -21,13 +21,13 @@ namespace TheSyndicate
         public string ActualDestinationId { get; private set; }
         public bool Start { get; private set; }
         public IAction Action { get; set; }
-        public static List<IAction> Games = new List<IAction>() { new RiddleAction(), new TongueTwisterAction(), new KeyPressAction()};
+        public static List<IAction> Games = new List<IAction>() { new RiddleAction(), new TongueTwisterAction(), new KeyPressAction() };
 
 
         public int Count { get; private set; }
         public int ScenePoints { get; private set; }
         public int[] HumanityPointsMaxMin { get; private set; } /// Maximum allowable points for "evil" path, Minimum allowable
-                                                            /// Love Points for 'love' path.
+                                                                /// Love Points for 'love' path.
 
         private TextToSpeech tts = new TextToSpeech();
         public Dictionary<string, string>[] dialogue { get; private set; }
@@ -62,15 +62,19 @@ namespace TheSyndicate
 
         private async Task<string> GetVoiceInput()
         {
-            Console.WriteLine("Say something...Press ENTER when you are ready.");
+            //Console.WriteLine("Press ENTER to stop the screen reader.");
+            //Console.ReadLine();
+            //Voice.StopMusic();
+            Console.WriteLine("Press ENTER when you are ready to make a selection.");
             Console.ReadLine();
             string voiceInput = await SpeechToText.RecognizeSpeechAsync();
+            //Voice.pl.Resume();
             return Regex.Replace(voiceInput.ToLower(), @"[^\w\s]", "");
         }
 
         public void RenderProgressBar()
         {
-            
+
             int blocks = player.LovePointTotal * 20 / 100;
 
             char POINT_METER_BLOCK = '\u2588';
@@ -108,9 +112,9 @@ namespace TheSyndicate
             dialogBox.FormatText(this.Text);
             dialogBox.DrawDialogBox(this.Text);
             //tts.HearText(this.Text);
-            if (Count == 0)
+            if (Count == 0 && GameEngine.UseVoiceInput)
             {
-                tts.HearText(this.dialogue);
+                tts.HearText(this.dialogue).Wait();
                 return dialogBox;
             }
             else
@@ -138,7 +142,7 @@ namespace TheSyndicate
             if (this.Options.Length > 0)
             {
                 RenderUserOptions(sceneTextBox);
-                tts.HearText(this.dialogue2);
+                tts.HearText(this.dialogue2).Wait();
             }
             else
             {
@@ -169,11 +173,11 @@ namespace TheSyndicate
                 }
             }
             sceneTextBox.SetBoxPosition(Program.WINDOW_WIDTH - (Program.WINDOW_WIDTH / 3), Program.WINDOW_HEIGHT - 2);
-            Console.WriteLine($"Press 0 at any point to save and quit.");
+            Console.WriteLine($"Press 0 to save and quit.");
 
             // ??Test Love Points implementation.
             sceneTextBox.SetBoxPosition(Console.WindowWidth - (Console.WindowWidth / 3), Console.WindowHeight - 3);
-            Console.WriteLine($"Humanity Points: {player.LovePointTotal} | SyndicateBotMax: {this.HumanityPointsMaxMin[0]} | HumanityMin: {this.HumanityPointsMaxMin[1]}");
+            Console.WriteLine($"Humanity Points: {player.LovePointTotal}");
         }
 
         private void PrintAvailableOptions(TextBox sceneTextBox)
@@ -190,12 +194,161 @@ namespace TheSyndicate
             }
         }
 
+       
+
+        private void RenderInstructions(TextBox sceneTextBox)
+        {
+            string msg = "What will you do next? Enter the number next to the option and press enter:";
+            sceneTextBox.TextBoxY += 2;
+            sceneTextBox.SetBoxPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY);
+            Console.WriteLine(msg);
+            tts.SynthesisToSpeakerAsync("Narrator", msg).Wait();
+        }
+
+        private void RenderQuitMessage(TextBox sceneTextBox)
+        {
+            sceneTextBox.TextBoxY += 2;
+            sceneTextBox.SetBoxPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY);
+            Console.WriteLine("You have reached the end of your journey.");
+            //Console.ForegroundColor = ConsoleColor.Cyan;
+        }
+
+        private void ExecutePlayerOption(TextBox sceneTextBox)
+        {
+            int userInput = GetValidUserInput(sceneTextBox);
+            if (userInput == SAVE_OPTION)
+            {
+                player.SavePlayerData(this.Id);
+                if (GameEngine.UseVoiceInput)
+                {
+                    tts.SynthesisToSpeakerAsync("B.A.W.S. 5000", "You've chosen to save and quit the game. Until next time...").Wait();
+                }
+                Environment.Exit(0);
+            }
+            else
+            {
+                SetDestinationId(userInput);
+            }
+        }
+
+        private int GetValidUserInput(TextBox sceneTextBox)
+        {
+            int userInput = -1;//Unassigned, userInput is zero.
+
+            do
+            {
+                string spaces = "                                                                       ";
+                sceneTextBox.SetBoxPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY + 2);
+                Console.Write(spaces);
+                //Console.SetCursorPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY + 3);
+                //Console.WriteLine(new string(' ', Program.WINDOW_WIDTH));
+                sceneTextBox.SetBoxPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY + 2);
+                string words = "";
+                if (GameEngine.UseVoiceInput)
+                {
+                    Task<string> inputTask = GetVoiceInput();
+                    inputTask.Wait();
+                    words = inputTask.Result;
+                }
+                else
+                {
+                    Console.SetCursorPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY + 2);
+                    words = Console.ReadLine();
+                }
+                if(words == "s")
+                {
+                    Voice.StopMusic();
+                }
+                if (Int32.TryParse(words, out int xInput))
+                {
+                    userInput = xInput;
+                }
+                Console.SetCursorPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY + 3);
+            }
+            while (!IsValidInput(userInput,sceneTextBox));
+
+            return userInput;
+        }
+
+        public bool IsValidInput(int userInput, TextBox tb)
+        {
+            int numberOfOptions = this.Options.Length;
+            //bool isValid = IsOptionAvailable(userInput - 1);
+            //if (!isValid)
+            //{
+
+
+
+            //    string msg = "Pick again...";
+            //    //Console.Write(spaces);
+            //    Console.Write(msg);
+            //    //Console.ReadKey();
+
+            //    //Console.SetCursorPosition(Console.CursorLeft-msg.Length, Console.CursorTop);
+            //    //Console.Write(spaces);
+            //}
+            bool isValid = false;
+            Console.SetCursorPosition(tb.TextBoxX, tb.TextBoxY + 3);
+            string msg = new string(' ', 60);
+            Console.WriteLine(msg);
+            int loveMin = this.HumanityPointsMaxMin[1];
+            int hateMax = this.HumanityPointsMaxMin[0];
+            switch (userInput)
+            {
+                case 0:
+                    isValid = true;
+                    break;
+                case 1:
+                    if(player.LovePointTotal >= loveMin)
+                    {
+                        isValid = true;
+                    }
+                    else
+                    {
+                        isValid = false;
+                        msg = $"You still need {loveMin - player.LovePointTotal} points to choose this path.";
+                    }
+                    break;
+                case 2:
+                    if (player.LovePointTotal <= hateMax)
+                    {
+                        isValid = true;
+                    }
+                    else
+                    {
+                        isValid = false;
+                        msg = $"You need to lose {player.LovePointTotal - hateMax} points to choose this path.";
+                    }
+                    break;
+                case 3:
+                    isValid = true;
+                    break;
+                case 4:
+                    isValid = true;
+                    break;
+                default:
+                    isValid = false;
+                    msg = "Not a valid option. Please enter again";
+                    break;
+
+            }
+            Console.SetCursorPosition(tb.TextBoxX, tb.TextBoxY + 3);
+            Console.Write(msg);
+            if (GameEngine.UseVoiceInput && msg != "")
+            {
+                tts.SynthesisToSpeakerAsync("Narrator", msg).Wait();
+            }
+
+
+            return isValid;
+        }
+
         private bool IsOptionAvailable(int index)
         {
             int loveMin = this.HumanityPointsMaxMin[1];
             int hateMax = this.HumanityPointsMaxMin[0];
 
-            if(index == -1)
+            if (index == -1)
             {
                 return true;
             }
@@ -212,89 +365,7 @@ namespace TheSyndicate
                 return true;
             }
             return false;
-           
-        }
 
-        private void RenderInstructions(TextBox sceneTextBox)
-        {
-            string msg = "What will you do next? Enter the number next to the option and press enter:";
-            sceneTextBox.TextBoxY += 2;
-            sceneTextBox.SetBoxPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY);
-
-            Console.WriteLine(msg);
-            tts.SynthesisToSpeakerAsync("Narrator", msg).Wait();
-        }
-
-        private void RenderQuitMessage(TextBox sceneTextBox)
-        {
-            sceneTextBox.TextBoxY += 2;
-            sceneTextBox.SetBoxPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY);
-            Console.WriteLine("You have reached the end of your journey. Press CTRL + C to end.");
-            //Console.ForegroundColor = ConsoleColor.Cyan;
-        }
-
-        private void ExecutePlayerOption(TextBox sceneTextBox)
-        {
-            int userInput = GetValidUserInput(sceneTextBox);
-            if (userInput == SAVE_OPTION)
-            {
-                player.SavePlayerData(this.Id);
-                Environment.Exit(0);
-            }
-            else
-            {
-                SetDestinationId(userInput);
-            }
-        }
-
-        private int GetValidUserInput(TextBox sceneTextBox)
-        {
-            int userInput=-1;//Unassigned, userInput is zero.
-
-            do
-            {
-                string spaces = "                                          ";
-                sceneTextBox.SetBoxPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY + 2);
-                Console.Write(spaces);
-                sceneTextBox.SetBoxPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY + 2);
-                string words = "";
-                if (GameEngine.UseVoiceInput)
-                {
-                    Task<string> inputTask = GetVoiceInput();
-                    inputTask.Wait();
-                    words = inputTask.Result;
-                }
-                else
-                {
-                    words = Console.ReadLine();
-                }
-
-                if (Int32.TryParse(words, out int xInput))
-                {
-                    userInput = xInput;
-                }
-                Console.SetCursorPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY + 2);
-            }
-            while (!IsValidInput(userInput));
-
-            return userInput;
-        }
-
-        public bool IsValidInput(int userInput)
-        {
-            int numberOfOptions = this.Options.Length;
-            bool isValid = IsOptionAvailable(userInput-1);
-            if (!isValid)
-            {
-                string msg = "Pick again...";
-                //Console.Write(spaces);
-                Console.Write(msg);
-                Console.ReadKey();
-                
-                //Console.SetCursorPosition(Console.CursorLeft-msg.Length, Console.CursorTop);
-                //Console.Write(spaces);
-            }
-            return isValid;
         }
 
         void ClearConsole()
@@ -309,47 +380,13 @@ namespace TheSyndicate
             {
                 this.ActualDestinationId = this.Id;
                 PlayMiniGameAndUpdatePoints();
-                //if (!Action.DidPlayerSucceed())
-                //{
-                //    this.ActualDestinationId = "dead";
-                //}
             }
-
-
-            //if (this.ActualDestinationId.Equals("fight"))
-            //{
-
-            //    player.AddLovePoints(-5);//?? Lose Love Points for getting into fight
-            //    this.Action = new FightAction();
-            //    Action.ExecuteActionAsync();
-            //    if (Action.DidPlayerSucceed())
-            //    {
-            //        this.ActualDestinationId = "recyclerTruck";
-            //    }
-            //    else
-            //    {
-            //        this.ActualDestinationId = "dead";
-            //        player.AddLovePoints(0);//?? Love Points go to zero upon death.
-            //    }
-            //}
-            //else if (this.Id.Equals("upload") ||
-            //    (this.Id.Equals("recyclerTruck") && this.ActualDestinationId.Equals("city")))
-            //else if (this.Id.Equals("game"))
-            //{
-            //    this.Action = new KeyPressAction();
-            //    Action.ExecuteAction();
-            //    this.ActualDestinationId = "introScene";
-            //    //if (!Action.DidPlayerSucceed())
-            //    //{
-            //    //    this.ActualDestinationId = "dead";
-            //    //}
-            //}
         }
 
         private void PlayMiniGameAndUpdatePoints()
         {
             Random rd = new Random();
-            int gameIdx = rd.Next(0, Games.Count);
+            int gameIdx = GameEngine.UseVoiceInput ? rd.Next(0,Games.Count-1) : 2;
             this.Action = Games[gameIdx];
             Action.ExecuteActionAsync().Wait();
             player.AddLovePoints(Action.DidPlayerSucceed() ? 5 : -5);
