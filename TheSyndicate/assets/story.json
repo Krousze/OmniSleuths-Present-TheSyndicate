@@ -67,7 +67,7 @@
       "Upload to the City(Humanity Required 65)",
       "Approach the incoming Robot(Syndicate Bot Required 45)",
       "Enter The Apartment(Level of Humanity and Syndicate Bot N/A)",
-      "Play a Game Winning adds 5 to your Humanity losing takes 5 Making you more a Syndicate Bot Making you more a Syndicate Bot"
+      "Play a Game Winning adds 5 to your Humanity losing takes 5 Making you more a Syndicate Bot"
     ],
     "destinations": [ "toaster", "fight", "loveOneself", "game" ],
     "actualDestinationId": null,

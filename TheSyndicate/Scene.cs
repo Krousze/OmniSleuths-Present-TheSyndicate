@@ -13,7 +13,7 @@ namespace TheSyndicate
     public class Scene
     {
         public static int SAVE_OPTION = 0;
-        player player = player.GetInstance();
+        GamePlayer player = GamePlayer.GetInstance();
         public string Id { get; private set; }
         public string Text { get; private set; }
         public string[] Options { get; private set; }
@@ -61,9 +61,13 @@ namespace TheSyndicate
 
         private async Task<string> GetVoiceInput()
         {
-            Console.WriteLine("Say something...Press ENTER when you are ready.");
+            Console.WriteLine("Press ENTER to stop the screen reader.");
+            Console.ReadLine();
+            Voice.StopMusic();
+            Console.WriteLine("Press ENTER again when you are raedy to make a selection.");
             Console.ReadLine();
             string voiceInput = await SpeechToText.RecognizeSpeechAsync();
+            //Voice.pl.Resume();
             return Regex.Replace(voiceInput.ToLower(), @"[^\w\s]", "");
         }
 
@@ -107,7 +111,7 @@ namespace TheSyndicate
             dialogBox.FormatText(this.Text);
             dialogBox.DrawDialogBox(this.Text);
             //tts.HearText(this.Text);
-            if (Count == 0)
+            if (Count == 0 && GameEngine.UseVoiceInput)
             {
                 //tts.HearText(this.dialogue);
                 Voice.PlayMusic(this.Id);
@@ -220,15 +224,15 @@ namespace TheSyndicate
         {
             sceneTextBox.TextBoxY += 2;
             sceneTextBox.SetBoxPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY);
-
-            Console.WriteLine("What will you do next? Enter the number next to the option and press enter:");
+            string instruction = "What will you do next? Enter the number next to the option and press enter:";
+            Console.WriteLine(instruction);
         }
 
         private void RenderQuitMessage(TextBox sceneTextBox)
         {
             sceneTextBox.TextBoxY += 2;
             sceneTextBox.SetBoxPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY);
-            Console.WriteLine("You have reached the end of your journey. Press CTRL + C to end.");
+            Console.WriteLine("You have reached the end of your journey.");
             //Console.ForegroundColor = ConsoleColor.Cyan;
         }
 
@@ -238,6 +242,10 @@ namespace TheSyndicate
             if (userInput == SAVE_OPTION)
             {
                 player.SavePlayerData(this.Id);
+                if (GameEngine.UseVoiceInput)
+                {
+                    tts.SynthesisToSpeakerAsync("B.A.W.S. 5000", "You've chosen to save and quit the game. Until next time...").Wait();
+                }
                 Environment.Exit(0);
             }
             else
@@ -265,6 +273,7 @@ namespace TheSyndicate
                 }
                 else
                 {
+                    Console.SetCursorPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY + 2);
                     words = Console.ReadLine();
                 }
                 if(words == "s")
@@ -275,7 +284,7 @@ namespace TheSyndicate
                 {
                     userInput = xInput;
                 }
-                Console.SetCursorPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY + 2);
+                Console.SetCursorPosition(sceneTextBox.TextBoxX, sceneTextBox.TextBoxY + 3);
             }
             while (!IsValidInput(userInput));
 
@@ -291,7 +300,7 @@ namespace TheSyndicate
                 string msg = "Pick again...";
                 //Console.Write(spaces);
                 Console.Write(msg);
-                Console.ReadKey();
+                //Console.ReadKey();
 
                 //Console.SetCursorPosition(Console.CursorLeft-msg.Length, Console.CursorTop);
                 //Console.Write(spaces);
@@ -311,10 +320,6 @@ namespace TheSyndicate
             {
                 this.ActualDestinationId = this.Id;
                 PlayMiniGameAndUpdatePoints();
-                //if (!Action.DidPlayerSucceed())
-                //{
-                //    this.ActualDestinationId = "dead";
-                //}
             }
 
 

@@ -12,9 +12,10 @@ namespace TheSyndicate
         private string PATH_TO_STORY = Program.ASSETS_PATH + "story.json";
         private Dictionary<string, Scene> Scenes { get; set; }
         private Scene CurrentScene { get; set; }
-        private player player { get; set; }
+        private GamePlayer player { get; set; }
         public static bool UseVoiceInput = false;
         public  enum StartMenuOptions{ START, SETTING, HELP, QUIT, undefined };
+        public static TextToSpeech tts = new TextToSpeech();
 
         public GameEngine()
         {
@@ -24,7 +25,7 @@ namespace TheSyndicate
             StartScreen();
 
             //Player.SetInstance(gameMode);
-            this.player = player.GetInstance();
+            this.player = GamePlayer.GetInstance();
             LoadScenes();
             LoadCurrentScene();
         }
@@ -38,6 +39,11 @@ namespace TheSyndicate
 
             }
             PlayFinalScene();
+            if (UseVoiceInput)
+            {
+                tts.SynthesisToSpeakerAsync("B.A.W.S. 5000", "You have reached the end of your journey. Until next time...").Wait();
+            }
+            
         }
 
         private void ChooseVoiceAssistance()
@@ -122,8 +128,6 @@ namespace TheSyndicate
 
         private void StartScreen()
         {
-            //Console.WriteLine("________                 .__            _________.__                 __  .__\n\\_____  \\   _____   ____ |__|          /   _____/|  |   ____  __ ___/  |_|  |__   ______\n /   |   \\ /     \\ /    \\|  |  ______  \\_____  \\ |  | _/ __ \\|  |  \\   __\\  |  \\ /  ___/\n/    |    \\  | |  \\   |  \\  | /_____/  /        \\|  |_\\  ___/|  |  /|  | |   |  \\___ \\\n\\_______  /__|_|  /___|  /__|         /_______  /|____/\\___  >____/ |__| |___|  /____ \\>\n        \\/      \\/     \\/                     \\/           \\/                 \\/     \\/\n__________                                      __                                      \n\\______   \\_______   ____   ______ ____   _____/  |_  /\\\n |     ___/\\_  __ \\_/ __ \\ /  ___// __ \\ /    \\   __\\ \\/\n |    |     |  | \\/\\  ___/ \\___ \\\\  ___/|   |  \\  |   /\\\n |____|     |__|    \\___  >____  >\\___  >___|  /__|   \\/\n                        \\/     \\/     \\/     \\/\n   ___________.__\n   \\__    ___/|  |__   ____\n     |    |   |  |  \\_/ __ \\\n     |    |   |   |  \\  ___/\n     |____|   |___|  /\\___  >\n                   \\/     \\/\n         _________                 .___.__               __\n        /   _____/__.__. ____    __| _/|__| ____ _____ _/  |_  ____\n        \\_____  <   |  |/    \\  / __ | |  |/ ___\\\\__  \\\\   __\\/ __ \\\n        /        \\___  |   |  \\/ /_/ | |  \\  \\___ / __ \\|  | \\  ___/\n       /_______  / ____|___|  /\\____ | |__|\\___  >____  /__|  \\___  >\n               \\/\\/         \\/      \\/         \\/     \\/          \\/\n                                            \n\na. new game | b. saved game");
-
             StartMenuOptions chosenOption = StartMenuOptions.undefined;
             StartMenuOptions currentOption = StartMenuOptions.START;
 
@@ -151,52 +155,7 @@ namespace TheSyndicate
                     chosenOption = currentOption;
                     ExecuteMenuOption(chosenOption);
                 }
-                
             }
-            
-
-            //Console.SetCursorPosition(30,30);
-            //Console.BackgroundColor = ConsoleColor.Blue;
-            //Console.WriteLine("New Game");
-            //Console.ResetColor();
-            //Console.SetCursorPosition(40, 30);
-            //Console.WriteLine("Saved Game");
-            //var input = ConsoleKey.Spacebar;
-            //while (input != ConsoleKey.Enter)
-            //{
-            //    input = Console.ReadKey().Key;
-            //    if(input == ConsoleKey.LeftArrow)
-            //    {
-            //        userChoice = "a";
-            //        Console.SetCursorPosition(30, 30);
-            //        Console.BackgroundColor = ConsoleColor.Blue;
-            //        Console.WriteLine("New Game");
-            //        Console.ResetColor();
-            //        Console.SetCursorPosition(40, 30);
-            //        Console.WriteLine("Saved Game");
-            //        Console.ResetColor();
-
-            //    }
-            //    else if (input == ConsoleKey.RightArrow)
-            //    {
-            //        userChoice = "b";
-            //        Console.SetCursorPosition(30, 30);
-            //        Console.WriteLine("New Game");
-            //        Console.BackgroundColor = ConsoleColor.Blue;
-            //        Console.SetCursorPosition(40, 30);
-            //        Console.WriteLine("Saved Game");
-            //        Console.ResetColor();
-            //    }
-
-            //}
-
-
-            
-            //while(userChoice != "a" && userChoice != "b")
-            //{
-            //    Console.WriteLine("You chose: " + userChoice);
-            //    userChoice = Console.ReadLine().ToLower();
-            //}
         }
 
         private void PrintStartScreen(StartMenuOptions curOption)
@@ -243,7 +202,6 @@ namespace TheSyndicate
                 case StartMenuOptions.START:
                     SetNewOrSavedGame();
                     break;
-
                 default:
                     break;
 
@@ -270,11 +228,11 @@ namespace TheSyndicate
             }
             if (pickNewGame)
             {
-                player.SetInstance("a");
+                GamePlayer.SetInstance("a");
             }
             else
             {
-                player.SetInstance("b");
+                GamePlayer.SetInstance("b");
             }
            
 
@@ -299,7 +257,6 @@ namespace TheSyndicate
         private void DisplayHelpMenu()
         {
             Console.Clear();
-            Console.WriteLine("This is the help info. Press Enter to return");
             StreamReader file = new StreamReader(Program.ASSETS_PATH + "helpContent.txt");
             string line;
             while ((line = file.ReadLine()) != null)
@@ -318,7 +275,8 @@ namespace TheSyndicate
                 }
                 Console.WriteLine(line);
             }
-                Console.ForegroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Press Enter to return");
 
             file.Close();
             Console.ReadLine();

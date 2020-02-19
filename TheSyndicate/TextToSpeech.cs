@@ -96,7 +96,7 @@ namespace TheSyndicate
         }
 
 
-        private async Task SynthesisToSpeakerAsync(string actor, string actorWords)
+        public async Task SynthesisToSpeakerAsync(string actor, string actorWords)
         {
 
             var config = SpeechConfig.FromSubscription(key, "westus2");
