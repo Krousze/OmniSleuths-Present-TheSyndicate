@@ -328,7 +328,7 @@ namespace TheSyndicate
             //Random rd = new Random();
             //int gameIdx = rd.Next(0, Games.Count);
             //this.Action = Games[gameIdx];
-            this.Action = Games[0];
+            this.Action = Games[1];
             Action.ExecuteActionAsync().Wait();
             player.AddLovePoints(Action.DidPlayerSucceed() ? 5 : -5);
         }

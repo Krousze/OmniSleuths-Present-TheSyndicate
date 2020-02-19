@@ -12,12 +12,12 @@ namespace TheSyndicate.Actions
         int guessesRemaining;
         public List<string> riddles = new List<string>()
         {
-             "What is always old and sometimes new; never sad, sometimes blue; never empty, but sometimes full; never pushes, always pulls?","What gets wetter and wetter the more it dries?","You answer me, although I never ask you questions. What am I?","What word is always pronounced wrong?","What is greater than God, more evil than the devil, the poor have it, the rich need it, and if you eat it, you'll die?","Which creature walks on four legs in the morning, two legs in the afternoon, and three legs in the evening?"
+             "What is always old and sometimes new; never sad, sometimes blue; never empty, but sometimes full; never pushes, always pulls?","What gets wetter and wetter the more it dries?","You answer me, although I never ask you questions. What am I?","What word is always pronounced wrong?","What is greater than God, more evil than the devil,\n the poor have it, the rich need it, and if you eat it, you'll die?","Which creature walks on four legs in the morning, two legs in the afternoon,\n and three legs in the evening?"
         };
         public Dictionary<string, string> riddleAnswerPairs = new Dictionary<string, string>()
         {
             { "What is always old and sometimes new; never sad, sometimes blue; never empty, but sometimes full; never pushes, always pulls?","moon" },
-            {"What gets wetter and wetter the more it dries?", "Towel" },{"You answer me, although I never ask you questions. What am I?","Telephone"},{"What word is always pronounced wrong?","Wrong"},{"What is greater than God, more evil than the devil, the poor have it, the rich need it, and if you eat it, you'll die?","Nothing"},{"Which creature walks on four legs in the morning, two legs in the afternoon, and three legs in the evening?","Man"}
+            {"What gets wetter and wetter the more it dries?", "Towel" },{"You answer me, although I never ask you questions. What am I?","Telephone"},{"What word is always pronounced wrong?","Wrong"},{"What is greater than God, more evil than the devil,\n the poor have it, the rich need it, and if you eat it, you'll die?","Nothing"},{"Which creature walks on four legs in the morning, two legs in the afternoon,\n and three legs in the evening?","Man"}
         };
 
         public RiddleAction()
@@ -52,7 +52,7 @@ namespace TheSyndicate.Actions
                 Console.WriteLine($"You have {guessesRemaining} chances remaining. Press ENTER when you are ready to answer");
                 Console.ReadLine();
                 //result = await SpeechToText.RecognizeSpeechAsync();
-                result = "wrong";
+                result = "test";
                 if (!DidPlayerSucceed())
                 {
                     guessesRemaining--;
@@ -68,7 +68,6 @@ namespace TheSyndicate.Actions
             Console.SetCursorPosition(instructions.TextBoxX, instructions.TextBoxY + 10);
             Console.WriteLine(new string(' ', Program.WINDOW_WIDTH));
        
-
             Console.SetCursorPosition((Program.WINDOW_WIDTH - 50) / 2, instructions.TextBoxY + 10);
             if (DidPlayerSucceed())
             {

@@ -37,23 +37,31 @@ namespace TheSyndicate.Actions
         {
             SetTargetPhrase();
             Console.Clear();
-            string instruction = $"Please say '{targetPhrase}' to the microphone.";
-            Console.WriteLine(instruction);
+            string instruction = $"Please say '{targetPhrase}' to the microphone. Press ENTER when you are ready.";
+            //Console.WriteLine(instruction);
             //tts.HearText(instruction);
-           
-            Console.WriteLine("Press ENTER when you are ready");
+            TextBox instructions = new TextBox(instruction, Program.WINDOW_WIDTH / 2, 2, Program.WINDOW_WIDTH / 4, Program.WINDOW_HEIGHT / 3);
+            Console.Clear();
+            instructions.SetBoxPosition(instructions.TextBoxX, instructions.TextBoxY);
+            instructions.FormatText(instruction);
+
             Console.ReadLine();
-            result = await SpeechToText.RecognizeSpeechAsync();
+            //result = await SpeechToText.RecognizeSpeechAsync();
+            result = "wrong";
+            Console.SetCursorPosition((Program.WINDOW_WIDTH - 50) / 2, instructions.TextBoxY + 7);
+
             if (DidPlayerSucceed())
             {
-                Console.WriteLine("You won");
+                Console.Write("You won, +5 points. ");
             }
             else
             {
-                Console.WriteLine("You lost");
+                Console.Write("You lost, -5 points. ");
             }
-            Console.WriteLine(result);
-            Console.WriteLine("Press ENTER to return.");
+          
+            //Console.SetCursorPosition((Program.WINDOW_WIDTH - 50) / 2, instructions.TextBoxY + 10);
+            //Console.WriteLine(result);
+            Console.Write("Press ENTER to return.");
             Console.ReadLine();
 
         }
