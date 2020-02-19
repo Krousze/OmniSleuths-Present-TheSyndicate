@@ -13,7 +13,7 @@ namespace TheSyndicate.Actions
         { 
             "Fred fed Ted bread, and Ted fed Fred bread",
             "The quick brown fox jumps over a lazy dog",
-            "How much wood would a woodchuck chuck if a woodchuck could chuck wood?",
+            "How much wood would a woodchuck chuck if a wood chuck could chuck wood?",
             "Susie works in a shoeshine shop. Where she shines she sits, and where she sits she shines",
             "I have got a date at a quarter to eight; I’ll see you at the gate, so don’t be late",
             "Can you can a can as a canner can can a can?"
@@ -44,24 +44,32 @@ namespace TheSyndicate.Actions
             Console.Clear();
             instructions.SetBoxPosition(instructions.TextBoxX, instructions.TextBoxY);
             instructions.FormatText(instruction);
-
+            if (GameEngine.UseVoiceInput)
+            {
+                tts.SynthesisToSpeakerAsync("Narrator", instruction).Wait();
+            }
             Console.ReadLine();
-            //result = await SpeechToText.RecognizeSpeechAsync();
-            result = "wrong";
+            result = await SpeechToText.RecognizeSpeechAsync();
+            //result = "test";
             Console.SetCursorPosition((Program.WINDOW_WIDTH - 50) / 2, instructions.TextBoxY + 7);
-
+            string msg = "";
             if (DidPlayerSucceed())
             {
-                Console.Write("You won, +5 points. ");
+                msg = "You won, +5 points. ";
             }
             else
             {
-                Console.Write("You lost, -5 points. ");
+                msg = "You lost, -5 points. ";
             }
-          
+
             //Console.SetCursorPosition((Program.WINDOW_WIDTH - 50) / 2, instructions.TextBoxY + 10);
             //Console.WriteLine(result);
-            Console.Write("Press ENTER to return.");
+            msg += "Press ENTER to return";
+            Console.WriteLine(msg);
+            if (GameEngine.UseVoiceInput)
+            {
+                tts.SynthesisToSpeakerAsync("Narrator", msg).Wait();
+            }
             Console.ReadLine();
 
         }
@@ -76,7 +84,9 @@ namespace TheSyndicate.Actions
         {
             Random rd = new Random();
             int targetPhraseIndex = rd.Next(0, phrases.Count);
-            targetPhrase = phrases[targetPhraseIndex];
+            //targetPhrase = phrases[targetPhraseIndex];
+            targetPhrase = phrases[5];
+
         }
     }
 }
