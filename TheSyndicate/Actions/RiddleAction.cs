@@ -39,15 +39,20 @@ namespace TheSyndicate.Actions
 
             Console.Clear();
             string instruction = $"Here's my riddle: '{targetRiddle}' ";
-            Console.WriteLine(instruction);
+            //Console.WriteLine(instruction);
             //tts.HearText(instruction);
+            TextBox instructions = new TextBox(instruction, Program.WINDOW_WIDTH / 2, 2, Program.WINDOW_WIDTH / 4, Program.WINDOW_HEIGHT / 3);
+            Console.Clear();
+            instructions.SetBoxPosition(instructions.TextBoxX, instructions.TextBoxY);
+            instructions.FormatText(instruction);
 
             while (guessesRemaining > 0)
             {
-                Console.WriteLine($"You have {guessesRemaining} chances remaining. What's your answer?");
-                Console.WriteLine("Press ENTER when you are ready");
+                Console.SetCursorPosition(instructions.TextBoxX, instructions.TextBoxY+10);
+                Console.WriteLine($"You have {guessesRemaining} chances remaining. Press ENTER when you are ready to answer");
                 Console.ReadLine();
-                result = await SpeechToText.RecognizeSpeechAsync();
+                //result = await SpeechToText.RecognizeSpeechAsync();
+                result = "wrong";
                 if (!DidPlayerSucceed())
                 {
                     guessesRemaining--;
@@ -57,17 +62,23 @@ namespace TheSyndicate.Actions
                 {
                     break;
                 }
-            } 
-            
+            }
+
+
+            Console.SetCursorPosition(instructions.TextBoxX, instructions.TextBoxY + 10);
+            Console.WriteLine(new string(' ', Program.WINDOW_WIDTH));
+       
+
+            Console.SetCursorPosition((Program.WINDOW_WIDTH - 50) / 2, instructions.TextBoxY + 10);
             if (DidPlayerSucceed())
             {
-                Console.WriteLine("You won");
+                Console.Write("You won, +5 points. ");
             }
             else
             {
-                Console.WriteLine("You lost");
+                Console.Write("You lost, -5 points. ");
             }
-            Console.WriteLine(result);
+            //Console.WriteLine(result);
             Console.WriteLine("Press ENTER to return.");
             Console.ReadLine();
         }

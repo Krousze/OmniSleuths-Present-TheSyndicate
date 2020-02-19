@@ -174,7 +174,7 @@ namespace TheSyndicate
                 }
             }
             sceneTextBox.SetBoxPosition(Program.WINDOW_WIDTH - (Program.WINDOW_WIDTH / 3), Program.WINDOW_HEIGHT - 2);
-            Console.WriteLine($"Press 0 at any point to save and quit.");
+            Console.WriteLine($"Press 0 to save and quit.");
 
             // ??Test Love Points implementation.
             sceneTextBox.SetBoxPosition(Console.WindowWidth - (Console.WindowWidth / 3), Console.WindowHeight - 3);
@@ -325,9 +325,10 @@ namespace TheSyndicate
 
         private void PlayMiniGameAndUpdatePoints()
         {
-            Random rd = new Random();
-            int gameIdx = rd.Next(0, Games.Count);
-            this.Action = Games[gameIdx];
+            //Random rd = new Random();
+            //int gameIdx = rd.Next(0, Games.Count);
+            //this.Action = Games[gameIdx];
+            this.Action = Games[0];
             Action.ExecuteActionAsync().Wait();
             player.AddLovePoints(Action.DidPlayerSucceed() ? 5 : -5);
         }
