@@ -21,12 +21,12 @@ namespace TheSyndicate
             {
                 ConsoleWindow.ShowWindow(ConsoleWindow.ThisConsole, ConsoleWindow.MAXIMIZE);
                 ConsoleWindow.SetWindowsWindow();
-                ASSETS_PATH = @"..\..\..\assets\";
+                ASSETS_PATH = @"assets\";
             }
             else
             {
                 ConsoleWindow.SetMacWindow();
-                ASSETS_PATH = @"../../../../assets/";
+                ASSETS_PATH = @"assets/";
             }
             Console.CursorVisible = false;
             GameEngine gameEngine = new GameEngine();
