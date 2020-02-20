@@ -18,7 +18,7 @@ namespace TheSyndicate.Actions
         public Dictionary<string, string> riddleAnswerPairs = new Dictionary<string, string>()
         {
             { "What is always old and sometimes new; never sad, sometimes blue; never empty, but sometimes full; never pushes, always pulls?","moon" },
-            {"This riddle is a real stumper -- What gets wetter and wetter the more it dries? ", "Towel" },{"You answer me, although I never ask you questions. What am I?","Telephone"},{"                What word is always pronounced wrong?                  ","Wrong"},{"What is greater than God, more evil than the devil, the poor have it, the rich need it, and if you eat it, you'll die?","Nothing"},{"Which creature walks on four legs in the morning, two legs in the afternoon, and three legs in the evening?","Man"}
+            {"This riddle is a real stumper -- What gets wetter and wetter the more it dries? ", "Towel" },{"You answer me, although I never ask you questions. What am I?","Telephone"},{"What word is always pronounced wrong?","Wrong"},{"What is greater than God, more evil than the devil, the poor have it, the rich need it, and if you eat it, you'll die?","Nothing"},{"Which creature walks on four legs in the morning, two legs in the afternoon, and three legs in the evening?","Man"}
         };
 
         public RiddleAction()
