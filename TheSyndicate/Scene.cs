@@ -402,8 +402,8 @@ namespace TheSyndicate
         private void PlayMiniGameAndUpdatePoints()
         {
             Random rd = new Random();
-            //int gameIdx = GameEngine.UseVoiceInput ? rd.Next(0,Games.Count-1) : 2;
-            this.Action = Games[1];
+            int gameIdx = GameEngine.UseVoiceInput ? rd.Next(0,Games.Count-1) : 2;
+            this.Action = Games[gameIdx];
             Action.ExecuteActionAsync().Wait();
             player.AddLovePoints(Action.DidPlayerSucceed() ? 5 : -5);
         }

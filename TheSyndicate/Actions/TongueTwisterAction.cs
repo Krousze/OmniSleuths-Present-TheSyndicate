@@ -78,8 +78,7 @@ namespace TheSyndicate.Actions
         {
             Random rd = new Random();
             int targetPhraseIndex = rd.Next(0, phrases.Count);
-            targetPhrase = phrases[0];
-
+            targetPhrase = phrases[targetPhraseIndex];
         }
     }
 }
